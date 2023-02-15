@@ -9,7 +9,7 @@
     z-index: 10;
 }
 
-#nav > div:first-child{
+#nav > div:first-child {
     margin: 20px 80px;
     font-family: 'Poppins', sans-serif;
 }
@@ -29,7 +29,7 @@
     margin-left: 50px;
 }
 
-#nav > div:last-child{
+#nav > div:last-child {
     margin: 30px 80px;
 }
 
@@ -56,7 +56,7 @@
 
 #signUpBtn:hover {
     background: #CC2451;
-    color : white;
+    color: white;
 }
 
 #signUpBtn {
@@ -104,19 +104,19 @@
     z-index: 2;
 }
 
-#intro > h3{
+#intro > h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     font-size: 40px;
 }
 
-#intro > h5{
+#intro > h5 {
     font-family: 'Poppins', sans-serif;
     font-size: 21px;
     color: #CC2451;
 }
 
-#intro > h6{
+#intro > h6 {
     font-family: 'Poppins', sans-serif;
     position: absolute;
     letter-spacing: 1px;
@@ -144,27 +144,42 @@
     margin-left: 10px;
 }
 
-#sentences > h2{
+#sentences > h2 {
     margin: 100px 50px 50px 100px;
 }
 
-#sentences > h4:first-child{
+#sentences > h4:first-child {
     margin-top: 150px;
 }
 
-#aboutUs > aside:first-child{
+#aboutUs > aside:first-child {
     background: url("../img/bmwWhite.png") no-repeat left;
     background-size: contain;
     border: 1px solid red;
 }
 
-#aboutUs aside:nth-child(2){
+#aboutUs aside:nth-child(2) {
     position: absolute;
 }
 
-#aboutUs aside:nth-child(2) h1{
+#aboutUs aside:nth-child(2) h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 50px;
     font-weight: bold;
     margin-left: 400px;
+}
+
+#services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 82vh;
+}
+
+#services > div {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    width: 100%;
 }
