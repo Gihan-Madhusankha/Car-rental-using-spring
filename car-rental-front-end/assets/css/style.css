@@ -1,12 +1,12 @@
 /*nav bar*/
 #nav {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     display: flex;
     width: 100%;
     height: 120px;
     position: fixed;
     background: #EEEFF1;
-    z-index: 1;
+    z-index: 10;
 }
 
 #nav > div:first-child{
@@ -17,6 +17,7 @@
 .navbar-brand {
     font-size: 25px;
     font-weight: bold;
+    color: #CC2451;
 }
 
 .navbar-nav > li {
@@ -78,12 +79,12 @@
 #bgImage {
     width: 50%;
     height: 80%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     background: url("../img/bgImage.png") no-repeat right;
     background-size: contain;
     position: absolute;
-    right: 400px;
-    top: 150px;
+    right: 420px;
+    top: 120px;
 }
 
 #carImage {
@@ -92,7 +93,7 @@
     background: url("../img/bensGray.png") no-repeat right;
     background-size: contain;
     position: absolute;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     right: 0;
     top: 150px;
 }
@@ -100,12 +101,27 @@
 #intro {
     /*position: absolute;*/
     margin: 200px 90px;
+    z-index: 2;
 }
 
 #intro > h3{
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     font-size: 40px;
+}
+
+#intro > h5{
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+    color: #CC2451;
+}
+
+#intro > h6{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    letter-spacing: 1px;
+    font-weight: initial;
+    font-size: 14px;
 }
 
 
