@@ -132,7 +132,7 @@
     display: flex;
 }
 
-#aboutUs aside{
+#aboutUs aside {
     width: 100%;
     border: 1px solid red;
 }
@@ -144,6 +144,27 @@
     margin-left: 10px;
 }
 
+#sentences > h2{
+    margin: 100px 50px 50px 100px;
+}
+
 #sentences > h4:first-child{
-    margin-top: 80px;
+    margin-top: 150px;
+}
+
+#aboutUs > aside:first-child{
+    background: url("../img/bmwWhite.png") no-repeat left;
+    background-size: contain;
+    border: 1px solid red;
+}
+
+#aboutUs aside:nth-child(2){
+    position: absolute;
+}
+
+#aboutUs aside:nth-child(2) h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 400px;
 }
