@@ -3,14 +3,14 @@
     /*border: 1px solid red;*/
     display: flex;
     width: 100%;
-    height: 120px;
+    height: 100px;
     position: fixed;
     background: #EEEFF1;
     z-index: 10;
 }
 
 #nav > div:first-child{
-    margin: 30px 80px;
+    margin: 20px 80px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -69,7 +69,7 @@
 #homepage {
     width: 100%;
     height: 100vh;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     background: #EEEFF1;
     display: flex;
     align-items: center;
@@ -124,5 +124,26 @@
     font-size: 14px;
 }
 
+/*about us*/
+#aboutUs {
+    width: 100%;
+    height: 82vh;
+    background: white;
+    display: flex;
+}
 
+#aboutUs aside{
+    width: 100%;
+    border: 1px solid red;
+}
 
+#sentences > h4 {
+    margin-right: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+#sentences > h4:first-child{
+    margin-top: 80px;
+}
