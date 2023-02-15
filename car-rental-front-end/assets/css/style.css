@@ -6,6 +6,7 @@
     height: 120px;
     position: fixed;
     background: #EEEFF1;
+    z-index: 1;
 }
 
 #nav > div:first-child{
@@ -48,12 +49,12 @@
 }
 
 #loginBtn:hover {
-    background: mediumvioletred;
+    background: #CC2451;
     color: white;
 }
 
 #signUpBtn:hover {
-    background: mediumvioletred;
+    background: #CC2451;
     color : white;
 }
 
@@ -69,6 +70,9 @@
     height: 100vh;
     border: 1px solid black;
     background: #EEEFF1;
+    display: flex;
+    align-items: center;
+    z-index: 0;
 }
 
 #bgImage {
@@ -78,19 +82,30 @@
     background: url("../img/bgImage.png") no-repeat right;
     background-size: contain;
     position: absolute;
-    right: 0;
+    right: 400px;
     top: 150px;
 }
 
 #carImage {
     width: 80%;
-    height: 60vh;
-    background: url("../img/bensGray.png") no-repeat center;
+    height: 70vh;
+    background: url("../img/bensGray.png") no-repeat right;
     background-size: contain;
     position: absolute;
     border: 1px solid blue;
     right: 0;
     top: 150px;
+}
+
+#intro {
+    /*position: absolute;*/
+    margin: 200px 90px;
+}
+
+#intro > h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
 }
 
 
