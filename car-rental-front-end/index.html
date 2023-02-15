@@ -22,18 +22,18 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
-<body style="margin: 0 50px">
+<body>
 
-<!--header -->
+<!--    header -->
 <header>
-
+    <!--    navbar-->
     <section id="nav">
-        <div style="border: 1px solid red; width: 200%">
-            <!--            navbar-->
+        <div style="width: 200%">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">RentalX</a>
-                    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler"
                             data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -49,7 +49,8 @@
                                 <a class="nav-link" href="#">Services</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                   href="#"
                                    role="button">
                                     Car
                                 </a>
@@ -68,9 +69,11 @@
             </nav>
         </div>
 
+        <!--        login and sign up buttons-->
         <div id="btns">
-            <div class="btn-group" role="group" id="loginBtn">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="btn-group" id="loginBtn" role="group">
+                <button aria-expanded="false" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                        type="button">
                     LOGIN
                 </button>
                 <ul class="dropdown-menu">
@@ -78,8 +81,9 @@
                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                 </ul>
             </div>
-            <div class="btn-group" role="group" id="signUpBtn">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="btn-group" id="signUpBtn" role="group">
+                <button aria-expanded="false" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                        type="button">
                     SIGN UP
                 </button>
                 <ul class="dropdown-menu">
@@ -87,10 +91,16 @@
                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                 </ul>
             </div>
+
         </div>
     </section>
-
 </header>
+<main>
+    <!--    homepage-->
+    <section id="homepage">
+
+    </section>
+</main>
 
 
 <script src="assets/js/bootstrap.min.js"></script>
