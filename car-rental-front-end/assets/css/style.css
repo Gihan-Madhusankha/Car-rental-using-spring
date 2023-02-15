@@ -9,6 +9,7 @@
 
 #nav > div:first-child{
     margin: 30px 80px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar-brand {
@@ -33,26 +34,31 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 20%;
+    font-family: 'Poppins', sans-serif;
 }
 
 #loginBtn {
-    margin-right: 10px;
+    margin-right: 15px;
     width: 100px;
     height: 40px;
+    border-radius: 3px;
 }
 
-#loginBtn > button {
-    border-radius: 3px;
+#loginBtn:hover {
+    background: #20c997;
+    color: white;
+}
+
+#signUpBtn:hover {
+    background: #20c997;
+    color : white;
 }
 
 #signUpBtn {
     width: 100px;
     height: 40px;
-}
-
-#signUpBtn > button {
     border-radius: 3px;
 }
 
