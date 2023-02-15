@@ -11,6 +11,20 @@
     margin: 30px 80px;
 }
 
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.navbar-nav > li {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.navbar-nav > li:first-child {
+    margin-left: 50px;
+}
+
 #nav > div:last-child{
     margin: 30px 80px;
 }
@@ -20,7 +34,7 @@
     align-items: center;
     justify-content: right;
     border: 1px solid red;
-    width: 100%;
+    width: 20%;
 }
 
 #loginBtn {
@@ -29,11 +43,18 @@
     height: 40px;
 }
 
+#loginBtn > button {
+    border-radius: 3px;
+}
+
 #signUpBtn {
     width: 100px;
     height: 40px;
 }
 
+#signUpBtn > button {
+    border-radius: 3px;
+}
 
 /*homepage*/
 #homepage {
