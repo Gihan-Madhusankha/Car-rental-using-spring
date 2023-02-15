@@ -132,8 +132,13 @@
     display: flex;
 }
 
-#aboutUs aside {
-    width: 100%;
+#aboutUs aside:first-child {
+    width: 40%;
+    border: 1px solid red;
+}
+
+#aboutUs aside:last-child {
+    width: 60%;
     border: 1px solid red;
 }
 
@@ -142,10 +147,13 @@
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     margin-left: 10px;
+    margin-bottom: 12px;
 }
 
 #sentences > h2 {
-    margin: 100px 50px 50px 100px;
+    margin: 150px 50px 20px 20px;
+    color: #CC2451;
+    font-size: 21px;
 }
 
 #sentences > h4:first-child {
@@ -160,13 +168,15 @@
 
 #aboutUs aside:nth-child(2) {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 #aboutUs aside:nth-child(2) h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 50px;
     font-weight: bold;
-    margin-left: 400px;
 }
 
 #services {
