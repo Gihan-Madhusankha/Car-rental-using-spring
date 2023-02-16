@@ -337,6 +337,10 @@
     height: 50vh;
 }
 
+#rentalCarDetails > div{
+    /*margin-right: 50px;*/
+}
+
 #columns > div {
     width: 100%;
 }
