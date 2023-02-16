@@ -226,7 +226,10 @@
 }
 
 #contact > div:last-child{
-
+    width: 500px;
+    position:relative;
+    top: -150px;
+    z-index: 2;
 }
 
 #cont {
@@ -339,10 +342,6 @@
     justify-content: center;
     width: 100%;
     height: 80vh;
-}
-
-#rentalCarDetails > div{
-    /*margin-right: 50px;*/
 }
 
 #columns > div {
