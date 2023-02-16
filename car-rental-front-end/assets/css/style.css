@@ -313,3 +313,11 @@
     }
 }
 
+#columns > div{
+    width: 100%;
+}
+
+#columns > div:first-child{
+    margin-left: 150px;
+}
+
