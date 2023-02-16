@@ -346,3 +346,7 @@
     font-weight: bold;
     color: #CC2451;
 }
+
+#social > img{
+    margin-right: 30px;
+}
