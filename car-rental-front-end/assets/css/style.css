@@ -313,11 +313,11 @@
     }
 }
 
-#columns > div{
+#columns > div {
     width: 100%;
 }
 
-#columns > div:first-child{
+#columns > div:first-child {
     margin-left: 150px;
 }
 
@@ -330,13 +330,19 @@
     background: #EEEFF1;
 }
 
-#footer > div{
+#footer > div {
     border: 1px solid red;
     width: 100%;
     height: 100px;
 }
 
-#footer > div:nth-child(2){
+#footer > div:nth-child(2) h6 {
     margin-right: 20px;
+    font-size: 12px;
 }
 
+#footer > div:first-child > h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #CC2451;
+}
