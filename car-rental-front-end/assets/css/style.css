@@ -278,3 +278,8 @@
 #rental > div:first-child > div{
     margin-left: 80px;
 }
+
+#rental > div:last-child{
+    background: url("../img/rangeRover1.png") no-repeat center;
+    background-size: contain;
+}
