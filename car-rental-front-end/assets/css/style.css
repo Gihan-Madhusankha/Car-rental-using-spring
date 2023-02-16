@@ -220,11 +220,12 @@
 }
 
 #contact > div {
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
     border: 1px solid red;
     width: 100%;
-    margin-top: 100px;
+    height: 82vh;
+    /*margin-top: 100px;*/
 }
 
 #cont {
@@ -241,4 +242,6 @@
     font-size: 50px;
     font-weight: bold;
 }
+
+
 
