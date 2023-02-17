@@ -11,7 +11,6 @@
 
     <!--    title-->
     <title>Car Rental</title>
-<!--link-->
 
     <!--    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"-->
     <!--          integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="-->
@@ -40,7 +39,7 @@
 <body>
 
 <!--    header -->
-<header>
+<header id="header">
     <!--    navbar-->
     <section id="nav">
         <div style="width: 70%;">
@@ -70,9 +69,8 @@
                                     Car
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="#">Car Listing</a></li>
+                                    <li><a class="dropdown-item" href="#">Car Booking</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -92,9 +90,12 @@
                     LOGIN
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                    <li><a class="dropdown-item" id="btnCustomerLogin" data-bs-toggle="modal" href="#">Customer</a>
+                    </li>
+                    <li><a class="dropdown-item" id="btnDriverLogin" data-bs-toggle="modal" href="#driverLogin">Driver</a></li>
+                    <li><a class="dropdown-item" id="btnAdminLogin" data-bs-toggle="modal" href="#adminLogin">Admin</a></li>
                 </ul>
+
             </div>
             <div class="btn-group" id="signUpBtn" role="group">
                 <button aria-expanded="false" class="btn dropdown-toggle rounded-1" data-bs-toggle="dropdown"
@@ -102,15 +103,14 @@
                     SIGN UP
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#" id="customerSignUp">Customer</a></li>
                 </ul>
             </div>
 
         </div>
     </section>
 </header>
-<main>
+<main id="main">
     <!--    homepage-->
     <section id="homepage">
         <div id="bgImage"></div>
@@ -239,37 +239,12 @@
         <div></div>
     </section>
 
-    <!--<section id="topRatedDeals">
-        <div class="carousel">
-            <div class="carousel-cell">
-                <img alt="orange tree" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img alt="One World Trade" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img alt="drizzle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img alt="cat nose" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img alt="contrail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img alt="golden hour" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg"/>
-            </div>
-            <div class="carousel-cell">
-                <img alt="flight formation" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg"/>
-            </div>
-        </div>
-    </section>-->
     <div id="deal">
         <h1>Explore Our top Deal From Top Rated Dealer</h1>
     </div>
     <section id="rentalCarDetails">
         <div class="card" style="width: 18rem; margin-left: 80px; margin-top: 150px">
-            <img src="assets/img/1.jpg" class="card-img-top" alt="...">
+            <img alt="..." class="card-img-top" src="assets/img/1.jpg">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk</p>
@@ -279,7 +254,7 @@
             </ul>
         </div>
         <div class="card" style="width: 18rem; margin-left: 20px;  margin-top: 150px">
-            <img src="assets/img/2.jpeg" class="card-img-top" alt="...">
+            <img alt="..." class="card-img-top" src="assets/img/2.jpeg">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk</p>
@@ -289,7 +264,7 @@
             </ul>
         </div>
         <div class="card" style="width: 18rem; margin-left: 20px;  margin-top: 150px;">
-            <img style="margin-top: 12px" src="assets/img/3.jpg" class="card-img-top" alt="...">
+            <img alt="..." class="card-img-top" src="assets/img/3.jpg" style="margin-top: 12px">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk</p>
@@ -299,7 +274,7 @@
             </ul>
         </div>
         <div class="card" style="z-index: 5; width: 18rem; margin-left: 20px;  margin-top: 150px">
-            <img style="margin-top: 8px" src="assets/img/toyota_allion.jpg" class="card-img-top" alt="...">
+            <img alt="..." class="card-img-top" src="assets/img/toyota_allion.jpg" style="margin-top: 8px">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk</p>
@@ -309,7 +284,7 @@
             </ul>
         </div>
         <div class="card" style="z-index: 5; width: 18rem; margin-left: 20px; margin-right: 80px;  margin-top: 150px">
-            <img style="margin-top: 10px" src="assets/img/corolla-cutout.png" class="card-img-top" alt="...">
+            <img alt="..." class="card-img-top" src="assets/img/corolla-cutout.png" style="margin-top: 10px">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk</p>
@@ -374,7 +349,7 @@
 
         </div>
         <div>
-            <img src="assets/img/c.webp" alt="">
+            <!--            <img style="overflow-x: hidden" src="assets/img/c.webp" alt="">-->
         </div>
     </section>
 
@@ -431,12 +406,373 @@
         <h6>Booking</h6>
     </div>
     <div id="social" style="display: flex; align-items: center; justify-content: center">
-        <img src="assets/img/facebook%20(1).png" alt="">
-        <img src="assets/img/twitter%20(1).png" alt="">
-        <img src="assets/img/whatsapp.png" alt="">
-        <img src="assets/img/instagram%20(1).png" alt="">
+        <img alt="" src="assets/img/facebook%20(1).png">
+        <img alt="" src="assets/img/twitter%20(1).png">
+        <img alt="" src="assets/img/whatsapp.png">
+        <img alt="" src="assets/img/instagram%20(1).png">
     </div>
 </footer>
+
+<!--<section class="emptySection" style="display: none; width: 100%; height: 100vh; border: 1px solid red;">
+    <div style="margin-top: 100px; display: flex; justify-content: center; font-family: 'Poppins', sans-serif;"><h1>CUSTOMER SIGNUP</h1></div>
+    <form class="row g-3" style="font-family: 'Poppins', sans-serif; margin-left: 200px; margin-right: 200px">
+        <div class="col-md-4">
+            <label class="form-label" for="cusFullName">Full name</label>
+            <input class="form-control rounded-1" id="cusFullName" type="text">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="inputUserName">User name</label>
+            <input class="form-control rounded-1" id="inputUserName" type="text">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="inputPasswordCus">Password</label>
+            <input class="form-control rounded-1" id="inputPasswordCus" type="password">
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="cusAddress">Address</label>
+            <input class="form-control rounded-1" id="cusAddress" type="text">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="cusContactNum">Contact</label>
+            <input class="form-control rounded-1" id="cusContactNum" type="number">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="cusEmail">Email</label>
+            <input class="form-control rounded-1" id="cusEmail" type="email">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="cusNICNum">NIC no</label>
+            <input class="form-control rounded-1" id="cusNICNum" type="number">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="cusLicenseNum">License no</label>
+            <input class="form-control rounded-1" id="cusLicenseNum" type="text">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="yourImage">Your Image</label>
+            <input class="form-control rounded-1" id="yourImage" style="font-size: 14px"
+                   type="file">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="identityCardImage">NIC</label>
+            <input class="form-control rounded-1" id="identityCardImage" style="font-size: 14px"
+                   type="file">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="licenseImage">License</label>
+            <input class="form-control rounded-1" id="licenseImage" style="font-size: 14px"
+                   type="file">
+        </div>
+        <div class="mb-3 form-check" style="font-size: 14px;">
+            <input class="form-check-input" id="checkCusSignUp" type="checkbox">
+            <label class="form-check-label" for="check">Agree to terms and conditions</label>
+        </div>
+        <div class="col-md-6" style="letter-spacing: 1px">
+            <button class="btn btn-success rounded-1 w-100" id="#full"
+                    type="submit">REGISTER
+            </button>
+        </div>
+        <div class="col-md-6" style="letter-spacing: 1px">
+            <button aria-label="Close" class="btn btn-danger rounded-1 w-100" data-bs-dismiss="modal"
+                    type="button">CANCEL
+            </button>
+        </div>
+    </form>
+</section>-->
+
+<!--customer sign up-->
+<section class="cusSignUp row bg-light" style="display: none; width: 100%; height: 100vh;">
+    <div style="width: 100%; height: 100vh;">
+        <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
+            <h1 style="font-weight: bolder; margin-top: 120px">CUSTOMER SIGNUP</h1>
+        </div>
+        <form class="row g-3" style="font-family: 'Poppins', sans-serif; margin-left: 200px; margin-right: 200px">
+            <div class="col-md-4">
+                <label class="form-label" for="cusFullName">Full name</label>
+                <input class="form-control rounded-1" id="cusFullName" type="text">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="inputUserName">User name</label>
+                <input class="form-control rounded-1" id="inputUserName" type="text">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="inputPasswordCus">Password</label>
+                <input class="form-control rounded-1" id="inputPasswordCus" type="password">
+            </div>
+            <div class="col-8">
+                <label class="form-label" for="cusAddress">Address</label>
+                <input class="form-control rounded-1" id="cusAddress" type="text">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="cusContactNum">Contact</label>
+                <input class="form-control rounded-1" id="cusContactNum" type="number">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="cusEmail">Email</label>
+                <input class="form-control rounded-1" id="cusEmail" type="email">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="cusNICNum">NIC no</label>
+                <input class="form-control rounded-1" id="cusNICNum" type="number">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="cusLicenseNum">License no</label>
+                <input class="form-control rounded-1" id="cusLicenseNum" type="text">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="yourImage">Your Image</label>
+                <input class="form-control rounded-1" id="yourImage" style="font-size: 14px"
+                       type="file">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="identityCardImage">NIC</label>
+                <input class="form-control rounded-1" id="identityCardImage" style="font-size: 14px"
+                       type="file">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="licenseImage">License</label>
+                <input class="form-control rounded-1" id="licenseImage" style="font-size: 14px"
+                       type="file">
+            </div>
+            <div class="mb-3 form-check" style="font-size: 14px;">
+                <input class="form-check-input" id="checkCusSignUp" type="checkbox">
+                <label class="form-check-label" for="check">Agree to terms and conditions</label>
+            </div>
+            <div class="col-md-6" style="letter-spacing: 1px">
+                <button class="btn btn-success rounded-1 w-100" id="#full"
+                        type="submit">REGISTER
+                </button>
+            </div>
+            <div class="col-md-6" style="letter-spacing: 1px">
+                <button aria-label="Close" class="btn btn-danger rounded-1 w-100" data-bs-dismiss="modal"
+                        id="cusSignUpCancel"
+                        type="button">CANCEL
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!--customer login-->
+<section class="cusLogin row bg-light" style="display:none; width: 100%; height: 100vh;">
+    <div style="width: 100%; height: 100vh;">
+        <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
+            <h1 style="font-weight: bolder; margin-top: 150px">CUSTOMER LOGIN</h1>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
+        <form style="width: 30%; font-family: 'Poppins', sans-serif">
+            <div class="mb-3">
+                <label class="form-label" for="username">User name</label>
+                <input class="form-control rounded-1" id="username" required type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control rounded-1" id="password" required type="password">
+            </div>
+            <div class="mb-3 form-check">
+                <input class="form-check-input" id="check" required type="checkbox">
+                <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+            </div>
+            <button class="btn btn-primary rounded-1 w-100"
+                    style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                    type="submit">LOGIN
+            </button>
+        </form>
+        </div>
+    </div>
+</section>
+
+<!--customerLogin-->
+<!--<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="customerLogin" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4 mx-auto" id="exampleModalLabel"
+                    style="font-family: 'Poppins', sans-serif; font-weight: bold;">CUSTOMER LOGIN</h1>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            &lt;!&ndash;            modal body&ndash;&gt;
+            <div class="modal-body">
+                <form style="font-family: 'Poppins', sans-serif">
+                    <div class="mb-3">
+                        <label class="form-label" for="username">User name</label>
+                        <input class="form-control rounded-1" id="username" required type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control rounded-1" id="password" required type="password">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input class="form-check-input" id="check" required type="checkbox">
+                        <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+                    </div>
+                    <button class="btn btn-primary rounded-1 w-100"
+                            style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                            type="submit">LOGIN
+                    </button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                &lt;!&ndash;                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>&ndash;&gt;
+                <div class="mx-auto">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: normal; font-size: 12px">Not a member ?
+                        sign up</h1>
+                </div>
+                <button class="btn btn-warning rounded-1 w-100"
+                        style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                        type="button">SIGN UP
+                </button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!--adminLogin-->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="adminLogin" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4 mx-auto" id="exampleModalLabelAd"
+                    style="font-family: 'Poppins', sans-serif; font-weight: bold;">ADMIN LOGIN</h1>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <!--            modal body-->
+            <div class="modal-body">
+                <form style="font-family: 'Poppins', sans-serif">
+                    <div class="mb-3">
+                        <label class="form-label" for="usernameAd">User name</label>
+                        <input class="form-control rounded-1" id="usernameAd" required type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="passwordAd">Password</label>
+                        <input class="form-control rounded-1" id="passwordAd" required type="password">
+                    </div>
+                    <div class="mb-3 form-check" style="font-size: 14px">
+                        <input class="form-check-input" id="checkAd" required type="checkbox">
+                        <label class="form-check-label" for="check">Remember me</label>
+                    </div>
+                    <button class="btn btn-primary rounded-1 w-100"
+                            style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                            type="submit">LOGIN
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--driverLogin-->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="driverLogin" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4 mx-auto" id="exampleModalLabelDr"
+                    style="font-family: 'Poppins', sans-serif; font-weight: bold;">DRIVER LOGIN</h1>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <!--            modal body-->
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label" for="usernameDr">User name</label>
+                        <input class="form-control rounded-1" id="usernameDr" required type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="passwordDr">Password</label>
+                        <input class="form-control rounded-1" id="passwordDr" required type="password">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input class="form-check-input" id="checkDr" required type="checkbox">
+                        <label class="form-check-label" for="check">Remember me</label>
+                    </div>
+                    <button class="btn btn-primary rounded-1 w-100"
+                            style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                            type="submit">LOGIN
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--customer sign up-->
+<!--<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-4 mx-xl-auto" id="exampleModalLabelCusSign"
+                    style="font-family: 'Poppins', sans-serif; font-weight: bold;">CUSTOMER SIGNUP</h1>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            &lt;!&ndash;            modal body&ndash;&gt;
+            <div class="modal-body">
+                <form class="row g-3" style="font-family: 'Poppins', sans-serif">
+                    <div class="col-md-6">
+                        <label class="form-label" for="inputUserName">User name</label>
+                        <input class="form-control rounded-1" id="inputUserName" type="text">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="inputPasswordCus">Password</label>
+                        <input class="form-control rounded-1" id="inputPasswordCus" type="password">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="cusFullName">Full name</label>
+                        <input class="form-control rounded-1" id="cusFullName" type="text">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="cusContactNum">Contact</label>
+                        <input class="form-control rounded-1" id="cusContactNum" type="number">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="cusAddress">Address</label>
+                        <input class="form-control rounded-1" id="cusAddress" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="cusEmail">Email</label>
+                        <input class="form-control rounded-1" id="cusEmail" type="email">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="cusNICNum">NIC no</label>
+                        <input class="form-control rounded-1" id="cusNICNum" type="number">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="cusLicenseNum">License no</label>
+                        <input class="form-control rounded-1" id="cusLicenseNum" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="yourImage">Your Image</label>
+                        <input class="form-control rounded-1" id="yourImage" style="font-size: 14px"
+                               type="file">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="identityCardImage">NIC</label>
+                        <input class="form-control rounded-1" id="identityCardImage" style="font-size: 14px"
+                               type="file">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="licenseImage">License</label>
+                        <input class="form-control rounded-1" id="licenseImage" style="font-size: 14px"
+                               type="file">
+                    </div>
+                    <div class="mb-3 form-check" style="font-size: 14px">
+                        <input class="form-check-input" id="checkCusSignUp" type="checkbox">
+                        <label class="form-check-label" for="check">Agree to terms and conditions</label>
+                    </div>
+                    <div class="col-md-6" style="letter-spacing: 1px">
+                        <button class="btn btn-success rounded-1 w-100" id="#full"
+                                type="submit">REGISTER
+                        </button>
+                    </div>
+                    <div class="col-md-6" style="letter-spacing: 1px">
+                        <button aria-label="Close" class="btn btn-danger rounded-1 w-100" data-bs-dismiss="modal"
+                                type="button">CANCEL
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>-->
 
 
 <script src="assets/js/bootstrap.min.js"></script>
@@ -464,5 +800,7 @@
         });
     });
 </script>-->
+
+<script src="assets/js/customer.js"></script>
 </body>
 </html>
