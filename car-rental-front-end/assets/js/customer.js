@@ -14,7 +14,7 @@ $('#customerSignUp').click(function () {
     $('.cusLogin').css('display', 'none');
 });
 
-$('#cusSignUpCancel').click(function(){
+$('#cusSignUpCancel, #btnBack').click(function(){
     $('.cusSignUp').css('display', 'none');
     $('.cusLogin').css('display', 'none');
     $('#main').css('display', 'block');
