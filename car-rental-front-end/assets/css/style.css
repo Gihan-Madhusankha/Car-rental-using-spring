@@ -226,10 +226,7 @@
 }
 
 #contact > div:last-child{
-    width: 500px;
-    position:relative;
-    top: -150px;
-    z-index: 2;
+    background: url("../img/bmw.png");
 }
 
 #cont {
@@ -385,3 +382,10 @@
 #social > img {
     margin-right: 30px;
 }
+
+.cusSignUp {
+    background: url("../img/bm.jpg") no-repeat bottom;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
