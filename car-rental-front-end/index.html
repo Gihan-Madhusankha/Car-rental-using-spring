@@ -1116,8 +1116,13 @@
                      tabindex="0">
                     <div class="main-title" style="display: flex; justify-content: center;"><h1
                             style="font-family: 'Poppins', sans-serif">INCOME REPORT</h1></div>
-                    <div>
-
+                    <div style="display: flex; justify-content: right; width: 95%; margin-bottom: 20px">
+                        <label class="form-label" for="stDate" style="font-family: 'Poppins', sans-serif; margin-right: 20px">start</label>
+                        <input id="stDate" type="date">
+                    </div>
+                    <div style="display: flex; justify-content: right; width: 95%; margin-bottom: 20px">
+                        <label class="form-label" for="enDate" style="font-family: 'Poppins', sans-serif; margin-right: 20px">end</label>
+                        <input id="enDate" type="date">
                     </div>
                     <div style="width: 95%; display: flex; justify-content: right">
                         <button class="btn btn-primary" id="btnDaily" style="color: white;"
@@ -1133,7 +1138,7 @@
                             ANNUAL
                         </button>
                     </div>
-                    <div style="display: flex; height: 390px; justify-content:center;">
+                    <div style="display: flex; height: 300px; justify-content:center;">
                         <table class="table table-striped table-hover" style="width: 90%; margin-top: 10px">
                             <thead>
                             <tr>
