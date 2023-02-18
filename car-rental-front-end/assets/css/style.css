@@ -390,8 +390,10 @@
     background-position-y: bottom;
 }
 
-#btnGroup button{
+.nav-pills button{
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
+    font-weight: normal;
 }
 
 

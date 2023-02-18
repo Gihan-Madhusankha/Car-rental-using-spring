@@ -586,19 +586,35 @@
 <section id="adminDash" style="display: none; width: 100%; height: 82vh;">
     <aside style="display: flex; width: 100%; height: 82vh">
         <div style="border: 1px solid red; width: 20%">
-            <div id="btnGroup" style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif" class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            <!--<div id="btnGroup" style="margin: 20px 20px; display: flex; justify-content: center; font-family: 'Poppins', sans-serif" class="list-group btn-group-vertical" role="group" aria-label="Vertical button group">
                 <div>
                     <img style="width: 100%" src="assets/img/profile.webp" alt="">
                 </div>
-                <button type="button" class="btn btn-primary">DASHBOARD</button>
-                <button type="button" class="btn btn-primary">ADMIN MANAGE</button>
-                <button type="button" class="btn btn-primary">CUSTOMER DETAILS</button>
-                <button type="button" class="btn btn-primary">DRIVER DETAILS</button>
-                <button type="button" class="btn btn-primary">CAR DETAILS</button>
-                <button type="button" class="btn btn-primary">RENTAL DETAILS</button>
-                <button type="button" class="btn btn-primary">SCHEDULE DETAILS</button>
-                <button type="button" class="btn btn-primary">PAYMENT DETAILS</button>
-                <button type="button" class="btn btn-primary">INCOME DETAILS</button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="true">DASHBOARD</button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+                <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
+            </div>-->
+            <div class="d-flex align-items-start">
+                <div style="margin-left: 20px" class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <div>
+                        <img style="width: 100%" src="assets/img/profile.webp" alt="">
+                    </div>
+                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">DASHBOARD</button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">ADMIN MANAGE</button>
+                    <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">CUSTOMER DETAILS</button>
+                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">DRIVER DETAILS</button>
+                    <button class="nav-link" id="v-pills-settings-tab1" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">CAR DETAILS</button>
+                    <button class="nav-link" id="v-pills-settings-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">RENTAL DETAILS</button>
+                    <button class="nav-link" id="v-pills-settings-tab3" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">SCHEDULE DETAILS</button>
+                    <button class="nav-link" id="v-pills-settings-tab4" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">PAYMENT DETAILS</button>
+                    <button class="nav-link" id="v-pills-settings-tab5" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">INCOME DETAILS</button>
+                </div>
             </div>
         </div>
         <div style="border: 1px solid red; width: 80%"></div>
