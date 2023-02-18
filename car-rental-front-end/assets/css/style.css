@@ -390,5 +390,8 @@
     background-position-y: bottom;
 }
 
+#btnGroup button{
+    font-size: 14px;
+}
 
 

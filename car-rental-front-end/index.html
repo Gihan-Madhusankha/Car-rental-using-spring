@@ -63,7 +63,8 @@
                                 <a class="nav-link active" href="#serv">Services</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a aria-expanded="false" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
+                                <a aria-expanded="false" class="nav-link active dropdown-toggle"
+                                   data-bs-toggle="dropdown"
                                    href="#"
                                    role="button">
                                     Car
@@ -90,10 +91,10 @@
                     LOGIN
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" id="btnCustomerLogin" data-bs-toggle="modal" href="#">Customer</a>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#" id="btnCustomerLogin">Customer</a>
                     </li>
-                    <li><a class="dropdown-item" id="btnDriverLogin" data-bs-toggle="modal" href="#">Driver</a></li>
-                    <li><a class="dropdown-item" id="btnAdminLogin" data-bs-toggle="modal" href="#">Admin</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#" id="btnDriverLogin">Driver</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#" id="btnAdminLogin">Admin</a></li>
                 </ul>
 
             </div>
@@ -495,25 +496,26 @@
             <h1 style="font-weight: bolder; margin-top: 150px">CUSTOMER LOGIN</h1>
         </div>
         <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
-        <form style="width: 30%; font-family: 'Poppins', sans-serif">
-            <div class="mb-3">
-                <label class="form-label" for="usernameCus">User name</label>
-                <input class="form-control rounded-1" id="usernameCus" required type="text">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="passwordCus">Password</label>
-                <input class="form-control rounded-1" id="passwordCus" required type="password">
-            </div>
-            <div class="mb-3 form-check">
-                <input class="form-check-input" id="check" required type="checkbox">
-                <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
-            </div>
-            <button class="btn btn-primary rounded-1 w-100"
-                    style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
-                    type="submit">LOGIN
-            </button>
-            <img class="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
-        </form>
+            <form style="width: 30%; font-family: 'Poppins', sans-serif">
+                <div class="mb-3">
+                    <label class="form-label" for="usernameCus">User name</label>
+                    <input class="form-control rounded-1" id="usernameCus" required type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="passwordCus">Password</label>
+                    <input class="form-control rounded-1" id="passwordCus" required type="password">
+                </div>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" id="check" required type="checkbox">
+                    <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+                </div>
+                <button class="btn btn-primary rounded-1 w-100"
+                        style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                        type="submit">LOGIN
+                </button>
+                <img alt="" class="btnBack" src="assets/img/back.png"
+                     style="width: 50px; margin-top: 25px; cursor: pointer">
+            </form>
         </div>
     </div>
 </section>
@@ -525,25 +527,26 @@
             <h1 style="font-weight: bolder; margin-top: 150px">DRIVER LOGIN</h1>
         </div>
         <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
-        <form style="width: 30%; font-family: 'Poppins', sans-serif">
-            <div class="mb-3">
-                <label class="form-label" for="usernameDr">User name</label>
-                <input class="form-control rounded-1" id="usernameDr" required type="text">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="passwordDr">Password</label>
-                <input class="form-control rounded-1" id="passwordDr" required type="password">
-            </div>
-            <div class="mb-3 form-check">
-                <input class="form-check-input" id="checkDr" required type="checkbox">
-                <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
-            </div>
-            <button class="btn btn-primary rounded-1 w-100"
-                    style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
-                    type="submit">LOGIN
-            </button>
-            <img class="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
-        </form>
+            <form style="width: 30%; font-family: 'Poppins', sans-serif">
+                <div class="mb-3">
+                    <label class="form-label" for="usernameDr">User name</label>
+                    <input class="form-control rounded-1" id="usernameDr" required type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="passwordDr">Password</label>
+                    <input class="form-control rounded-1" id="passwordDr" required type="password">
+                </div>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" id="checkDr" required type="checkbox">
+                    <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+                </div>
+                <button class="btn btn-primary rounded-1 w-100"
+                        style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                        type="submit">LOGIN
+                </button>
+                <img alt="" class="btnBack" src="assets/img/back.png"
+                     style="width: 50px; margin-top: 25px; cursor: pointer">
+            </form>
         </div>
     </div>
 </section>
@@ -555,34 +558,52 @@
             <h1 style="font-weight: bolder; margin-top: 150px">ADMIN LOGIN</h1>
         </div>
         <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
-        <form style="width: 30%; font-family: 'Poppins', sans-serif">
-            <div class="mb-3">
-                <label class="form-label" for="usernameAd">User name</label>
-                <input class="form-control rounded-1" id="usernameAd" required type="text">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="passwordAd">Password</label>
-                <input class="form-control rounded-1" id="passwordAd" required type="password">
-            </div>
-            <div class="mb-3 form-check">
-                <input class="form-check-input" id="checkAd" required type="checkbox">
-                <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
-            </div>
-            <button class="btn btn-primary rounded-1 w-100"
-                    style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
-                    type="submit" id="adminLoginBtn">LOGIN
-            </button>
-            <img class="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
-        </form>
+            <form style="width: 30%; font-family: 'Poppins', sans-serif">
+                <div class="mb-3">
+                    <label class="form-label" for="usernameAd">User name</label>
+                    <input class="form-control rounded-1" id="usernameAd" required type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="passwordAd">Password</label>
+                    <input class="form-control rounded-1" id="passwordAd" required type="password">
+                </div>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" id="checkAd" required type="checkbox">
+                    <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+                </div>
+                <button class="btn btn-primary rounded-1 w-100"
+                        id="adminLoginBtn"
+                        style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;" type="submit">LOGIN
+                </button>
+                <img alt="" class="btnBack" src="assets/img/back.png"
+                     style="width: 50px; margin-top: 25px; cursor: pointer">
+            </form>
         </div>
     </div>
 </section>
 
 <!--admin dashboard-->
-<section id="adminDash" style="display: none; width: 100%; height: 82vh; background: #0d6efd">
-
+<section id="adminDash" style="display: none; width: 100%; height: 82vh;">
+    <aside style="display: flex; width: 100%; height: 82vh">
+        <div style="border: 1px solid red; width: 20%">
+            <div id="btnGroup" style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif" class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                <div>
+                    <img style="width: 100%" src="assets/img/profile.webp" alt="">
+                </div>
+                <button type="button" class="btn btn-primary">DASHBOARD</button>
+                <button type="button" class="btn btn-primary">ADMIN MANAGE</button>
+                <button type="button" class="btn btn-primary">CUSTOMER DETAILS</button>
+                <button type="button" class="btn btn-primary">DRIVER DETAILS</button>
+                <button type="button" class="btn btn-primary">CAR DETAILS</button>
+                <button type="button" class="btn btn-primary">RENTAL DETAILS</button>
+                <button type="button" class="btn btn-primary">SCHEDULE DETAILS</button>
+                <button type="button" class="btn btn-primary">PAYMENT DETAILS</button>
+                <button type="button" class="btn btn-primary">INCOME DETAILS</button>
+            </div>
+        </div>
+        <div style="border: 1px solid red; width: 80%"></div>
+    </aside>
 </section>
-
 
 
 <script src="assets/js/bootstrap.min.js"></script>
