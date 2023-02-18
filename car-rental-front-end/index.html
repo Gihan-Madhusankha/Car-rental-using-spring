@@ -92,8 +92,8 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" id="btnCustomerLogin" data-bs-toggle="modal" href="#">Customer</a>
                     </li>
-                    <li><a class="dropdown-item" id="btnDriverLogin" data-bs-toggle="modal" href="#driverLogin">Driver</a></li>
-                    <li><a class="dropdown-item" id="btnAdminLogin" data-bs-toggle="modal" href="#adminLogin">Admin</a></li>
+                    <li><a class="dropdown-item" id="btnDriverLogin" data-bs-toggle="modal" href="#">Driver</a></li>
+                    <li><a class="dropdown-item" id="btnAdminLogin" data-bs-toggle="modal" href="#">Admin</a></li>
                 </ul>
 
             </div>
@@ -562,12 +562,12 @@
         <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
         <form style="width: 30%; font-family: 'Poppins', sans-serif">
             <div class="mb-3">
-                <label class="form-label" for="username">User name</label>
-                <input class="form-control rounded-1" id="username" required type="text">
+                <label class="form-label" for="usernameCus">User name</label>
+                <input class="form-control rounded-1" id="usernameCus" required type="text">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="password">Password</label>
-                <input class="form-control rounded-1" id="password" required type="password">
+                <label class="form-label" for="passwordCus">Password</label>
+                <input class="form-control rounded-1" id="passwordCus" required type="password">
             </div>
             <div class="mb-3 form-check">
                 <input class="form-check-input" id="check" required type="checkbox">
@@ -577,7 +577,67 @@
                     style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
                     type="submit">LOGIN
             </button>
-            <img id="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
+            <img class="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
+        </form>
+        </div>
+    </div>
+</section>
+
+<!--driver login-->
+<section class="driverLogin row bg-light" style="display:none; width: 100%; height: 100vh;">
+    <div style="width: 100%; height: 100vh;">
+        <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
+            <h1 style="font-weight: bolder; margin-top: 150px">DRIVER LOGIN</h1>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
+        <form style="width: 30%; font-family: 'Poppins', sans-serif">
+            <div class="mb-3">
+                <label class="form-label" for="usernameDr">User name</label>
+                <input class="form-control rounded-1" id="usernameDr" required type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="passwordDr">Password</label>
+                <input class="form-control rounded-1" id="passwordDr" required type="password">
+            </div>
+            <div class="mb-3 form-check">
+                <input class="form-check-input" id="checkDr" required type="checkbox">
+                <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+            </div>
+            <button class="btn btn-primary rounded-1 w-100"
+                    style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                    type="submit">LOGIN
+            </button>
+            <img class="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
+        </form>
+        </div>
+    </div>
+</section>
+
+<!--admin login-->
+<section class="adminLogin row bg-light" style="display:none; width: 100%; height: 100vh;">
+    <div style="width: 100%; height: 100vh;">
+        <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
+            <h1 style="font-weight: bolder; margin-top: 150px">ADMIN LOGIN</h1>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
+        <form style="width: 30%; font-family: 'Poppins', sans-serif">
+            <div class="mb-3">
+                <label class="form-label" for="usernameAd">User name</label>
+                <input class="form-control rounded-1" id="usernameAd" required type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="passwordAd">Password</label>
+                <input class="form-control rounded-1" id="passwordAd" required type="password">
+            </div>
+            <div class="mb-3 form-check">
+                <input class="form-check-input" id="checkAd" required type="checkbox">
+                <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
+            </div>
+            <button class="btn btn-primary rounded-1 w-100"
+                    style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                    type="submit">LOGIN
+            </button>
+            <img class="btnBack" style="width: 50px; margin-top: 25px; cursor: pointer" src="assets/img/back.png" alt="">
         </form>
         </div>
     </div>
@@ -629,6 +689,7 @@
 </div>-->
 
 <!--adminLogin-->
+<!--
 <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="adminLogin" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content w-75">
@@ -637,19 +698,19 @@
                     style="font-family: 'Poppins', sans-serif; font-weight: bold;">ADMIN LOGIN</h1>
                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
-            <!--            modal body-->
+            &lt;!&ndash;            modal body&ndash;&gt;
             <div class="modal-body">
                 <form style="font-family: 'Poppins', sans-serif">
                     <div class="mb-3">
-                        <label class="form-label" for="usernameAd">User name</label>
-                        <input class="form-control rounded-1" id="usernameAd" required type="text">
+                        <label class="form-label" for="usernameAdm">User name</label>
+                        <input class="form-control rounded-1" id="usernameAdm" required type="text">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="passwordAd">Password</label>
-                        <input class="form-control rounded-1" id="passwordAd" required type="password">
+                        <label class="form-label" for="passwordAdm">Password</label>
+                        <input class="form-control rounded-1" id="passwordAdm" required type="password">
                     </div>
                     <div class="mb-3 form-check" style="font-size: 14px">
-                        <input class="form-check-input" id="checkAd" required type="checkbox">
+                        <input class="form-check-input" id="checkAdm" required type="checkbox">
                         <label class="form-check-label" for="check">Remember me</label>
                     </div>
                     <button class="btn btn-primary rounded-1 w-100"
@@ -661,8 +722,10 @@
         </div>
     </div>
 </div>
+-->
 
 <!--driverLogin-->
+<!--
 <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="driverLogin" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content w-75">
@@ -671,7 +734,7 @@
                     style="font-family: 'Poppins', sans-serif; font-weight: bold;">DRIVER LOGIN</h1>
                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
-            <!--            modal body-->
+            &lt;!&ndash;            modal body&ndash;&gt;
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
@@ -695,6 +758,7 @@
         </div>
     </div>
 </div>
+-->
 
 <!--customer sign up-->
 <!--<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" tabindex="-1">
