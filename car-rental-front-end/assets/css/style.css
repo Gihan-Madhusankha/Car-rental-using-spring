@@ -397,8 +397,8 @@
 }
 
 #dashboardGrid div{
-    border: 1px solid red;
-    height: 50px;
+    /*border: 1px solid red;*/
+    height: 80px;
     width: 100%;
 }
 
