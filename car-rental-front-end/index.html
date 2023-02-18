@@ -601,36 +601,69 @@
                 <button type="button" class="btn btn-primary list-group-item list-group-item-action" aria-selected="false"></button>
             </div>-->
             <div class="d-flex align-items-start">
-                <div style="margin-left: 20px" class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div aria-orientation="vertical" class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                     style="margin-left: 20px">
                     <div>
-                        <img style="width: 100%" src="assets/img/profile.webp" alt="">
+                        <img alt="" src="assets/img/profile.webp" style="width: 100%">
                     </div>
-                    <button class="nav-link active" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">DASHBOARD</button>
-                    <button class="nav-link" id="v-pills-adminManage-tab" data-bs-toggle="pill" data-bs-target="#v-pills-adminManage" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">ADMIN MANAGE</button>
-                    <button class="nav-link" id="v-pills-customerDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-customerDetails" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">CUSTOMER DETAILS</button>
-                    <button class="nav-link" id="v-pills-driverDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-driverDetails" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">DRIVER DETAILS</button>
-                    <button class="nav-link" id="v-pills-carDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-carDetails" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">CAR DETAILS</button>
-                    <button class="nav-link" id="v-pills-rentalDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-rentalDetails" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">RENTAL DETAILS</button>
-                    <button class="nav-link" id="v-pills-scheduleDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-scheduleDetails" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">SCHEDULE DETAILS</button>
-                    <button class="nav-link" id="v-pills-paymentDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-paymentDetails" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">PAYMENT DETAILS</button>
-                    <button class="nav-link" id="v-pills-incomeDetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-incomeDetails" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">INCOME DETAILS</button>
+                    <button aria-controls="v-pills-home" aria-selected="true" class="nav-link active"
+                            data-bs-target="#v-pills-dashboard" data-bs-toggle="pill" id="v-pills-dashboard-tab" role="tab"
+                            type="button">DASHBOARD
+                    </button>
+                    <button aria-controls="v-pills-profile" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-adminManage" data-bs-toggle="pill" id="v-pills-adminManage-tab"
+                            role="tab" type="button">ADMIN MANAGE
+                    </button>
+                    <button aria-controls="v-pills-disabled" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-customerDetails" data-bs-toggle="pill" id="v-pills-customerDetails-tab"
+                            role="tab" type="button">CUSTOMER DETAILS
+                    </button>
+                    <button aria-controls="v-pills-messages" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-driverDetails" data-bs-toggle="pill" id="v-pills-driverDetails-tab"
+                            role="tab" type="button">DRIVER DETAILS
+                    </button>
+                    <button aria-controls="v-pills-settings" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-carDetails" data-bs-toggle="pill" id="v-pills-carDetails-tab"
+                            role="tab" type="button">CAR DETAILS
+                    </button>
+                    <button aria-controls="v-pills-settings" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-rentalDetails" data-bs-toggle="pill" id="v-pills-rentalDetails-tab"
+                            role="tab" type="button">RENTAL DETAILS
+                    </button>
+                    <button aria-controls="v-pills-settings" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-scheduleDetails" data-bs-toggle="pill" id="v-pills-scheduleDetails-tab"
+                            role="tab" type="button">SCHEDULE DETAILS
+                    </button>
+                    <button aria-controls="v-pills-settings" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-paymentDetails" data-bs-toggle="pill" id="v-pills-paymentDetails-tab"
+                            role="tab" type="button">PAYMENT DETAILS
+                    </button>
+                    <button aria-controls="v-pills-settings" aria-selected="false" class="nav-link"
+                            data-bs-target="#v-pills-incomeDetails" data-bs-toggle="pill" id="v-pills-incomeDetails-tab"
+                            role="tab" type="button">INCOME DETAILS
+                    </button>
                 </div>
             </div>
         </div>
         <div style="border: 1px solid red; width: 80%">
             <div class="tab-content" id="v-pills-tabContent">
-<!--                dashboard content-->
-                <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab" tabindex="0">
-                    <div style="display: flex; justify-content: center;" class="main-title"><h1 style="font-family: 'Poppins', sans-serif">DASHBOARD</h1></div>
-                    <div id="dashboardGrid" style="margin:0 20px; display: grid; gap: 15px 15px; grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(4,1fr)">
+                <!--                dashboard content-->
+                <div aria-labelledby="v-pills-dashboard-tab" class="tab-pane fade show active" id="v-pills-dashboard"
+                     role="tabpanel" tabindex="0">
+                    <div class="main-title" style="display: flex; justify-content: center;"><h1
+                            style="font-family: 'Poppins', sans-serif">DASHBOARD</h1></div>
+                    <div id="dashboardGrid"
+                         style="margin:0 20px; display: grid; gap: 15px 15px; grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(4,1fr)">
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; display: flex; align-items: center; width: 20%">
-                                        <img src="assets/img/001.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; display: flex; align-items: center; width: 20%">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/001.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">TOTAL REGISTERED USERS</h5>
                                         </div>
                                     </div>
@@ -640,11 +673,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/002.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/002.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">TOTAL NEW USERS</h5>
                                         </div>
                                     </div>
@@ -654,11 +689,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/003.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/003.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">TODAY RESERVATIONS</h5>
                                         </div>
                                     </div>
@@ -668,11 +705,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/004.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/004.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">ACTIVE BOOKINGS</h5>
                                         </div>
                                     </div>
@@ -682,11 +721,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/005.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/005.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">AVAILABLE CARS</h5>
                                         </div>
                                     </div>
@@ -696,11 +737,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/006.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/006.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">RESERVED CARS</h5>
                                         </div>
                                     </div>
@@ -710,11 +753,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/007.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/007.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">AVAILABLE DRIVERS</h5>
                                         </div>
                                     </div>
@@ -724,11 +769,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/008.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/008.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">RESERVED DRIVERS</h5>
                                         </div>
                                     </div>
@@ -738,11 +785,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/009.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/009.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">MAINTAINED CARS</h5>
                                         </div>
                                     </div>
@@ -752,11 +801,13 @@
                         <div>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0" style="display: flex;">
-                                    <div class="col-md-4" style="margin-left:5%; width: 20%; display: flex; align-items: center">
-                                        <img src="assets/img/010.png" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/010.png">
                                     </div>
                                     <div class="col-md-8" style="width: 75%">
-                                        <div class="card-body" style="display: flex; justify-content: center; align-items: center">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: center; align-items: center">
                                             <h5 class="card-title dashTitles">UNDER MAINTAINED CARS</h5>
                                         </div>
                                     </div>
@@ -764,18 +815,67 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-
+                    <div style="margin-top:40px; display: flex; border: 1px solid red">
+                        <div style="margin-left: 20px; margin-right: 0">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0" style="display: flex;">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/010.png">
+                                    </div>
+                                    <div class="col-md-8" style="width: 75%">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: right; align-items: center">
+                                            <h4 class="card-title dashTitles">RESERVATION</h4>
+                                            <h6 class="card-title dashTitles">All reservations</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-left: 15px; margin-right: 20px">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0" style="display: flex;">
+                                    <div class="col-md-4"
+                                         style="margin-left:5%; width: 20%; display: flex; align-items: center">
+                                        <img alt="..." class="img-fluid rounded-start" src="assets/img/010.png">
+                                    </div>
+                                    <div class="col-md-8" style="width: 75%">
+                                        <div class="card-body"
+                                             style="display: flex; justify-content: right; align-items: center">
+                                            <h4 class="card-title dashTitles">INCOME</h4>
+                                            <h6 class="card-title dashTitles">Total Income</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-adminManage" role="tabpanel" tabindex="0" aria-labelledby="v-pills-adminManage-tab">B</div>
-                <div class="tab-pane fade" id="v-pills-customerDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-customerDetails-tab">D</div>
-                <div class="tab-pane fade" id="v-pills-driverDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-driverDetails-tab">E</div>
-                <div class="tab-pane fade" id="v-pills-carDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-carDetails-tab">F</div>
-                <div class="tab-pane fade" id="v-pills-rentalDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-rentalDetails-tab">G</div>
-                <div class="tab-pane fade" id="v-pills-scheduleDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-scheduleDetails-tab">H</div>
-                <div class="tab-pane fade" id="v-pills-paymentDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-paymentDetails-tab">I</div>
-                <div class="tab-pane fade" id="v-pills-incomeDetails" role="tabpanel" tabindex="0" aria-labelledby="v-pills-incomeDetails-tab">J</div>
+                <div aria-labelledby="v-pills-adminManage-tab" class="tab-pane fade" id="v-pills-adminManage" role="tabpanel"
+                     tabindex="0">B
+                </div>
+                <div aria-labelledby="v-pills-customerDetails-tab" class="tab-pane fade" id="v-pills-customerDetails" role="tabpanel"
+                     tabindex="0">D
+                </div>
+                <div aria-labelledby="v-pills-driverDetails-tab" class="tab-pane fade" id="v-pills-driverDetails" role="tabpanel"
+                     tabindex="0">E
+                </div>
+                <div aria-labelledby="v-pills-carDetails-tab" class="tab-pane fade" id="v-pills-carDetails" role="tabpanel"
+                     tabindex="0">F
+                </div>
+                <div aria-labelledby="v-pills-rentalDetails-tab" class="tab-pane fade" id="v-pills-rentalDetails" role="tabpanel"
+                     tabindex="0">G
+                </div>
+                <div aria-labelledby="v-pills-scheduleDetails-tab" class="tab-pane fade" id="v-pills-scheduleDetails" role="tabpanel"
+                     tabindex="0">H
+                </div>
+                <div aria-labelledby="v-pills-paymentDetails-tab" class="tab-pane fade" id="v-pills-paymentDetails" role="tabpanel"
+                     tabindex="0">I
+                </div>
+                <div aria-labelledby="v-pills-incomeDetails-tab" class="tab-pane fade" id="v-pills-incomeDetails" role="tabpanel"
+                     tabindex="0">J
+                </div>
             </div>
         </div>
     </aside>
