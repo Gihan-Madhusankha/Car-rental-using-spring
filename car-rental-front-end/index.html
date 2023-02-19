@@ -886,7 +886,7 @@
                                 <div class="col-md-6">
                                     <label class="form-label" for="adId" style="font-family: 'Poppins', sans-serif;">Admin
                                         ID</label>
-                                    <input class="form-control" id="adId" type="email">
+                                    <input class="form-control" id="adId" type="text">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="adminName"
@@ -935,7 +935,7 @@
                                 <th scope="col">Contact</th>
                             </tr>
                             </thead>
-                            <tbody id="tblAdmin">
+                            <tbody id="tblAdminManage">
                             </tbody>
                         </table>
                     </div>
@@ -970,7 +970,70 @@
                     <div class="main-title" style="display: flex; justify-content: center;"><h1
                             style="font-family: 'Poppins', sans-serif">DRIVER DETAILS</h1></div>
                     <div style="width: 90%; display: flex; justify-content: right">
-                        <button type="button" class="btn btn-primary btn-sm">ADD</button>
+<!--                        <button type="button" class="btn btn-primary btn-sm" id="addDriver">ADD</button>-->
+<!--                        manage driver-->
+                        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Manage Driver</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+<!--                                        manage driver-->
+                                        <div style="display:flex; justify-content:center;">
+                                            <div style="width: 80%">
+                                                <form class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="adUserName" style="font-family: 'Poppins', sans-serif;">User name</label>
+                                                        <input class="form-control" id="adUserName" type="text">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="adPassword1"
+                                                               style="font-family: 'Poppins', sans-serif;">Password</label>
+                                                        <input class="form-control" id="adPassword1" type="password">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="driverId"
+                                                               style="font-family: 'Poppins', sans-serif;">Driver ID</label>
+                                                        <input class="form-control" id="driverId" type="text">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="driverName"
+                                                               style="font-family: 'Poppins', sans-serif;">Driver Name</label>
+                                                        <input class="form-control" id="driverName" type="text">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label class="form-label" for="driverAddress"
+                                                               style="font-family: 'Poppins', sans-serif;">Driver Address</label>
+                                                        <input class="form-control" id="driverAddress" type="text">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="driverAge"
+                                                               style="font-family: 'Poppins', sans-serif;">Age</label>
+                                                        <input class="form-control" id="driverAge" type="number">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="driverContact"
+                                                               style="font-family: 'Poppins', sans-serif;">Contact</label>
+                                                        <input class="form-control" id="driverContact" type="number">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div aria-label="Basic mixed styles example" class="btn-group" role="group">
+                                                            <button class="btn btn-primary" id="btnSaveDriver" style="color: white;"
+                                                                    type="button">SAVE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">ADD</button>
+
                     </div>
                     <div style="display:flex; height: 390px; justify-content:center;">
                         <table class="table table-striped table-hover" style="width: 80%; margin-top: 10px">
@@ -1161,6 +1224,7 @@
                         </table>
                     </div>
                 </div>
+
             </div>
         </div>
     </aside>

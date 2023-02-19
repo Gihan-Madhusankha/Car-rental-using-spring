@@ -407,4 +407,8 @@
     font-size: 14px;
 }
 
+#stDate, #enDate:hover{
+    cursor: pointer;
+}
+
 
