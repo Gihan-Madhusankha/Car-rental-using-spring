@@ -1251,7 +1251,79 @@
                     <div class="main-title" style="display: flex; justify-content: center;"><h1
                             style="font-family: 'Poppins', sans-serif">RENTAL DETAILS</h1></div>
                     <div style="width: 95%; display: flex; justify-content: right">
-                        <button class="btn btn-primary btn-sm" type="button">CHANGE DRIVER</button>
+                        <!--                        change driver-->
+                        <div aria-hidden="true" aria-labelledby="exampleModalToggleLabel" class="modal fade"
+                             id="exampleModalToggle2" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Change Driver</h1>
+                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                type="button"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- change driver-->
+                                        <div style="display:flex; justify-content:center;">
+                                            <div style="width: 80%">
+                                                <form class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="changeDriverReservationIDs"
+                                                               style="font-family: 'Poppins', sans-serif;">Reservation IDs
+                                                            </label>
+                                                        <input class="form-control" id="changeDriverReservationIDs" type="text">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="changeDriverCarIDs"
+                                                               style="font-family: 'Poppins', sans-serif;">Car ID</label>
+                                                        <input class="form-control" id="changeDriverCarIDs" type="text">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="changeDriverOldDriverID"
+                                                               style="font-family: 'Poppins', sans-serif;">Old Driver
+                                                            ID</label>
+                                                        <input class="form-control" id="changeDriverOldDriverID" type="text">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="changeOldDriverName"
+                                                               style="font-family: 'Poppins', sans-serif;">Old Driver
+                                                            Name</label>
+                                                        <input class="form-control" id="changeOldDriverName" type="text">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label class="form-label" for="chooseNewDriver"
+                                                               style="font-family: 'Poppins', sans-serif;">Choose New Driver
+                                                            </label>
+                                                        <input class="form-control" id="chooseNewDriver" type="text">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="newDriverName"
+                                                               style="font-family: 'Poppins', sans-serif;">New Driver Name</label>
+                                                        <input class="form-control" id="newDriverName" type="number">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="newDriverContact"
+                                                               style="font-family: 'Poppins', sans-serif;">New Driver Contact</label>
+                                                        <input class="form-control" id="newDriverContact" type="number">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div aria-label="Basic mixed styles example" class="btn-group"
+                                                             role="group">
+                                                            <button class="btn btn-primary btn-sm" id="btnChangeDriver"
+                                                                    style="color: white;"
+                                                                    type="button">CHANGE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm" data-bs-target="#exampleModalToggle2"
+                                data-bs-toggle="modal">CHANGE DRIVER
+                        </button>
                     </div>
                     <div style="display:flex; height: 380px; justify-content:center;">
                         <table class="table table-striped table-hover" style="width: 80%; margin-top: 10px">
