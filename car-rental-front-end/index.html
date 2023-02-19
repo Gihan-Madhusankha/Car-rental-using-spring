@@ -1070,7 +1070,129 @@
                     <div class="main-title" style="display: flex; justify-content: center;"><h1
                             style="font-family: 'Poppins', sans-serif">CAR DETAILS</h1></div>
                     <div style="width: 90%; display: flex; justify-content: right">
-                        <button class="btn btn-primary btn-sm" type="button">ADD</button>
+                        <!--                        manage car-->
+                        <div aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" class="modal fade"
+                             id="exampleModalToggle1" tabindex="-1">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel1">Manage Car</h1>
+                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                type="button"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div style="display:flex; justify-content:center;">
+                                            <div style="width: 90%">
+                                                <form class="row g-3">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarId"
+                                                               style="font-family: 'Poppins', sans-serif;">
+                                                            Car ID
+                                                        </label>
+                                                        <input class="form-control" id="manageCarId" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarBrand"
+                                                               style="font-family: 'Poppins', sans-serif;">Brand</label>
+                                                        <input class="form-control" id="manageCarBrand" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarColor"
+                                                               style="font-family: 'Poppins', sans-serif;">Color
+                                                            ID</label>
+                                                        <input class="form-control" id="manageCarColor" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarType"
+                                                               style="font-family: 'Poppins', sans-serif;">Type
+                                                            </label>
+                                                        <input class="form-control" id="manageCarType" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarRegistrationNo"
+                                                               style="font-family: 'Poppins', sans-serif;">Registration No
+                                                            </label>
+                                                        <input class="form-control" id="manageCarRegistrationNo" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarFuelType"
+                                                               style="font-family: 'Poppins', sans-serif;">Fuel Type</label>
+                                                        <input class="form-control" id="manageCarFuelType" type="number">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarTransmissionType"
+                                                               style="font-family: 'Poppins', sans-serif;">Transmission Type</label>
+                                                        <input class="form-control" id="manageCarTransmissionType" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarNoOfPassengers"
+                                                               style="font-family: 'Poppins', sans-serif;">No of Passengers</label>
+                                                        <input class="form-control" id="manageCarNoOfPassengers" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarDailyRatePrice"
+                                                               style="font-family: 'Poppins', sans-serif;">Daily Rate Price</label>
+                                                        <input class="form-control" id="manageCarDailyRatePrice" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarMonthlyRatePrice"
+                                                               style="font-family: 'Poppins', sans-serif;">Monthly Rate Price</label>
+                                                        <input class="form-control" id="manageCarMonthlyRatePrice" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarFreeKMPerDay"
+                                                               style="font-family: 'Poppins', sans-serif;">Free KM Per Day</label>
+                                                        <input class="form-control" id="manageCarFreeKMPerDay" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarFreeKMPerMonth"
+                                                               style="font-family: 'Poppins', sans-serif;">Free KM Per Month</label>
+                                                        <input class="form-control" id="manageCarFreeKMPerMonth" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarPriceForExtraKm"
+                                                               style="font-family: 'Poppins', sans-serif;">Price for Extra KM</label>
+                                                        <input class="form-control" id="manageCarPriceForExtraKm" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarAvailableOrNot"
+                                                               style="font-family: 'Poppins', sans-serif;">Available or Not</label>
+                                                        <input class="form-control" id="manageCarAvailableOrNot" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarDamageOrNot"
+                                                               style="font-family: 'Poppins', sans-serif;">Damage or Not</label>
+                                                        <input class="form-control" id="manageCarDamageOrNot" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarUnderMaintainOrNot"
+                                                               style="font-family: 'Poppins', sans-serif;">Under Maintain or Not</label>
+                                                        <input class="form-control" id="manageCarUnderMaintainOrNot" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manageCarTotalDistanceTravelled"
+                                                               style="font-family: 'Poppins', sans-serif;">Total Distance Travelled</label>
+                                                        <input class="form-control" id="manageCarTotalDistanceTravelled" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div aria-label="Basic mixed styles example" class="btn-group"
+                                                             role="group">
+                                                            <button class="btn btn-primary btn-sm" id="btnSaveCar"
+                                                                    style="color: white;"
+                                                                    type="button">SAVE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm" data-bs-target="#exampleModalToggle1"
+                                data-bs-toggle="modal">ADD
+                        </button>
                     </div>
                     <div style="display:flex; height: 380px; justify-content:left; margin-left: 20px">
                         <table class="table table-striped table-hover" style="width: 80%; margin-top: 10px">
