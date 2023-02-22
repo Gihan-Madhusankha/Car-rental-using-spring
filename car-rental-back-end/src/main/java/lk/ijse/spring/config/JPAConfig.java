@@ -44,8 +44,6 @@ public class JPAConfig {
 
     @Bean
     public DataSource dataSource() throws NamingException {
-        //we use this data source only for testing purposes (Development)
-        //if we are in (Production) we can use a DBCP pool
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName(env.getRequiredProperty("my.app.driverClassName"));
         ds.setUrl(env.getRequiredProperty("my.app.url"));
