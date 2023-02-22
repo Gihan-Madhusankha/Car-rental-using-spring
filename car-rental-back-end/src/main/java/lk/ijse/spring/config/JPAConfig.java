@@ -28,43 +28,42 @@ import javax.sql.DataSource;
 @Configuration
 @EnableJpaRepositories(basePackageClasses = {CustomerRepo.class})
 @EnableTransactionManagement
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class JPAConfig {
 
-    @Autowired
-    Environment env;
-
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa) {
-        LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
-        bean.setPackagesToScan(env.getRequiredProperty("package.name"));
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){
+        LocalContainerEntityManagerFactoryBean bean= new LocalContainerEntityManagerFactoryBean();
+        bean.setPackagesToScan("lk.ijse.spring.entity");
         bean.setDataSource(ds);
         bean.setJpaVendorAdapter(jpa);
         return bean;
     }
 
     @Bean
-    public DataSource dataSource() throws NamingException {
+    public DataSource dataSource(){
+        //we use this data source only for testing purposes (Development)
+        //if we are in (Production) we can use a DBCP pool
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName(env.getRequiredProperty("my.app.driverClassName"));
-        ds.setUrl(env.getRequiredProperty("my.app.url"));
-        ds.setUsername(env.getRequiredProperty("my.app.username"));
-        ds.setPassword(env.getRequiredProperty("my.app.password"));
+        ds.setDriverClassName("com.mysql.jdbc.Driver");
+        ds.setUrl("jdbc:mysql://localhost:3306/car_rental?createDatabaseIfNotExist=true");
+        ds.setUsername("root");
+        ds.setPassword("1234");
         return ds;
     }
 
     @Bean
-    public JpaVendorAdapter jpaVendorAdapter() {
-        HibernateJpaVendorAdapter va = new HibernateJpaVendorAdapter();
-        va.setDatabasePlatform(env.getRequiredProperty("my.app.databasePlatform"));
+    public JpaVendorAdapter jpaVendorAdapter(){
+        HibernateJpaVendorAdapter va=new HibernateJpaVendorAdapter();
+        va.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
         va.setDatabase(Database.MYSQL);
-        va.setShowSql(true);
         va.setGenerateDdl(true);
+        va.setShowSql(true);
         return va;
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
         return new JpaTransactionManager(emf);
     }
 
