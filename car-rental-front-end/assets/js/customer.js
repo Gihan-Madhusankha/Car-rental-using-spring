@@ -60,11 +60,22 @@ $('#adminLoginBtn').click(function () {
 });
 
 
+var baseURL = "http://localhost:8080/car_rental";
 
 $('#btnRegister').click(function (){
     let formData = $('#customerSignUpForm').serialize();
 
     $.ajax({
-
+        url: baseURL+"customer",
+        method: "post",
+        data: formData,
+        dataType:"json",
+        success: function (resp){
+            alert(resp.message);
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert(jsObject);
+        }
     });
 });
