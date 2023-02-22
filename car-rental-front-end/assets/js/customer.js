@@ -58,3 +58,13 @@ $('#adminLoginBtn').click(function () {
     $('#main').css('display', 'none');
     $('#footer').css('display', 'flex');
 });
+
+
+
+$('#btnRegister').click(function (){
+    let formData = $('#customerSignUpForm').serialize();
+
+    $.ajax({
+
+    });
+});
