@@ -19,10 +19,10 @@ import javax.persistence.Id;
 @Data
 @ToString
 public class Customer {
-    private String fullName;
     @Id
     private String userName;
     private String password;
+    private String fullName;
     private String address;
     private int contact;
     private String email;
