@@ -114,4 +114,46 @@ const cusEmailRegEx = /^[a-z]{1,}(@gmail.com)$/;
 const cusNICNoRegEx = /^[0-9]{9}$/;
 const cusLicenseNumRegEx = /^(B)[0-9]{7}$/;
 
+let customerSignUpValidations = [];
 
+let c = {
+    reg: inputUserNameRegEx,
+    field: $('#inputUserName'),
+    error: 'user name is wrong.! ex: A-z 0-9'
+}
+
+function checkValidity(){
+    for (let cusValidation of customerSignUpValidations) {
+        if (check(cusValidation.reg, cusValidation.field)){
+            testSuccess(cusValidation.field, "");
+        }else {
+            setError(cusValidation.field, cusValidation.error());
+        }
+    }
+}
+
+function check(regex, textField){
+    let inputValue = textField.val();
+    return regex.test(inputValue);
+}
+
+function testSuccess(textField, msg){
+    if (textField.val()<=0){
+        textField.css('border', '1px solid #ced4da');
+        textField.parent().children('span').text("");
+    } else {
+        textField.css('border', '3px solid lightgreen');
+        textField.parent().children('span').text(msg);
+    }
+
+}
+
+function setError(textField, msg){
+    if (textField.val().length <= 0) {
+        textField.css('border', '1px solid #ced4da');
+        textField.parent().children('span').text("");
+    } else {
+        textField.css('border', '3px solid red');
+        textField.parent().children('span').text(msg);
+    }
+}
