@@ -1,30 +1,21 @@
-package lk.ijse.spring.entity;
+package lk.ijse.spring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  * @author : Gihan Madhusankha
- * 2023-02-21 11:52 PM
+ * 2023-02-23 9:31 PM
  **/
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
-public class User {
-    @Id
-    @Column(nullable = false)
+public class UserDTO {
     private String userID;
-    @Column(nullable = false)
     private String userName;
-    @Column(nullable = false)
     private String password;
 }
