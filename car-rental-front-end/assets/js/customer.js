@@ -71,9 +71,16 @@ $('#btnRegister').click(function () {
 
     console.log(yourImage, identityCardImage, licenseImage);
 
+    var user = {
+        userId: generateID(),
+        username: $('#inputUserName').val(),
+        password: $('#inputPasswordCus').val()
+    }
+
     var customer = {
-        userName: $('#inputUserName').val(),
-        password: $('#inputPasswordCus').val(),
+        customerID: user.userId,
+        userName: user.username,
+        password: user.password,
         fullName: $('#cusFullName').val(),
         address: $('#cusAddress').val(),
         contact: $('#cusContactNum').val(),
@@ -102,10 +109,35 @@ $('#btnRegister').click(function () {
             alert("error : " + jsObject.message);
         }
     });
+
+    $.ajax({
+        url: baseURL+ "user",
+        method: "post",
+        contentType: "application/json",
+        data: user,
+        // dataType: "json",
+        success: function (resp) {
+            alert("success : " + resp.message);
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
 });
 
-// customer sign up form regex
+// generate IDs
+let counter = 0;
 
+function generateID() {
+    counter++;
+    let numberString = counter.toString().padStart(3, '0');
+    let cusId = 'C--' + numberString;
+    return cusId;
+}
+
+
+// customer sign up form regex
 $('#inputUserName, #inputPasswordCus, #cusFullName, #cusAddress, #cusContactNum, #cusEmail,#cusNICNo, #cusLicenseNum').on('keyup', function () {
     checkValidity();
 });
@@ -190,7 +222,7 @@ function testSuccess(textField, msg) {
         textField.css('border', '1px solid #ced4da');
         textField.parent().children('span').text("");
     } else {
-        textField.css('border', '3px solid lightgreen');
+        textField.css('border', '1px solid lightgreen');
         textField.parent().children('span').text(msg);
     }
 }

@@ -22,6 +22,9 @@ import javax.persistence.Id;
 public class Customer {
     @Id
     @Column(nullable=false)
+    private String customerID;
+
+    @Column(nullable=false)
     private String userName;
 
     @Column(nullable=false)
