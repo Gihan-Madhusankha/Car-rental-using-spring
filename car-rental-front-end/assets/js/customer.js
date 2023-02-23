@@ -63,13 +63,13 @@ $('#adminLoginBtn').click(function () {
 var baseURL = "http://localhost:8080/car_rental/";
 
 $('#btnRegister').click(function () {
-    let formData = $('#customerSignUpForm').serialize();
-    console.log(formData);
-    // let yourImage = $("#yourImage")[0].files[0].name;
-    // let identityCardImage = $("#identityCardImage")[0].files[0].name;
-    // let licenseImage = $("#licenseImage")[0].files[0].name;
-    //
-    // console.log(yourImage, identityCardImage, licenseImage);
+    // let formData = $('#customerSignUpForm').serialize();
+    // console.log(formData);
+    let yourImage = $("#yourImage")[0].files[0].name;
+    let identityCardImage = $("#identityCardImage")[0].files[0].name;
+    let licenseImage = $("#licenseImage")[0].files[0].name;
+
+    console.log(yourImage, identityCardImage, licenseImage);
 
     var customer = {
         userName: $('#inputUserName').val(),
@@ -78,21 +78,22 @@ $('#btnRegister').click(function () {
         address: $('#cusAddress').val(),
         contact: $('#cusContactNum').val(),
         email: $('#cusEmail').val(),
-        nicNo: $('#cusNICNum').val(),
+        nicNo: $('#cusNICNo').val(),
         licenseNo: $('#cusLicenseNum').val(),
-        customerImage: null,
-        nicImage: null,
-        licenseImage: null
+        customerImage: yourImage,
+        nicImage: identityCardImage,
+        licenseImage: licenseImage
     };
 
-    // let c = JSON.stringify(customer);
+    let c = JSON.stringify(customer);
     console.log("Customer : ", customer);
 
     $.ajax({
         url: baseURL + "customer",
         method: "post",
-        data: formData,
-        dataType: "json",
+        contentType: "application/json",
+        data: c,
+        // dataType: "json",
         success: function (resp) {
             alert(resp.message);
         },
