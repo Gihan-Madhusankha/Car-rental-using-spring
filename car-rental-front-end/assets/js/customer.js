@@ -72,14 +72,28 @@ $('#btnRegister').click(function () {
     console.log(yourImage, identityCardImage, licenseImage);
 
     var user = {
-        userId: generateID(),
-        username: $('#inputUserName').val(),
+        userID: generateID(),
+        userName: $('#inputUserName').val(),
         password: $('#inputPasswordCus').val()
     }
+    $.ajax({
+        url: baseURL + "user",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(user),
+        // dataType: "json",
+        success: function (resp) {
+            alert("success : " + resp.message);
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
 
     var customer = {
-        customerID: user.userId,
-        userName: user.username,
+        customerID: user.userID,
+        userName: user.userName,
         password: user.password,
         fullName: $('#cusFullName').val(),
         address: $('#cusAddress').val(),
@@ -110,29 +124,15 @@ $('#btnRegister').click(function () {
         }
     });
 
-    $.ajax({
-        url: baseURL+ "user",
-        method: "post",
-        contentType: "application/json",
-        data: user,
-        // dataType: "json",
-        success: function (resp) {
-            alert("success : " + resp.message);
-        },
-        error: function (error) {
-            let jsObject = JSON.parse(error.responseText);
-            alert("error : " + jsObject.message);
-        }
-    });
 });
 
 // generate IDs
 let counter = 0;
 
 function generateID() {
-    counter++;
+    counter += 1;
     let numberString = counter.toString().padStart(3, '0');
-    let cusId = 'C--' + numberString;
+    let cusId = 'C-' + numberString;
     return cusId;
 }
 
