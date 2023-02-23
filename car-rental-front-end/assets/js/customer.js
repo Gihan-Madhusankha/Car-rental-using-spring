@@ -110,7 +110,7 @@ const inputPasswordCusRegEx = /^[A-z0-9]{5}$/;
 const cusFullNameRegEx = /^[A-z ]{5,}$/;
 const cusAddressRegEx = /^[0-9/A-z. ,]{5,}$/;
 const cusContactNumRegEx = /^[0-9]{10}$/;
-const cusEmailRegEx = /^[a-z]{1,}(@gmail.com)$/;
+const cusEmailRegEx = /^[a-z0-9]{1,}(@gmail.com)$/;
 const cusNICNoRegEx = /^[0-9]{9}$/;
 const cusLicenseNumRegEx = /^(B)[0-9]{7}$/;
 
@@ -121,6 +121,50 @@ let c = {
     field: $('#inputUserName'),
     error: 'user name is wrong.! ex: A-z 0-9'
 }
+customerSignUpValidations.push(c);
+customerSignUpValidations.push({
+    reg: inputPasswordCusRegEx,
+    field: $('#inputPasswordCus'),
+    error: 'user name is wrong.! ex:0-9 5 digits'
+});
+
+customerSignUpValidations.push({
+    reg: cusFullNameRegEx,
+    field: $('#cusFullName'),
+    error: 'user name is wrong.! ex: A-z'
+});
+
+customerSignUpValidations.push({
+    reg: cusAddressRegEx,
+    field: $('#cusAddress'),
+    error: 'user name is wrong.! ex: 0-9 A-z,. /'
+});
+
+customerSignUpValidations.push({
+    reg: cusContactNumRegEx,
+    field: $('#cusContactNum'),
+    error: 'user name is wrong.! ex: 0-9'
+});
+
+customerSignUpValidations.push({
+    reg: cusEmailRegEx,
+    field: $('#cusEmail'),
+    error: 'user name is wrong.! ex: A-z 0-9'
+});
+
+customerSignUpValidations.push({
+    reg: cusNICNoRegEx,
+    field: $('#cusNICNo'),
+    error: 'user name is wrong.! ex: 0-9 10 digits'
+});
+
+customerSignUpValidations.push({
+    reg: cusLicenseNumRegEx,
+    field: $('#cusLicenseNum'),
+    error: 'user name is wrong.! ex: B(0-9 7digits)'
+});
+
+
 
 function checkValidity(){
     for (let cusValidation of customerSignUpValidations) {
