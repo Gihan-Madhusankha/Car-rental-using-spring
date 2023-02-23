@@ -22,8 +22,8 @@ public class CustomerDTO {
     private String address;
     private int contact;
     private String email;
-    private int nicNo;
-    private int licenseNo;
+    private String nicNo;
+    private String licenseNo;
     private String customerImage;
     private String nicImage;
     private String licenseImage;

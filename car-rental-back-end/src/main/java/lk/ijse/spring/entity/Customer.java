@@ -40,10 +40,10 @@ public class Customer {
     private String email;
 
     @Column(nullable=false)
-    private int nicNo;
+    private String nicNo;
 
     @Column(nullable=false)
-    private int licenseNo;
+    private String licenseNo;
 
     private String customerImage;
     private String nicImage;
