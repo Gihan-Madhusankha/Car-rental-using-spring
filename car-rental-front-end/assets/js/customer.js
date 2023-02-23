@@ -64,6 +64,29 @@ var baseURL = "http://localhost:8080/car_rental/";
 
 $('#btnRegister').click(function () {
     let formData = $('#customerSignUpForm').serialize();
+    console.log(formData);
+    // let yourImage = $("#yourImage")[0].files[0].name;
+    // let identityCardImage = $("#identityCardImage")[0].files[0].name;
+    // let licenseImage = $("#licenseImage")[0].files[0].name;
+    //
+    // console.log(yourImage, identityCardImage, licenseImage);
+
+    var customer = {
+        userName: $('#inputUserName').val(),
+        password: $('#inputPasswordCus').val(),
+        fullName: $('#cusFullName').val(),
+        address: $('#cusAddress').val(),
+        contact: $('#cusContactNum').val(),
+        email: $('#cusEmail').val(),
+        nicNo: $('#cusNICNum').val(),
+        licenseNo: $('#cusLicenseNum').val(),
+        customerImage: null,
+        nicImage: null,
+        licenseImage: null
+    };
+
+    // let c = JSON.stringify(customer);
+    console.log("Customer : ", customer);
 
     $.ajax({
         url: baseURL + "customer",

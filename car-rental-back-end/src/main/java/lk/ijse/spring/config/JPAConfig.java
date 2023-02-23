@@ -45,7 +45,7 @@ public class JPAConfig {
         //we use this data source only for testing purposes (Development)
         //if we are in (Production) we can use a DBCP pool
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
+        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/car_rental?createDatabaseIfNotExist=true");
         ds.setUsername("root");
         ds.setPassword("1234");
