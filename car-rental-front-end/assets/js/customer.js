@@ -103,3 +103,15 @@ $('#btnRegister').click(function () {
         }
     });
 });
+
+// customer sign up form regex
+const inputUserNameRegEx = /^[A-z ]{3,10}$/;
+const inputPasswordCusRegEx = /^[A-z0-9]{5}$/;
+const cusFullNameRegEx = /^[A-z ]{5,}$/;
+const cusAddressRegEx = /^[0-9/A-z. ,]{5,}$/;
+const cusContactNumRegEx = /^[0-9]{10}$/;
+const cusEmailRegEx = /^[a-z]{1,}(@gmail.com)$/;
+const cusNICNoRegEx = /^[0-9]{9}$/;
+const cusLicenseNumRegEx = /^(B)[0-9]{7}$/;
+
+
