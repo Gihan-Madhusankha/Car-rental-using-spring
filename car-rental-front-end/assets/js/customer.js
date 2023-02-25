@@ -69,32 +69,14 @@ $('#btnRegister').click(function () {
         method: "get",
         // data: "json",
         success: function (resp) {
-            var uID;
+            var uID = 'C-001';
             for (let i=0; i<resp.data.length; i++) {
-                if (resp.data == null) {
-                    uID = 'C-001';
-                }
-                if ('C' == resp.data[0].substr(0,1)){
+                if ('C' == resp.data[i].substr(0,1)){
                     console.log(resp.data[0].substr(0,1));
-                    var a = parseInt(resp.data[0].substr(2, 5)) + 1;
+                    var a = parseInt(resp.data[i].substr(2, 5)) + 1;
                     uID = 'C-' + a.toString().padStart(3, '0');
                 }
-                // if ('C' == cus.substr(0, 1)) {
-                //     var a = parseInt(resp.data[0].substr(2, 5)) + 1;
-                //     uID = 'C-' + a.toString().padStart(3, '0');
-                // }
             }
-            // var a = resp.data[0];
-
-
-            // alert("success : " + resp.message);
-            // console.log("userID : ", resp.data);
-            // counter += 1;
-            // console.log("counter : " + counter);
-            // let numberString = counter.toString().padStart(3, '0');
-            // uID = 'C-' + numberString;
-            // console.log(uID);
-            // counter = 0;
             var user = {
                 userID: uID,
                 userName: $('#inputUserName').val(),
@@ -167,19 +149,6 @@ function saveCus(a, b, c) {
         }
     });
 }
-
-// generate IDs
-let counter = 0;
-
-function generateID() {
-
-
-}
-
-// function getUserID() {
-//
-// }
-
 
 // customer sign up form regex
 $('#inputUserName, #inputPasswordCus, #cusFullName, #cusAddress, #cusContactNum, #cusEmail,#cusNICNo, #cusLicenseNum').on('keyup', function () {
