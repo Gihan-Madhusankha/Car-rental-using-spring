@@ -70,9 +70,9 @@ $('#btnRegister').click(function () {
         // data: "json",
         success: function (resp) {
             var uID = 'C-001';
-            for (let i=0; i<resp.data.length; i++) {
-                if ('C' == resp.data[i].substr(0,1)){
-                    console.log(resp.data[0].substr(0,1));
+            for (let i = 0; i < resp.data.length; i++) {
+                if ('C' == resp.data[i].substr(0, 1)) {
+                    console.log(resp.data[0].substr(0, 1));
                     var a = parseInt(resp.data[i].substr(2, 5)) + 1;
                     uID = 'C-' + a.toString().padStart(3, '0');
                 }
@@ -249,3 +249,21 @@ function setError(textField, msg) {
         textField.parent().children('span').text(msg);
     }
 }
+
+
+// customer login
+$('#btnCusLogin').click(function () {
+    var username = $('#usernameCus').val();
+    $.ajax({
+        url: baseURL + "customer?username=" + username,
+        method:"get",
+        success:function (resp){
+            console.log(resp.data);
+
+        },
+        error: function (error){
+            console.log(error.message);
+        }
+
+    });
+});
