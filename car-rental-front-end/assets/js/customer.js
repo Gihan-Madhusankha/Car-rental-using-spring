@@ -63,19 +63,48 @@ $('#adminLoginBtn').click(function () {
 var baseURL = "http://localhost:8080/car_rental/";
 
 $('#btnRegister').click(function () {
-    // let formData = $('#customerSignUpForm').serialize();
-    // console.log(formData);
-    let yourImage = $("#yourImage")[0].files[0].name;
-    let identityCardImage = $("#identityCardImage")[0].files[0].name;
-    let licenseImage = $("#licenseImage")[0].files[0].name;
+    var sample = "sample";
+    $.ajax({
+        url: baseURL + "user?sample=" + sample,
+        method: "get",
+        // data: "json",
+        success: function (resp) {
+            var uID;
+            for (let cus of resp.data) {
+                if (cus == null) {
+                    uID = 'C-001';
+                }
+                if ('C' == resp.data.substr(0, 1)) {
+                    var a = parseInt(resp.data[0].substr(2, 5)) + 1;
+                    uID = 'C-' + a.toString().padStart(3, '0');
+                }
+            }
+            // var a = resp.data[0];
 
-    console.log(yourImage, identityCardImage, licenseImage);
 
-    var user = {
-        userID: generateID(),
-        userName: $('#inputUserName').val(),
-        password: $('#inputPasswordCus').val()
-    }
+            // alert("success : " + resp.message);
+            // console.log("userID : ", resp.data);
+            // counter += 1;
+            // console.log("counter : " + counter);
+            // let numberString = counter.toString().padStart(3, '0');
+            // uID = 'C-' + numberString;
+            // console.log(uID);
+            // counter = 0;
+            var user = {
+                userID: uID,
+                userName: $('#inputUserName').val(),
+                password: $('#inputPasswordCus').val()
+            }
+            saveUser(user);
+        },
+        error: function (error) {
+            console.log("error : ", error.message);
+        }
+    });
+
+});
+
+function saveUser(user) {
     $.ajax({
         url: baseURL + "user",
         method: "post",
@@ -84,17 +113,26 @@ $('#btnRegister').click(function () {
         // dataType: "json",
         success: function (resp) {
             alert("success : " + resp.message);
+            saveCus(user.userID, user.userName, user.password);
         },
         error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
     });
+}
+
+function saveCus(a, b, c) {
+    let yourImage = $("#yourImage")[0].files[0].name;
+    let identityCardImage = $("#identityCardImage")[0].files[0].name;
+    let licenseImage = $("#licenseImage")[0].files[0].name;
+
+    console.log(yourImage, identityCardImage, licenseImage);
 
     var customer = {
-        customerID: user.userID,
-        userName: user.userName,
-        password: user.password,
+        customerID: a,
+        userName: b,
+        password: c,
         fullName: $('#cusFullName').val(),
         address: $('#cusAddress').val(),
         contact: $('#cusContactNum').val(),
@@ -106,14 +144,14 @@ $('#btnRegister').click(function () {
         licenseImage: licenseImage
     };
 
-    let c = JSON.stringify(customer);
+    let d = JSON.stringify(customer);
     console.log("Customer : ", customer);
 
     $.ajax({
         url: baseURL + "customer",
         method: "post",
         contentType: "application/json",
-        data: c,
+        data: JSON.stringify(customer),
         // dataType: "json",
         success: function (resp) {
             alert("success : " + resp.message);
@@ -123,18 +161,19 @@ $('#btnRegister').click(function () {
             alert("error : " + jsObject.message);
         }
     });
-
-});
+}
 
 // generate IDs
 let counter = 0;
 
 function generateID() {
-    counter += 1;
-    let numberString = counter.toString().padStart(3, '0');
-    let cusId = 'C-' + numberString;
-    return cusId;
+
+
 }
+
+// function getUserID() {
+//
+// }
 
 
 // customer sign up form regex
