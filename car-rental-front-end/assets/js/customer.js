@@ -70,14 +70,19 @@ $('#btnRegister').click(function () {
         // data: "json",
         success: function (resp) {
             var uID;
-            for (let cus of resp.data) {
-                if (cus == null) {
+            for (let i=0; i<resp.data.length; i++) {
+                if (resp.data == null) {
                     uID = 'C-001';
                 }
-                if ('C' == resp.data.substr(0, 1)) {
+                if ('C' == resp.data[0].substr(0,1)){
+                    console.log(resp.data[0].substr(0,1));
                     var a = parseInt(resp.data[0].substr(2, 5)) + 1;
                     uID = 'C-' + a.toString().padStart(3, '0');
                 }
+                // if ('C' == cus.substr(0, 1)) {
+                //     var a = parseInt(resp.data[0].substr(2, 5)) + 1;
+                //     uID = 'C-' + a.toString().padStart(3, '0');
+                // }
             }
             // var a = resp.data[0];
 

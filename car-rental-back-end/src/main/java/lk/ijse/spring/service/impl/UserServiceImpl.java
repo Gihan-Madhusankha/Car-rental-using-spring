@@ -39,8 +39,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ArrayList<String> getLastUserID() {
-        return modelMapper.map(repo.lastUserID(), new TypeToken<ArrayList<CustomerDTO>>() {
-        }.getType());
+        return repo.lastUserID();
 //        System.out.println("num : " + num);
 //        if (num == null) {
 //            return 0;
