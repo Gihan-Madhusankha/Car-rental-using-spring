@@ -160,7 +160,7 @@ const inputUserNameRegEx = /^[A-z]{3,10}$/;
 const inputPasswordCusRegEx = /^[A-z0-9]{5}$/;
 const cusFullNameRegEx = /^[A-z .]{5,}$/;
 const cusAddressRegEx = /^[0-9/A-z. ,]{5,}$/;
-const cusContactNumRegEx = /^[0-9]{10}$/;
+const cusContactNumRegEx = /^(07)[01245678][0-9]{7}$/;
 const cusEmailRegEx = /^[a-z0-9]{3,}(@gmail.com)$/;
 const cusNICNoRegEx = /^[0-9]{9}(v)$/;
 const cusLicenseNumRegEx = /^(B)[0-9]{7}$/;
@@ -176,7 +176,7 @@ customerSignUpValidations.push(c);
 customerSignUpValidations.push({
     reg: inputPasswordCusRegEx,
     field: $('#inputPasswordCus'),
-    error: 'password pattern is wrong.! ex:0-9 5 digits'
+    error: 'password pattern is wrong.! ex:A-z 0-9 5 digits'
 });
 
 customerSignUpValidations.push({
@@ -295,5 +295,5 @@ customerLoginValidations.push({
 customerLoginValidations.push({
     reg: passwordCusRegEx,
     field: $('#passwordCus'),
-    error: 'password pattern is wrong.! ex:0-9 5 digits'
+    error: 'password pattern is wrong.! ex:A-z 0-9 5 digits'
 });

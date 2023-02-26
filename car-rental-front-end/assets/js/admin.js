@@ -5,20 +5,20 @@ $('#usernameAd, #passwordAd').on('keyup', function () {
 const usernameAdRegEx = /^[A-z]{3,10}$/;
 const passwordAdRegEx = /^[A-z0-9]{5}$/;
 
-let adminLoginValidations = [];
-adminLoginValidations.push({
+let adminValidations = [];
+adminValidations.push({
     reg: usernameAdRegEx,
     field: $('#usernameAd'),
     error: 'username pattern is wrong.! ex: A-z 0-9'
 });
-adminLoginValidations.push({
+adminValidations.push({
     reg: passwordAdRegEx,
     field: $('#passwordAd'),
     error: 'password pattern is wrong.! ex:0-9 5 digits'
 });
 
 function checkValidityAd() {
-    for (let validation of adminLoginValidations) {
+    for (let validation of adminValidations) {
         if (checkAd(validation.reg, validation.field)) {
             testSuccessAd(validation.field, "");
         } else {
@@ -52,3 +52,28 @@ function setErrorAd(textField, msg) {
     }
 }
 
+//==============================
+$('#adId, #adminName, #adPassword, #adContact').on('keyup', function () {
+    checkValidityAd();
+});
+
+
+const usernameAdManageRegEx = /^[A-z]{3,10}$/;
+const passwordAdManageRegEx = /^[A-z0-9]{5}$/;
+const contactNumAdManageRegEx = /^(07)[01245678][0-9]{7}$/;
+
+adminValidations.push({
+    reg: usernameAdManageRegEx,
+    field: $('#adminName'),
+    error: 'username pattern is wrong.! ex: A-z 0-9'
+});
+adminValidations.push({
+    reg: passwordAdManageRegEx,
+    field: $('#adPassword'),
+    error: 'password pattern is wrong.! ex: A-z 0-9 5 digits'
+});
+adminValidations.push({
+    reg: contactNumAdManageRegEx,
+    field: $('#adContact'),
+    error: 'contact no pattern is wrong.! ex: 0771234567 10 digits'
+});
