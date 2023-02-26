@@ -25,6 +25,13 @@ function checkValidityDr() {
             setErrorDr(validation.field, validation.error);
         }
     }
+    // for (let validation of driverValidations) {
+    //     if (checkDr(validation.reg, validation.field)) {
+    //         testSuccessDr(validation.field, "");
+    //     } else {
+    //         setErrorDr(validation.field, validation.error);
+    //     }
+    // }
 }
 
 function checkDr(regex, textField) {
@@ -54,7 +61,7 @@ function setErrorDr(textField, msg) {
 
 //=============================================================
 
-$('#adUserName, #adPassword1, #driverId, #driverName, #driverAddress, #driverAge, #driverContact, #driverReleaseOrNot').on('keyup', function () {
+/*$('#adUserName, #adPassword1, #driverId, #driverName, #driverAddress, #driverAge, #driverContact, #driverReleaseOrNot').on('keyup', function () {
     checkValidityDr();
 });
 
@@ -65,35 +72,60 @@ const driverAddressRegEx = /^[0-9/A-z. ,]{5,}$/;
 const driverAgeRegEx = /^[1-9][0-9]$/;
 const driverContactNumRegEx = /^(07)[01245678][0-9]{7}$/;
 
-driverLoginValidations.push({
+let driverValidations = [];
+driverValidations.push({
     reg: usernameAdRegEx,
     field: $('#adUserName'),
     error: 'username pattern is wrong.! ex: A-z 0-9'
 });
-driverLoginValidations.push({
+driverValidations.push({
     reg: passwordAdRegEx,
     field: $('#adPassword1'),
     error: 'password pattern is wrong.! ex: A-z 0-9 5 digits'
 });
-driverLoginValidations.push({
+driverValidations.push({
     reg: driverNameRegEx,
     field: $('#driverName'),
     error: 'driver name pattern is wrong.! ex: A-z'
 });
-driverLoginValidations.push({
+driverValidations.push({
     reg: driverAddressRegEx,
     field: $('#driverAddress'),
     error: 'driver address pattern is wrong.! ex: A-z 0-9, ./'
 });
-driverLoginValidations.push({
+driverValidations.push({
     reg: driverAgeRegEx,
     field: $('#driverAge'),
     error: 'driver age pattern is wrong.! ex: 0-9'
 });
-driverLoginValidations.push({
+driverValidations.push({
     reg: driverContactNumRegEx,
     field: $('#driverContact'),
     error: 'driver contact pattern is wrong.! ex: 0-9 10 digits'
-});
+});*/
+
+setDriverID()
+
+function setDriverID(){
+    $.ajax({
+        url: baseURL+"driver/generate",
+        method: "get",
+        success: function (resp){
+            let id = resp.data;
+            if (id==null){
+                $('#adID').val("D-001");
+            } else {
+                let idNo = parseInt(id.substr(2, 5)) + 1;
+                console.log(idNo);
+                $('#adID').val('D-' + idNo.toString().padStart(3, '0'));
+            }
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
+
 
 
