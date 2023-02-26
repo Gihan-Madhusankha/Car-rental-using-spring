@@ -1,5 +1,5 @@
 $('#usernameAd, #passwordAd').on('keyup', function () {
-    checkValidity();
+    checkValidity(adminLoginValidations);
 });
 
 const usernameAdRegEx = /^[A-z]{3,10}$/;
@@ -16,3 +16,4 @@ adminLoginValidations.push({
     field: $('#passwordCus'),
     error: 'password pattern is wrong.! ex:0-9 5 digits'
 });
+

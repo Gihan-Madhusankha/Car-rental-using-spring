@@ -269,7 +269,7 @@ $('#btnCusLogin').click(function () {
             if ($('#passwordCus').val() == resp.data) {
                 console.log('password', resp.data);
             }else {
-                alert('password is wrong...');
+                alert('username or password is wrong...');
             }
 
         },
