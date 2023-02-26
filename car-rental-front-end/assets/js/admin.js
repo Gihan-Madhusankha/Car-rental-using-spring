@@ -77,3 +77,19 @@ adminValidations.push({
     field: $('#adContact'),
     error: 'contact no pattern is wrong.! ex: 0771234567 10 digits'
 });
+
+//
+loadAllAdmins();
+
+function loadAllAdmins(){
+    $.ajax({
+        url: baseURL+"admin",
+        method: "get",
+        success:function (resp){
+
+        },
+        error: function (error){
+
+        }
+    });
+}
