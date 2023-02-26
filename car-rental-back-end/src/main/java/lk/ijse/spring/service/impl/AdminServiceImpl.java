@@ -38,4 +38,13 @@ public class AdminServiceImpl implements AdminService {
     public String generateID() {
         return repo.generateID();
     }
+
+    @Override
+    public void saveAdmin(AdminDTO dto) {
+        if (repo.existsById(dto.getAdminID())) {
+            throw new RuntimeException("Admin "+dto.getAdminID()+ " is Already Exists");
+        }
+        Admin entity = modelMapper.map(dto, Admin.class);
+        repo.save(entity);
+    }
 }

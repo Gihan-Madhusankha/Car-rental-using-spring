@@ -105,9 +105,32 @@ function generateAdID(){
     });
 }
 
+$('#btnSave').click(function (){
+    var admin = {
+        adminID: $('#adID').val(),
+        userName: $('#adminName').val(),
+        password: $('#adPassword').val(),
+        contact: $('#adContact').val()
+    }
+
+    $.ajax({
+        url: baseURL + "admin",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(admin),
+        success: function (){
+            alert('saved');
+            loadAllAdmins();
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+
+});
 
 loadAllAdmins();
-
 $('#btnGetAll').click(function (){
     $.ajax({
         success:function (){

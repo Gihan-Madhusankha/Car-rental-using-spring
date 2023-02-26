@@ -4,10 +4,7 @@ import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.service.AdminService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -23,6 +20,11 @@ public class AdminController {
 
     @Autowired
     AdminService service;
+
+    @PostMapping
+    public void saveAdmin(@RequestBody AdminDTO dto){
+        service.saveAdmin(dto);
+    }
 
     @GetMapping
     public ResponseUtil getAllAdmins(){

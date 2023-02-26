@@ -12,4 +12,5 @@ import java.util.ArrayList;
 public interface AdminService {
     public ArrayList<AdminDTO> allAdmins();
     public String generateID();
+    public void saveAdmin(AdminDTO dto);
 }
