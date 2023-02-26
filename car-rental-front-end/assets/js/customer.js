@@ -259,7 +259,11 @@ $('#btnCusLogin').click(function () {
         url: baseURL + "customer?username=" + username,
         method:"get",
         success:function (resp){
-            console.log(resp.data);
+            if ($('#passwordCus').val() == resp.data) {
+                console.log('password', resp.data);
+            }else {
+                alert('password is wrong...');
+            }
 
         },
         error: function (error){
@@ -267,4 +271,23 @@ $('#btnCusLogin').click(function () {
         }
 
     });
+});
+
+$('#usernameCus, #passwordCus').on('keyup', function () {
+    checkValidity();
+});
+
+const usernameCusRegEx = /^[A-z]{3,10}$/;
+const passwordCusRegEx = /^[A-z0-9]{5}$/;
+
+let customerLoginValidations = [];
+customerSignUpValidations.push({
+    reg: usernameCusRegEx,
+    field: $('#usernameCus'),
+    error: 'username pattern is wrong.! ex: A-z 0-9'
+});
+customerSignUpValidations.push({
+    reg: passwordCusRegEx,
+    field: $('#passwordCus'),
+    error: 'password pattern is wrong.! ex:0-9 5 digits'
 });

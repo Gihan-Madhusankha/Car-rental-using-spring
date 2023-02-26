@@ -2,6 +2,7 @@ package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.service.CustomerService;
+import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +25,9 @@ public class CustomerController {
     }
 
     @GetMapping(params = {"username"})
-    public String getPassword(@RequestParam String username){
-        return service.getPassword(username);
+    public ResponseUtil getPassword(@RequestParam String username){
+        service.getPassword(username)
+        return new ResponseUtil("200", "Done", password);
     }
 
 }
