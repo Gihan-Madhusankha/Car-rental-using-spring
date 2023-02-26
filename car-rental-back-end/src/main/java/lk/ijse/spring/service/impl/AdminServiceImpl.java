@@ -42,7 +42,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void saveAdmin(AdminDTO dto) {
         if (repo.existsById(dto.getAdminID())) {
-            throw new RuntimeException("Admin "+dto.getAdminID()+ " is Already Exists");
+            throw new RuntimeException("Admin "+dto.getAdminID()+ " id is Already Exists");
         }
         Admin entity = modelMapper.map(dto, Admin.class);
         repo.save(entity);

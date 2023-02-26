@@ -115,7 +115,6 @@ $('#btnSave').click(function (){
         contentType: "application/json",
         data: JSON.stringify(admin),
         success: function (){
-            alert('saved');
             loadAllAdmins();
         },
         error: function (error){
