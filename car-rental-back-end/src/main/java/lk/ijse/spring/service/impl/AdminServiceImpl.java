@@ -53,4 +53,9 @@ public class AdminServiceImpl implements AdminService {
         Admin entity = modelMapper.map(dto, Admin.class);
         repo.save(entity);
     }
+
+    @Override
+    public void deleteAdmin(String id) {
+        repo.deleteById(id);
+    }
 }

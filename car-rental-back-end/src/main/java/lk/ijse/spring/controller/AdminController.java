@@ -22,13 +22,21 @@ public class AdminController {
     AdminService service;
 
     @PostMapping
-    public void saveAdmin(@RequestBody AdminDTO dto){
+    public ResponseUtil saveAdmin(@RequestBody AdminDTO dto){
         service.saveAdmin(dto);
+        return new ResponseUtil("200", dto + " Added", null);
     }
 
     @PutMapping
-    public void updateAdmin(@RequestBody AdminDTO dto){
+    public ResponseUtil updateAdmin(@RequestBody AdminDTO dto){
         service.updateAdmin(dto);
+        return new ResponseUtil("200", dto + " Updated", null);
+    }
+
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteAdmin(String id){
+        service.deleteAdmin(id);
+        return new ResponseUtil("200", id + " Deleted", null);
     }
 
     @GetMapping

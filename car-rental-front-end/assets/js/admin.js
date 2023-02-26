@@ -211,3 +211,23 @@ $('#btnUpdate').click(function (){
     });
 
 });
+
+$('#btnDelete').click(function (){
+    var id = $('#adID').val();
+
+    $.ajax({
+        url: baseURL + "admin?id=" + id,
+        method: "delete",
+        dataType: "json",
+        success: function (){
+            loadAllAdmins();
+            generateAdID();
+            clearTextFields();
+            bindRowClickEvent();
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+});

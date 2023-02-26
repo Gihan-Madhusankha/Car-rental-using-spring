@@ -14,4 +14,5 @@ public interface AdminService {
     public String generateID();
     public void saveAdmin(AdminDTO dto);
     public void updateAdmin(AdminDTO dto);
+    public void deleteAdmin(String id);
 }
