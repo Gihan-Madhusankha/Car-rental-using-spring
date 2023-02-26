@@ -47,4 +47,10 @@ public class AdminServiceImpl implements AdminService {
         Admin entity = modelMapper.map(dto, Admin.class);
         repo.save(entity);
     }
+
+    @Override
+    public void updateAdmin(AdminDTO dto) {
+        Admin entity = modelMapper.map(dto, Admin.class);
+        repo.save(entity);
+    }
 }

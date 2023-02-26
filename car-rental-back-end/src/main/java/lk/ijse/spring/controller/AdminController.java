@@ -26,6 +26,11 @@ public class AdminController {
         service.saveAdmin(dto);
     }
 
+    @PutMapping
+    public void updateAdmin(@RequestBody AdminDTO dto){
+        service.updateAdmin(dto);
+    }
+
     @GetMapping
     public ResponseUtil getAllAdmins(){
         ArrayList<AdminDTO> allAdmins = service.allAdmins();

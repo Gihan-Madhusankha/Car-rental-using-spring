@@ -150,7 +150,8 @@ function loadAllAdmins(){
             bindRowClickEvent();
         },
         error: function (error){
-
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
         }
     });
 }
@@ -180,3 +181,33 @@ function clearTextFields(){
         $('#adminName, #adPassword, #adContact').parent().children('span').text("");
     }
 }
+
+
+$('#btnUpdate').click(function (){
+
+    var ad = {
+        adminID: $('#adID').val(),
+        userName: $('#adminName').val(),
+        password: $('#adPassword').val(),
+        contact: $('#adContact').val()
+    }
+
+    $.ajax({
+        url: baseURL + "admin",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(ad),
+        success: function (){
+            loadAllAdmins();
+            generateAdID();
+            clearTextFields();
+            bindRowClickEvent();
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+
+    });
+
+});
