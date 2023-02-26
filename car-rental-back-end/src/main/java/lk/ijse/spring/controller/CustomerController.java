@@ -26,7 +26,7 @@ public class CustomerController {
 
     @GetMapping(params = {"username"})
     public ResponseUtil getPassword(@RequestParam String username){
-        service.getPassword(username)
+        String password = service.getPassword(username);
         return new ResponseUtil("200", "Done", password);
     }
 

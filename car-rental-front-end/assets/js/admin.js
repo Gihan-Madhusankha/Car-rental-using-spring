@@ -85,8 +85,12 @@ function loadAllAdmins(){
     $.ajax({
         url: baseURL+"admin",
         method: "get",
+        dataType: "json",
         success:function (resp){
-
+            $('#tblAdminManage').empty();
+            for (let ad of resp.data) {
+                $('#tblAdminManage').append('<tr><td>'+ad.adminID+'</td><td>'+ad.userName+'</td><td>'+ad.password+'</td><td>'+ad.contact+'</td></tr>');
+            }
         },
         error: function (error){
 
