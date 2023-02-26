@@ -53,7 +53,7 @@ function setErrorAd(textField, msg) {
 }
 
 //==============================
-$('#adId, #adminName, #adPassword, #adContact').on('keyup', function () {
+$('#adID, #adminName, #adPassword, #adContact').on('keyup', function () {
     checkValidityAd();
 });
 
@@ -91,9 +91,24 @@ function loadAllAdmins(){
             for (let ad of resp.data) {
                 $('#tblAdminManage').append('<tr><td>'+ad.adminID+'</td><td>'+ad.userName+'</td><td>'+ad.password+'</td><td>'+ad.contact+'</td></tr>');
             }
+            bindRowClickEvent();
         },
         error: function (error){
 
         }
+    });
+}
+
+function bindRowClickEvent(){
+    $('#tblAdminManage > tr').click(function (){
+        let id = $(this).children(":eq(0)").text();
+        let name = $(this).children(":eq(1)").text();
+        let password = $(this).children(":eq(2)").text();
+        let contact = $(this).children(":eq(3)").text();
+
+        $('#adID').val(id);
+        $('#adminName').val(name);
+        $('#adPassword').val(password);
+        $('#adContact').val(contact);
     });
 }
