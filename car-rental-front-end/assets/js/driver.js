@@ -113,11 +113,11 @@ function setDriverID(){
         success: function (resp){
             let id = resp.data;
             if (id==null){
-                $('#adID').val("D-001");
+                $('#driverId').val("D-001");
             } else {
                 let idNo = parseInt(id.substr(2, 5)) + 1;
                 console.log(idNo);
-                $('#adID').val('D-' + idNo.toString().padStart(3, '0'));
+                $('#driverId').val('D-' + idNo.toString().padStart(3, '0'));
             }
         },
         error: function (error){
