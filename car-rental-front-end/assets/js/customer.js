@@ -264,16 +264,15 @@ $('#btnCusLogin').click(function () {
     var username = $('#usernameCus').val();
     $.ajax({
         url: baseURL + "customer?username=" + username,
-        method:"get",
-        success:function (resp){
+        method: "get",
+        success: function (resp) {
             if ($('#passwordCus').val() == resp.data) {
                 console.log('password', resp.data);
-            }else {
+            } else {
                 alert('username or password is wrong...');
             }
-
         },
-        error: function (error){
+        error: function (error) {
             console.log(error.message);
         }
 
