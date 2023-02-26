@@ -78,7 +78,34 @@ adminValidations.push({
     error: 'contact no pattern is wrong.! ex: 0771234567 10 digits'
 });
 
-//
+//==================================================
+
+$('#v-pills-adminManage-tab').click(function (){
+    generateAdID();
+});
+
+function generateAdID(){
+    $.ajax({
+        url: baseURL+"admin/generate",
+        method: "get",
+        success: function (resp){
+            let id = resp.data;
+            if (id==null){
+                $('#adID').val("A-001");
+            } else {
+                let idNo = parseInt(id.substr(2, 5)) + 1;
+                console.log(idNo);
+                $('#adID').val('A-' + idNo.toString().padStart(3, '0'));
+            }
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
+
+
 loadAllAdmins();
 
 $('#btnGetAll').click(function (){

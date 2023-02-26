@@ -30,4 +30,10 @@ public class AdminController {
         return new ResponseUtil("200","Success", allAdmins);
     }
 
+    @GetMapping(path = "/generate")
+    public ResponseUtil generateID(){
+        String id = service.generateID();
+        return new ResponseUtil("200", "Success", id);
+    }
+
 }

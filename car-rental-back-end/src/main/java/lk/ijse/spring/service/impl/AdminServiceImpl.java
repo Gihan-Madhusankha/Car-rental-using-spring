@@ -33,4 +33,9 @@ public class AdminServiceImpl implements AdminService {
         return modelMapper.map(repo.findAll(), new TypeToken<ArrayList<AdminDTO>>(){
         }.getType());
     }
+
+    @Override
+    public String generateID() {
+        return repo.generateID();
+    }
 }
