@@ -223,6 +223,13 @@ function checkValidity() {
             setError(validation.field, validation.error);
         }
     }
+    for (let validation of customerLoginValidations) {
+        if (check(validation.reg, validation.field)) {
+            testSuccess(validation.field, "");
+        } else {
+            setError(validation.field, validation.error);
+        }
+    }
 }
 
 function check(regex, textField) {
@@ -281,12 +288,12 @@ const usernameCusRegEx = /^[A-z]{3,10}$/;
 const passwordCusRegEx = /^[A-z0-9]{5}$/;
 
 let customerLoginValidations = [];
-customerSignUpValidations.push({
+customerLoginValidations.push({
     reg: usernameCusRegEx,
     field: $('#usernameCus'),
     error: 'username pattern is wrong.! ex: A-z 0-9'
 });
-customerSignUpValidations.push({
+customerLoginValidations.push({
     reg: passwordCusRegEx,
     field: $('#passwordCus'),
     error: 'password pattern is wrong.! ex:0-9 5 digits'
