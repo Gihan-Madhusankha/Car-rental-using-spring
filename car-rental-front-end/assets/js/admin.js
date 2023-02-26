@@ -80,10 +80,6 @@ adminValidations.push({
 
 //==================================================
 
-$('#v-pills-adminManage-tab').click(function (){
-    generateAdID();
-});
-
 function generateAdID(){
     $.ajax({
         url: baseURL+"admin/generate",
@@ -149,6 +145,8 @@ function loadAllAdmins(){
             for (let ad of resp.data) {
                 $('#tblAdminManage').append('<tr><td>'+ad.adminID+'</td><td>'+ad.userName+'</td><td>'+ad.password+'</td><td>'+ad.contact+'</td></tr>');
             }
+            generateAdID();
+            clearTextFields();
             bindRowClickEvent();
         },
         error: function (error){
@@ -169,4 +167,16 @@ function bindRowClickEvent(){
         $('#adPassword').val(password);
         $('#adContact').val(contact);
     });
+}
+
+function clearTextFields(){
+    $('#adID').val("");
+    $('#adminName').val("");
+    $('#adPassword').val("");
+    $('#adContact').val("");
+
+    if ($('#adminName, #adPassword, #adContact').val().length <= 0) {
+        $('#adminName, #adPassword, #adContact').css('border', '1px solid #ced4da');
+        $('#adminName, #adPassword, #adContact').parent().children('span').text("");
+    }
 }
