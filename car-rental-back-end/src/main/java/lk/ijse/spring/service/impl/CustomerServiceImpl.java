@@ -34,4 +34,9 @@ public class CustomerServiceImpl implements CustomerService {
         repo.save(entity);
     }
 
+    @Override
+    public String getPassword(String username) {
+        return repo.getPassword(username);
+    }
+
 }

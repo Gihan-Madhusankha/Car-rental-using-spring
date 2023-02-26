@@ -23,4 +23,9 @@ public class CustomerController {
         service.saveCustomer(dto);
     }
 
+    @GetMapping(params = {"username"})
+    public String getPassword(@RequestParam String username){
+        return service.getPassword(username);
+    }
+
 }

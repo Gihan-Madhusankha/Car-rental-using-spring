@@ -9,4 +9,5 @@ import lk.ijse.spring.dto.CustomerDTO;
 
 public interface CustomerService {
     public void saveCustomer(CustomerDTO dto);
+    public String getPassword(String username);
 }

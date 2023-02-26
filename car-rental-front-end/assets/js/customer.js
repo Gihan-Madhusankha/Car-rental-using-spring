@@ -75,6 +75,7 @@ $('#btnRegister').click(function () {
                     console.log(resp.data[0].substr(0, 1));
                     var a = parseInt(resp.data[i].substr(2, 5)) + 1;
                     uID = 'C-' + a.toString().padStart(3, '0');
+                    break;
                 }
             }
             var user = {

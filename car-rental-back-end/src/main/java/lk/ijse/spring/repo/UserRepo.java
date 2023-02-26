@@ -12,6 +12,6 @@ import java.util.ArrayList;
  **/
 
 public interface UserRepo extends JpaRepository<User, String> {
-    @Query(value = "select userID from user", nativeQuery = true)
+    @Query(value = "select userID from user order by userID desc", nativeQuery = true)
     ArrayList<String> lastUserID();
 }
