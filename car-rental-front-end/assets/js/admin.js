@@ -81,6 +81,14 @@ adminValidations.push({
 //
 loadAllAdmins();
 
+$('#btnGetAll').click(function (){
+    $.ajax({
+        success:function (){
+            loadAllAdmins();
+        }
+    });
+});
+
 function loadAllAdmins(){
     $.ajax({
         url: baseURL+"admin",
