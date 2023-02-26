@@ -31,6 +31,5 @@ public class Driver {
     private int age;
     @Column(nullable = false)
     private int contact;
-    @Column(nullable = false)
     private String releaseOrNot;
 }

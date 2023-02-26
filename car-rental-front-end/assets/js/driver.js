@@ -104,15 +104,41 @@ driverValidations.push({
     error: 'driver contact pattern is wrong.! ex: 0-9 10 digits'
 });*/
 
+$('#btnSaveDriver').click(function () {
+    var driver = {
+        driverID: $('#driverId').val(),
+        driverName: $('#driverName').val(),
+        driverAddress: $('#driverAddress').val(),
+        age: $('#driverAge').val(),
+        contact: $('#driverContact').val(),
+        releaseOrNot: $('#driverReleaseOrNot option:selected').text()
+    }
+
+    $.ajax({
+        url: baseURL + "driver",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(driver),
+        success: function (resp) {
+            // loadAllDrivers();
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    })
+});
+
+
 setDriverID()
 
-function setDriverID(){
+function setDriverID() {
     $.ajax({
-        url: baseURL+"driver/generate",
+        url: baseURL + "driver/generate",
         method: "get",
-        success: function (resp){
+        success: function (resp) {
             let id = resp.data;
-            if (id==null){
+            if (id == null) {
                 $('#driverId').val("D-001");
             } else {
                 let idNo = parseInt(id.substr(2, 5)) + 1;
@@ -120,7 +146,7 @@ function setDriverID(){
                 $('#driverId').val('D-' + idNo.toString().padStart(3, '0'));
             }
         },
-        error: function (error){
+        error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
