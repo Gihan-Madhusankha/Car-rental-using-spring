@@ -119,8 +119,8 @@ $('#btnSaveDriver').click(function () {
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(driver),
-        success: function (resp) {
-            // loadAllDrivers();
+        success: function () {
+            loadAllDrivers();
         },
         error: function (error) {
             let jsObject = JSON.parse(error.responseText);
@@ -129,9 +129,55 @@ $('#btnSaveDriver').click(function () {
     })
 });
 
+function loadAllDrivers() {
+    $.ajax({
+        url: baseURL + "driver",
+        method: "get",
+        dataType: "json",
+        success: function (resp) {
+            $('#tblDriver').empty();
+            for (let dr of resp.data) {
+                $('#tblDriver').append('<tr><td>' + dr.driverID + '</td><td>' + dr.driverName + '</td><td>' + dr.driverAddress + '</td><td>' + dr.age + '</td><td>' + dr.contact + '</td><td>' + dr.releaseOrNot + '</td></tr>');
+            }
+            setDriverID();
+            clearTextFields();
+            bindRowClickEvent();
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
+
+function clearTextFields() {
+    $('#driverId').val("");
+    $('#driverName').val("");
+    $('#driverAddress').val("");
+    $('#driverAge').val("");
+    $('#driverContact').val("");
+    $('#driverReleaseOrNot').val("");
+}
+
+function bindRowClickEvent() {
+    $('#tblDriver > tr').click(function () {
+        let id = $(this).children(":eq(0)").text();
+        let name = $(this).children(":eq(1)").text();
+        let address = $(this).children(":eq(2)").text();
+        let age = $(this).children(":eq(3)").text();
+        let contact = $(this).children(":eq(3)").text();
+        let release = $(this).children(":eq(3)").text();
+
+        $('#driverId').val(id);
+        $('#driverName').val(name);
+        $('#driverAddress').val(address);
+        $('#driverAge').val(age);
+        $('#driverContact').val(contact);
+        $('#driverReleaseOrNot').val(release);
+    });
+}
 
 setDriverID()
-
 function setDriverID() {
     $.ajax({
         url: baseURL + "driver/generate",
