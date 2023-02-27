@@ -201,5 +201,31 @@ function setDriverID() {
     });
 }
 
+$('#btnUpdateDriver').click(function (){
+    var driver = {
+        driverID: $('#driverId').val(),
+        driverName: $('#driverName').val(),
+        driverAddress: $('#driverAddress').val(),
+        age: $('#driverAge').val(),
+        contact: $('#driverContact').val(),
+        releaseOrNot: $('#driverReleaseOrNot option:selected').text()
+    }
+
+    $.ajax({
+        url: baseURL + "driver",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(driver),
+        dataType: "json",
+        success: function () {
+            loadAllDrivers();
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    })
+});
+
 
 
