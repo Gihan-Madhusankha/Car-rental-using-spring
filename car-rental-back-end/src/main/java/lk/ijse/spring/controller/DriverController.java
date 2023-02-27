@@ -28,7 +28,7 @@ public class DriverController {
     }
 
     @GetMapping
-    public ResponseUtil allDrivers(){
+    public ResponseUtil allDrivers() {
         ArrayList<DriverDTO> allDrivers = service.allDrivers();
         return new ResponseUtil("200","Success", allDrivers);
     }
