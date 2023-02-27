@@ -42,6 +42,12 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
+    public void updateDriver(DriverDTO dto) {
+        Driver entity = modelMapper.map(dto, Driver.class);
+        repo.save(entity);
+    }
+
+    @Override
     public ArrayList<DriverDTO> allDrivers() {
         return modelMapper.map(repo.findAll(), new TypeToken<ArrayList<DriverDTO>>(){}.getType());
     }

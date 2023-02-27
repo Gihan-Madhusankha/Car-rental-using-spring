@@ -24,7 +24,13 @@ public class DriverController {
     @PostMapping
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto) {
         service.saveDriver(dto);
-        return new ResponseUtil("200", "Done", null);
+        return new ResponseUtil("200", "Added", null);
+    }
+
+    @PutMapping
+    public ResponseUtil updateDriver(@RequestBody DriverDTO dto){
+        service.updateDriver(dto);
+        return new ResponseUtil("200", "Updated", null);
     }
 
     @GetMapping

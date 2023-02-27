@@ -12,5 +12,6 @@ import java.util.ArrayList;
 public interface DriverService {
     public String generateID();
     public void saveDriver(DriverDTO dto);
+    public void updateDriver(DriverDTO dto);
     public ArrayList<DriverDTO> allDrivers();
 }
