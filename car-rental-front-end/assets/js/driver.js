@@ -138,7 +138,8 @@ function loadAllDrivers() {
         success: function (resp) {
             $('#tblDriver').empty();
             for (let dr of resp.data) {
-                $('#tblDriver').append('<tr><td>' + dr.driverID + '</td><td>' + dr.driverName + '</td><td>' + dr.driverAddress + '</td><td>' + dr.age + '</td><td>' + dr.contact + '</td><td>' + dr.releaseOrNot + '</td></tr>');
+                $('#tblDriver').append('<tr><td>' + dr.driverID + '</td><td>' + dr.driverName + '</td><td>' + dr.driverAddress + '</td><td>' + dr.age + '</td><td>' + dr.contact + '</td><td>' + dr.releaseOrNot + '</td>' +
+                    '<td><button class="btn btn-success btn-sm" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" type="button" id="btnEdit">Edit</button></td></tr>');
             }
             setDriverID();
             clearTextFields();
@@ -150,6 +151,7 @@ function loadAllDrivers() {
         }
     });
 }
+
 
 function clearTextFields() {
     $('#driverId').val("");
