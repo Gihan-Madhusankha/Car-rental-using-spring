@@ -20,7 +20,6 @@ function generateCarID() {
 }
 
 loadAllCars();
-
 function loadAllCars() {
     $.ajax({
         url: baseURL + "car",
