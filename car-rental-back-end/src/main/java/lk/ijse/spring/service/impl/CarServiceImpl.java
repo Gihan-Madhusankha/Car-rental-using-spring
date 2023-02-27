@@ -4,7 +4,6 @@ import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.service.CarService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -26,6 +25,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public String generateID() {
-        return null;
+        return repo.generateID();
     }
 }
