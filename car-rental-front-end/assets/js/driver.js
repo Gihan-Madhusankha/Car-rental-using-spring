@@ -176,7 +176,7 @@ function bindRowClickEvent1() {
         $('#driverAddress').val(address);
         $('#driverAge').val(age);
         $('#driverContact').val(contact);
-        $('#driverReleaseOrNot').val(release);
+        $('#driverReleaseOrNot option:selected').text(release);
     });
 }
 
