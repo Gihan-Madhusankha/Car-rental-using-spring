@@ -139,11 +139,11 @@ function loadAllDrivers() {
             $('#tblDriver').empty();
             for (let dr of resp.data) {
                 $('#tblDriver').append('<tr><td>' + dr.driverID + '</td><td>' + dr.driverName + '</td><td>' + dr.driverAddress + '</td><td>' + dr.age + '</td><td>' + dr.contact + '</td><td>' + dr.releaseOrNot + '</td>' +
-                    '<td><button class="btn btn-success btn-sm" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" type="button" id="btnEdit">Edit</button></td></tr>');
+                    '<td><button class="btn btn-success btn-sm" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" type="button" id="btnEdit">Edit</button></td><td><button class="btn btn-success btn-sm" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" type="button" id="btnDelete">Edit</button></td></tr>');
             }
             setDriverID();
-            clearTextFields();
-            bindRowClickEvent();
+            clearTextFields1();
+            bindRowClickEvent1();
         },
         error: function (error) {
             let jsObject = JSON.parse(error.responseText);
@@ -153,7 +153,7 @@ function loadAllDrivers() {
 }
 
 
-function clearTextFields() {
+function clearTextFields1() {
     $('#driverId').val("");
     $('#driverName').val("");
     $('#driverAddress').val("");
@@ -162,7 +162,7 @@ function clearTextFields() {
     $('#driverReleaseOrNot').val("");
 }
 
-function bindRowClickEvent() {
+function bindRowClickEvent1() {
     $('#tblDriver > tr').click(function () {
         let id = $(this).children(":eq(0)").text();
         let name = $(this).children(":eq(1)").text();

@@ -80,13 +80,13 @@ adminValidations.push({
 
 //==================================================
 
-function generateAdID(){
+function generateAdID() {
     $.ajax({
-        url: baseURL+"admin/generate",
+        url: baseURL + "admin/generate",
         method: "get",
-        success: function (resp){
+        success: function (resp) {
             let id = resp.data;
-            if (id==null){
+            if (id == null) {
                 $('#adID').val("A-001");
             } else {
                 let idNo = parseInt(id.substr(2, 5)) + 1;
@@ -94,14 +94,14 @@ function generateAdID(){
                 $('#adID').val('A-' + idNo.toString().padStart(3, '0'));
             }
         },
-        error: function (error){
+        error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
     });
 }
 
-$('#btnSave').click(function (){
+$('#btnSave').click(function () {
     var admin = {
         adminID: $('#adID').val(),
         userName: $('#adminName').val(),
@@ -114,10 +114,10 @@ $('#btnSave').click(function (){
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(admin),
-        success: function (){
+        success: function () {
             loadAllAdmins();
         },
-        error: function (error){
+        error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
@@ -126,37 +126,33 @@ $('#btnSave').click(function (){
 });
 
 loadAllAdmins();
-$('#btnGetAll').click(function (){
-    $.ajax({
-        success:function (){
-            loadAllAdmins();
-        }
-    });
+$('#btnGetAll').click(function () {
+    loadAllAdmins();
 });
 
-function loadAllAdmins(){
+function loadAllAdmins() {
     $.ajax({
-        url: baseURL+"admin",
+        url: baseURL + "admin",
         method: "get",
         dataType: "json",
-        success:function (resp){
+        success: function (resp) {
             $('#tblAdminManage').empty();
             for (let ad of resp.data) {
-                $('#tblAdminManage').append('<tr><td>'+ad.adminID+'</td><td>'+ad.userName+'</td><td>'+ad.password+'</td><td>'+ad.contact+'</td></tr>');
+                $('#tblAdminManage').append('<tr><td>' + ad.adminID + '</td><td>' + ad.userName + '</td><td>' + ad.password + '</td><td>' + ad.contact + '</td></tr>');
             }
             generateAdID();
             clearTextFields();
             bindRowClickEvent();
         },
-        error: function (error){
+        error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
     });
 }
 
-function bindRowClickEvent(){
-    $('#tblAdminManage > tr').click(function (){
+function bindRowClickEvent() {
+    $('#tblAdminManage > tr').click(function () {
         let id = $(this).children(":eq(0)").text();
         let name = $(this).children(":eq(1)").text();
         let password = $(this).children(":eq(2)").text();
@@ -169,8 +165,7 @@ function bindRowClickEvent(){
     });
 }
 
-function clearTextFields(){
-    $('#adID').val("");
+function clearTextFields() {
     $('#adminName').val("");
     $('#adPassword').val("");
     $('#adContact').val("");
@@ -182,8 +177,7 @@ function clearTextFields(){
 }
 
 
-$('#btnUpdate').click(function (){
-
+$('#btnUpdate').click(function () {
     var ad = {
         adminID: $('#adID').val(),
         userName: $('#adminName').val(),
@@ -196,13 +190,13 @@ $('#btnUpdate').click(function (){
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(ad),
-        success: function (){
+        success: function () {
             loadAllAdmins();
             generateAdID();
             clearTextFields();
             bindRowClickEvent();
         },
-        error: function (error){
+        error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
@@ -211,20 +205,20 @@ $('#btnUpdate').click(function (){
 
 });
 
-$('#btnDelete').click(function (){
+$('#btnDelete').click(function () {
     var id = $('#adID').val();
 
     $.ajax({
         url: baseURL + "admin?id=" + id,
         method: "delete",
         dataType: "json",
-        success: function (){
+        success: function () {
             loadAllAdmins();
             generateAdID();
             clearTextFields();
             bindRowClickEvent();
         },
-        error: function (error){
+        error: function (error) {
             let jsObject = JSON.parse(error.responseText);
             alert("error : " + jsObject.message);
         }
