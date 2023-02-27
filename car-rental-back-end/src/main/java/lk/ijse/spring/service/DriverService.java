@@ -14,4 +14,5 @@ public interface DriverService {
     public void saveDriver(DriverDTO dto);
     public void updateDriver(DriverDTO dto);
     public ArrayList<DriverDTO> allDrivers();
+    public void deleteDriver(String id);
 }

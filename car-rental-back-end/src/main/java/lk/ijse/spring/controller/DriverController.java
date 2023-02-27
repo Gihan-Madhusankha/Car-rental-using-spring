@@ -33,6 +33,12 @@ public class DriverController {
         return new ResponseUtil("200", "Updated", null);
     }
 
+    @DeleteMapping(params = {"dId"})
+    public ResponseUtil deleteDriver(String dId){
+        service.deleteDriver(dId);
+        return new ResponseUtil("200", "Deleted", null);
+    }
+
     @GetMapping
     public ResponseUtil allDrivers() {
         ArrayList<DriverDTO> allDrivers = service.allDrivers();

@@ -214,9 +214,6 @@ $('#btnDelete').click(function () {
         dataType: "json",
         success: function () {
             loadAllAdmins();
-            generateAdID();
-            clearTextFields();
-            bindRowClickEvent();
         },
         error: function (error) {
             let jsObject = JSON.parse(error.responseText);
