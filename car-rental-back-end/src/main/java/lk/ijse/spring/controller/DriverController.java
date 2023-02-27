@@ -6,6 +6,8 @@ import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Gihan Madhusankha
  * 2023-02-21 11:56 PM
@@ -23,6 +25,12 @@ public class DriverController {
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto) {
         service.saveDriver(dto);
         return new ResponseUtil("200", "Done", null);
+    }
+
+    @GetMapping
+    public ResponseUtil allDrivers(){
+        ArrayList<DriverDTO> allDrivers = service.allDrivers();
+        return new ResponseUtil("200","Success", allDrivers);
     }
 
     @GetMapping(path = "/generate")

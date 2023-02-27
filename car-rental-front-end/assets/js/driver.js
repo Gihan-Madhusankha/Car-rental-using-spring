@@ -129,6 +129,7 @@ $('#btnSaveDriver').click(function () {
     })
 });
 
+loadAllDrivers();
 function loadAllDrivers() {
     $.ajax({
         url: baseURL + "driver",
@@ -177,7 +178,6 @@ function bindRowClickEvent() {
     });
 }
 
-setDriverID()
 function setDriverID() {
     $.ajax({
         url: baseURL + "driver/generate",
@@ -198,6 +198,5 @@ function setDriverID() {
         }
     });
 }
-
 
 
