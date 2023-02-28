@@ -1,3 +1,45 @@
+$('#btnSaveCar').click(function () {
+    var car = {
+        manageCarId: $('#manageCarId').val(),
+        manageCarBrand: $('#manageCarBrand option:selected').text(),
+        manageCarColor: $('#manageCarColor option:selected').text(),
+        manageCarType: $('#manageCarType option:selected').text(),
+        manageCarRegistrationNo: $('#manageCarRegistrationNo').val(),
+        manageCarFuelType: $('#manageCarFuelType option:selected').text(),
+        manageCarTransmissionType: $('#manageCarTransmissionType option:selected').text(),
+        manageCarNoOfPassengers: $('#manageCarNoOfPassengers').val(),
+        manageCarDailyRatePrice: $('#manageCarDailyRatePrice').val(),
+        manageCarMonthlyRatePrice: $('#manageCarMonthlyRatePrice').val(),
+        manageCarFreeKMPerDay: $('#manageCarFreeKMPerDay').val(),
+        manageCarFreeKMPerMonth: $('#manageCarFreeKMPerMonth').val(),
+        manageCarTotalDistanceTravelled: $('#manageCarTotalDistanceTravelled').val(),
+        manageCarPriceForExtraKm: $('#manageCarPriceForExtraKm').val(),
+        manageCarInteriorView: $("#manageCarInteriorView")[0].files[0].name,
+        manageCarBackView: $("#manageCarBackView")[0].files[0].name,
+        manageCarSideView: $("#manageCarSideView")[0].files[0].name,
+        manageCarFrontView: $("#manageCarFrontView")[0].files[0].name,
+        manageCarAvailableOrNot: $('#manageCarAvailableOrNot option:selected').text(),
+        manageCarDamageOrNot: $('#manageCarDamageOrNot option:selected').text(),
+        manageCarUnderMaintainOrNot: $('#manageCarUnderMaintainOrNot option:selected').text()
+    }
+
+    $.ajax({
+        url: baseURL + "car",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(car),
+        success: function () {
+            loadAllCars();
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+
+});
+
+
 function generateCarID() {
     $.ajax({
         url: baseURL + "car/generate",
@@ -28,7 +70,8 @@ function loadAllCars() {
         success: function (resp) {
             $('#tblCar').empty();
             for (let car of resp.data) {
-                $('#tblCar').append('<tr><td>' + car.manageCarId + '</td><td>' + car.manageCarBrand + '</td><td>' + car.manageCarColor + '</td><td>' + car.manageCarType + '</td><td>' + car.manageCarRegistrationNo + '</td><td>' + car.manageCarFuelType + '</td><td>' + car.manageCarTransmissionType + '</td><td>' + car.manageCarNoOfPassengers + '</td><td>' + car.manageCarDailyRatePrice + '</td><td>' + car.manageCarMonthlyRatePrice + '</td><td>' + car.manageCarFreeKMPerDay + '</td><td>' + car.manageCarFreeKMPerMonth + '</td><td>' + car.manageCarTotalDistanceTravelled + '</td><td>' + car.manageCarPriceForExtraKm + '</td><td>' + car.manageCarInteriorView + '</td><td>' + car.manageCarBackView + '</td><td>' + car.manageCarSideView + '</td><td>' + car.manageCarFrontView + '</td><td>' + car.manageCarAvailableOrNot + '</td><td>' + car.manageCarDamageOrNot + '</td><td>' + car.manageCarUnderMaintainOrNot + '</td></tr>');
+                $('#tblCar').append('<tr><td>' + car.manageCarId + '</td><td>' + car.manageCarBrand + '</td><td>' + car.manageCarColor + '</td><td>' + car.manageCarType + '</td><td>' + car.manageCarRegistrationNo + '</td><td>' + car.manageCarFuelType + '</td><td>' + car.manageCarTransmissionType + '</td><td>' + car.manageCarNoOfPassengers + '</td><td>' + car.manageCarDailyRatePrice + '</td><td>' + car.manageCarMonthlyRatePrice + '</td><td>' + car.manageCarFreeKMPerDay + '</td><td>' + car.manageCarFreeKMPerMonth + '</td><td>' + car.manageCarTotalDistanceTravelled + '</td><td>' + car.manageCarPriceForExtraKm + '</td><td>' +
+                    '<img src=car.manageCarInteriorView alt="">' + '</td><td>' + '<img src=car.manageCarBackView alt="">' + '</td><td>' + '<img src=car.manageCarSideView alt="">' + '</td><td>' + '<img src=car.manageCarFrontView alt="">' + '</td><td>' + car.manageCarAvailableOrNot + '</td><td>' + car.manageCarDamageOrNot + '</td><td>' + car.manageCarUnderMaintainOrNot + '</td></tr>');
             }
             generateCarID();
             clearCarTextFields();

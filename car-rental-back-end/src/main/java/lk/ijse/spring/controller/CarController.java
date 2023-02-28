@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.service.CarService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
 
 /**
  * @author : Gihan Madhusankha
@@ -25,6 +28,12 @@ public class CarController {
     public ResponseUtil generateID(){
         String id = service.generateID();
         return new ResponseUtil("200", "Success", id);
+    }
+
+    @GetMapping
+    public ResponseUtil allCars(){
+        ArrayList<CarDTO> allCars = service.allCars();
+        return new ResponseUtil("200", "Success", allCars);
     }
 
 }
