@@ -12,4 +12,5 @@ import org.springframework.data.jpa.repository.Query;
 public interface CarRepo extends JpaRepository<Car, String> {
     @Query(value = "select manageCarId from Car order by manageCarId desc limit 1", nativeQuery = true)
     public String generateID();
+    
 }
