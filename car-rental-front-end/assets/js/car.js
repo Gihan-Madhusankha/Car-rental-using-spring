@@ -49,9 +49,9 @@ function generateCarID() {
             if (cId == null) {
                 $('#manageCarId').val("C-001");
             } else {
-                let cIdNo = parseInt(id.substr(2, 5)) + 1;
+                let cIdNo = parseInt(cId.substr(2, 5)) + 1;
                 console.log(cIdNo);
-                $('#adID').val('C-' + cIdNo.toString().padStart(3, '0'));
+                $('#manageCarId').val('C-' + cIdNo.toString().padStart(3, '0'));
             }
         },
         error: function (error) {
@@ -62,6 +62,7 @@ function generateCarID() {
 }
 
 loadAllCars();
+
 function loadAllCars() {
     $.ajax({
         url: baseURL + "car",
@@ -71,7 +72,7 @@ function loadAllCars() {
             $('#tblCar').empty();
             for (let car of resp.data) {
                 $('#tblCar').append('<tr><td>' + car.manageCarId + '</td><td>' + car.manageCarBrand + '</td><td>' + car.manageCarColor + '</td><td>' + car.manageCarType + '</td><td>' + car.manageCarRegistrationNo + '</td><td>' + car.manageCarFuelType + '</td><td>' + car.manageCarTransmissionType + '</td><td>' + car.manageCarNoOfPassengers + '</td><td>' + car.manageCarDailyRatePrice + '</td><td>' + car.manageCarMonthlyRatePrice + '</td><td>' + car.manageCarFreeKMPerDay + '</td><td>' + car.manageCarFreeKMPerMonth + '</td><td>' + car.manageCarTotalDistanceTravelled + '</td><td>' + car.manageCarPriceForExtraKm + '</td><td>' +
-                    '<img src=car.manageCarInteriorView alt="">' + '</td><td>' + '<img src=car.manageCarBackView alt="">' + '</td><td>' + '<img src=car.manageCarSideView alt="">' + '</td><td>' + '<img src=car.manageCarFrontView alt="">' + '</td><td>' + car.manageCarAvailableOrNot + '</td><td>' + car.manageCarDamageOrNot + '</td><td>' + car.manageCarUnderMaintainOrNot + '</td></tr>');
+                    $('#manageCarInteriorView').attr('src', car.manageCarInteriorView) + '</td><td>' + '<img src=car.manageCarBackView alt="">' + '</td><td>' + '<img src=car.manageCarSideView alt="">' + '</td><td>' + '<img src=car.manageCarFrontView alt="">' + '</td><td>' + car.manageCarAvailableOrNot + '</td><td>' + car.manageCarDamageOrNot + '</td><td>' + car.manageCarUnderMaintainOrNot + '</td></tr>');
             }
             generateCarID();
             clearCarTextFields();
@@ -108,7 +109,7 @@ function clearCarTextFields() {
     $('#manageCarUnderMaintainOrNot').val("");
 }
 
-function bindRowCarClickEvent(){
+function bindRowCarClickEvent() {
     $('#tblCar > tr').click(function () {
         let manageCarId = $(this).children(":eq(0)").text();
         let manageCarBrand = $(this).children(":eq(1)").text();
@@ -133,25 +134,25 @@ function bindRowCarClickEvent(){
         let manageCarUnderMaintainOrNot = $(this).children(":eq(20)").text();
 
         $('#manageCarId').val(manageCarId);
-        $('#manageCarBrand option:selected').val(manageCarBrand);
-        $('#manageCarColor option:selected').val(manageCarColor);
-        $('#manageCarType option:selected').val(manageCarType);
+        $('#manageCarBrand option:selected').text(manageCarBrand);
+        $('#manageCarColor option:selected').text(manageCarColor);
+        $('#manageCarType option:selected').text(manageCarType);
         $('#manageCarRegistrationNo').val(manageCarRegistrationNo);
         $('#manageCarFuelType option:selected').text(manageCarFuelType);
-        $('#manageCarTransmissionType option:selected').val(manageCarTransmissionType);
+        $('#manageCarTransmissionType option:selected').text(manageCarTransmissionType);
         $('#manageCarNoOfPassengers').val(manageCarNoOfPassengers);
         $('#manageCarDailyRatePrice').val(manageCarDailyRatePrice);
         $('#manageCarMonthlyRatePrice').val(manageCarMonthlyRatePrice);
         $('#manageCarFreeKMPerDay').val(manageCarFreeKMPerDay);
-        $('#manageCarFreeKMPerMonth').text(manageCarFreeKMPerMonth);
+        $('#manageCarFreeKMPerMonth').val(manageCarFreeKMPerMonth);
         $('#manageCarTotalDistanceTravelled').val(manageCarTotalDistanceTravelled);
         $('#manageCarPriceForExtraKm').val(manageCarPriceForExtraKm);
         $('#manageCarInteriorView').val(manageCarInteriorView);
         $('#manageCarBackView').val(manageCarBackView);
         $('#manageCarSideView').val(manageCarSideView);
-        $('#manageCarFrontView').text(manageCarFrontView);
-        $('#manageCarAvailableOrNot option:selected').val(manageCarAvailableOrNot);
-        $('#manageCarDamageOrNot option:selected').val(manageCarDamageOrNot);
-        $('#manageCarUnderMaintainOrNot option:selected').val(manageCarUnderMaintainOrNot);
+        $('#manageCarFrontView').val(manageCarFrontView);
+        $('#manageCarAvailableOrNot option:selected').text(manageCarAvailableOrNot);
+        $('#manageCarDamageOrNot option:selected').text(manageCarDamageOrNot);
+        $('#manageCarUnderMaintainOrNot option:selected').text(manageCarUnderMaintainOrNot);
     });
 }

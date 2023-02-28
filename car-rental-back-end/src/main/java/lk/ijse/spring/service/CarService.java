@@ -10,6 +10,7 @@ import java.util.ArrayList;
  **/
 
 public interface CarService {
+    public void saveCar(CarDTO dto);
     public ArrayList<CarDTO> allCars();
     public String generateID();
 }

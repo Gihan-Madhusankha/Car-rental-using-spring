@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.service.CarService;
 import org.modelmapper.ModelMapper;
@@ -25,6 +26,15 @@ public class CarServiceImpl implements CarService {
 
     @Autowired
     ModelMapper modelMapper;
+
+    @Override
+    public void saveCar(CarDTO dto) {
+        if (repo.existsById(dto.getManageCarId())) {
+            throw new RuntimeException("Car "+dto.getManageCarId()+ " id is Already Exists");
+        }
+        Car entity = modelMapper.map(dto, Car.class);
+        repo.save(entity);
+    }
 
     @Override
     public ArrayList<CarDTO> allCars() {
