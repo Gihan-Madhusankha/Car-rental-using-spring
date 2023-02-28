@@ -221,3 +221,32 @@ $('#btnDelete').click(function () {
         }
     });
 });
+
+$('#adminLoginBtn').click(function () {
+    var admUserName = $('#usernameAd').val();
+    var admPwd = $('#passwordAd').val();
+
+    $.ajax({
+        url: baseURL + "admin?admUserName = " + admUserName,
+        method: "get",
+        success: function (resp) {
+            console.log('pwd : ', resp.data);
+            if(resp.data == admPwd) {
+                $('#adminDash').css('display', 'block');
+                $('.cusSignUp').css('display', 'none');
+                $('.cusLogin').css('display', 'none');
+                $('.adminLogin').css('display', 'none');
+                $('.driverLogin').css('display', 'none');
+                $('#main').css('display', 'none');
+                $('#footer').css('display', 'flex');
+            } else {
+                alert('username or password is wrong..!');
+            }
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+});
+

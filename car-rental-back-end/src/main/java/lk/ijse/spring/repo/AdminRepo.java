@@ -12,4 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface AdminRepo extends JpaRepository<Admin, String> {
     @Query(value = "select adminID from admin order by adminID desc limit 1", nativeQuery = true)
     public String generateID();
+
+    @Query(value = "select password from admin where userName = ?1", nativeQuery = true)
+    public String getAdminPassword(String userName);
 }

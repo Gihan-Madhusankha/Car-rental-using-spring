@@ -49,15 +49,15 @@ $('#cusSignUpCancel, .btnBack').click(function () {
     $('#adminDash').css('display', 'none');
 });
 
-$('#adminLoginBtn').click(function () {
-    $('#adminDash').css('display', 'block');
-    $('.cusSignUp').css('display', 'none');
-    $('.cusLogin').css('display', 'none');
-    $('.adminLogin').css('display', 'none');
-    $('.driverLogin').css('display', 'none');
-    $('#main').css('display', 'none');
-    $('#footer').css('display', 'flex');
-});
+// $('#adminLoginBtn').click(function () {
+//     $('#adminDash').css('display', 'block');
+//     $('.cusSignUp').css('display', 'none');
+//     $('.cusLogin').css('display', 'none');
+//     $('.adminLogin').css('display', 'none');
+//     $('.driverLogin').css('display', 'none');
+//     $('#main').css('display', 'none');
+//     $('#footer').css('display', 'flex');
+// });
 
 
 var baseURL = "http://localhost:8080/car_rental/";
