@@ -1,4 +1,26 @@
 $('#btnSaveCar').click(function () {
+    // var data = new FormData();
+    // let file = $("#manageCarInteriorView")[0].files[0];
+    // let fileName = $("#manageCarInteriorView")[0].files[0].name;
+    // data.append("myFile", file, fileName);
+    // console.log(fileName);
+    //
+    // $.ajax({
+    //     url: baseURL + "api/v1/upload",
+    //     method: 'post',
+    //     async: true,
+    //     contentType: false,
+    //     processData: false,
+    //     data: data,
+    //     success: function (resp) {
+    //         alert("Successfully Uploaded");
+    //         // loadTheLastUploadedImage();
+    //     },
+    //     error: function (err) {
+    //         console.log(err);
+    //     }
+    // });
+
     var car = {
         manageCarId: $('#manageCarId').val(),
         manageCarBrand: $('#manageCarBrand option:selected').text(),
@@ -64,6 +86,30 @@ function generateCarID() {
 loadAllCars();
 
 function loadAllCars() {
+    // $.ajax({
+    //     url: baseURL + "api/v1/upload",
+    //     method: 'get',
+    //     dataType: 'json',
+    //     success: function (resp) {
+    //         let url = resp[resp.length - 1];
+    //
+    //         $("#display").css({
+    //             "background": `url(${baseURL + url})`,
+    //             "background-size": "cover",
+    //             "height": "300px"
+    //         });
+    //
+    //         for (let i in resp) {
+    //             let row = `<tr><td><img src="${baseURL + resp[i]}" width="100px"></td></tr>`;
+    //             $("#table").append(row);
+    //         }
+    //     },
+    //     error: function (err) {
+    //         console.log(err);
+    //     }
+    // });
+
+
     $.ajax({
         url: baseURL + "car",
         method: "get",
@@ -71,8 +117,8 @@ function loadAllCars() {
         success: function (resp) {
             $('#tblCar').empty();
             for (let car of resp.data) {
-                $('#tblCar').append('<tr><td>' + car.manageCarId + '</td><td>' + car.manageCarBrand + '</td><td>' + car.manageCarColor + '</td><td>' + car.manageCarType + '</td><td>' + car.manageCarRegistrationNo + '</td><td>' + car.manageCarFuelType + '</td><td>' + car.manageCarTransmissionType + '</td><td>' + car.manageCarNoOfPassengers + '</td><td>' + car.manageCarDailyRatePrice + '</td><td>' + car.manageCarMonthlyRatePrice + '</td><td>' + car.manageCarFreeKMPerDay + '</td><td>' + car.manageCarFreeKMPerMonth + '</td><td>' + car.manageCarTotalDistanceTravelled + '</td><td>' + car.manageCarPriceForExtraKm + '</td><td>' +
-                    $('#manageCarInteriorView').attr('src', car.manageCarInteriorView) + '</td><td>' + '<img src=car.manageCarBackView alt="">' + '</td><td>' + '<img src=car.manageCarSideView alt="">' + '</td><td>' + '<img src=car.manageCarFrontView alt="">' + '</td><td>' + car.manageCarAvailableOrNot + '</td><td>' + car.manageCarDamageOrNot + '</td><td>' + car.manageCarUnderMaintainOrNot + '</td></tr>');
+                $('#tblCar').append(`<tr><td> ${car.manageCarId} </td><td> ${car.manageCarBrand} </td><td> ${car.manageCarColor} </td><td> ${car.manageCarType} </td><td> ${car.manageCarRegistrationNo} </td><td> ${car.manageCarFuelType} </td><td> ${car.manageCarTransmissionType} </td><td> ${car.manageCarNoOfPassengers} </td><td> ${car.manageCarDailyRatePrice} </td><td> ${car.manageCarMonthlyRatePrice} </td><td> ${car.manageCarFreeKMPerDay} </td><td> ${car.manageCarFreeKMPerMonth} </td><td> ${car.manageCarTotalDistanceTravelled} </td><td> ${car.manageCarPriceForExtraKm} </td><td>
+                    <img src="assets/img/${car.manageCarInteriorView}" alt="" style="width: 100px; height:50px"></td><td><img src="assets/img/${car.manageCarBackView}" alt="" style="width: 100px; height:50px"></td><td><img src="assets/img/${car.manageCarSideView}" alt="" style="width: 100px; height:50px"></td><td><img src="assets/img/${car.manageCarFrontView}" alt="" style="width: 100px; height:50px"></td><td> ${car.manageCarAvailableOrNot} </td><td> ${car.manageCarDamageOrNot} </td><td> ${car.manageCarUnderMaintainOrNot} </td></tr>`);
             }
             generateCarID();
             clearCarTextFields();
