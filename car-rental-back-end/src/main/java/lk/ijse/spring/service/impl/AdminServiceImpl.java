@@ -40,6 +40,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public String getAdminID(String admName) {
+        return repo.getAdminID(admName);
+    }
+
+    @Override
     public String generateID() {
         return repo.generateID();
     }

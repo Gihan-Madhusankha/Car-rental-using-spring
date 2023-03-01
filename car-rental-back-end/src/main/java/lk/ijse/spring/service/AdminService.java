@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public interface AdminService {
     public ArrayList<AdminDTO> allAdmins();
     public String getAdminPassword(String userName);
+    public String getAdminID(String admName);
     public String generateID();
     public void saveAdmin(AdminDTO dto);
     public void updateAdmin(AdminDTO dto);

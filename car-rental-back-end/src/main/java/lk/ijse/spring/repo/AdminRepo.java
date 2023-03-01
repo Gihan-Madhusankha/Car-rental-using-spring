@@ -18,4 +18,7 @@ public interface AdminRepo extends JpaRepository<Admin, String> {
 
     @Query(value = "select password from admin where userName = ?1", nativeQuery = true)
     public String getAdminPassword(String admUserName);
+
+    @Query(value = "select adminID from admin where userName = ?1", nativeQuery = true)
+    public String getAdminID(String admName);
 }

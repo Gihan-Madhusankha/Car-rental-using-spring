@@ -57,4 +57,10 @@ public class AdminController {
         return new ResponseUtil("200", "Done", password);
     }
 
+    @GetMapping(params = {"admName"})
+    public ResponseUtil getAdminID(@RequestParam String admName) {
+        String id = service.getAdminID(admName);
+        return new ResponseUtil("200", "Done", id);
+    }
+
 }

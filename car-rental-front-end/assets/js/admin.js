@@ -241,7 +241,7 @@ $('#adminLoginBtn').click(function () {
                     $('#footer').css('display', 'flex');
 
                     $('#adUserName').val(admUserName);
-
+                    getAdminID(admUserName);
                 } else {
                     alert("username or password is wrong..!");
                 }
@@ -253,3 +253,16 @@ $('#adminLoginBtn').click(function () {
     });
 });
 
+function getAdminID(admName){
+    $.ajax({
+        url: baseURL+"admin?admName="+admName,
+        method: "get",
+        success: function (resp){
+            $('#adUserId').val(resp.data);
+        },
+        error: function (error){
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
