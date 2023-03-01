@@ -1,8 +1,11 @@
 package lk.ijse.spring.repo;
 
+import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.entity.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import java.util.ArrayList;
 
 /**
  * @author : Gihan Madhusankha
