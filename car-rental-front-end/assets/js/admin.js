@@ -227,7 +227,7 @@ $('#adminLoginBtn').click(function () {
     var admPwd = $('#passwordAd').val();
 
     $.ajax({
-        url: baseURL + "admin?admUserName = " + admUserName,
+        url: baseURL + "admin?admUserName=" + admUserName,
         method: "get",
         success: function (resp) {
             console.log('pwd : ', resp.data);

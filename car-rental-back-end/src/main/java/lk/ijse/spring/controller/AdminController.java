@@ -52,7 +52,7 @@ public class AdminController {
     }
 
     @GetMapping(params = {"admUserName"})
-    public ResponseUtil getAdminPassword(String admUserName) {
+    public ResponseUtil getAdminPassword(@RequestParam String admUserName) {
         String password = service.getAdminPassword(admUserName);
         return new ResponseUtil("200", "Done", password);
     }
