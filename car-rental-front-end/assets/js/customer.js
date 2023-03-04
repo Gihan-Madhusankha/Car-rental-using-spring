@@ -89,7 +89,6 @@ $('#btnRegister').click(function () {
             console.log("error : ", error.message);
         }
     });
-
 });
 
 function saveUser(user) {
@@ -297,3 +296,22 @@ customerLoginValidations.push({
     field: $('#passwordCus'),
     error: 'password pattern is wrong.! ex:A-z 0-9 5 digits'
 });
+
+loadAllCustomers();
+
+function loadAllCustomers() {
+    $.ajax({
+        url: baseURL + "customer",
+        method: "get",
+        dataType: "json",
+        success: function (resp) {
+            for (let cus of resp.data) {
+                $('#tblCustomer').append(`<tr><td>${cus.customerID}</td><td>${cus.fullName}</td><td>${cus.address}</td><td>${cus.email}</td><td>${cus.contact}</td><td>${cus.nicNo}</td></tr>`);
+            }
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}

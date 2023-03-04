@@ -5,9 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : Gihan Madhusankha
@@ -32,4 +30,8 @@ public class Driver {
     @Column(nullable = false)
     private int contact;
     private String releaseOrNot;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "admID", referencedColumnName = "adminID",nullable = false)
+    private Admin admID;
 }

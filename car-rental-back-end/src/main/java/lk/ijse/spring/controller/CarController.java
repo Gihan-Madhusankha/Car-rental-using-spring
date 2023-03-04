@@ -28,13 +28,13 @@ public class CarController {
     }
 
     @GetMapping(path = "/generate")
-    public ResponseUtil generateID(){
+    public ResponseUtil generateID() {
         String id = service.generateID();
         return new ResponseUtil("200", "Success", id);
     }
 
     @GetMapping
-    public ResponseUtil allCars(){
+    public ResponseUtil allCars() {
         ArrayList<CarDTO> allCars = service.allCars();
         return new ResponseUtil("200", "Success", allCars);
     }

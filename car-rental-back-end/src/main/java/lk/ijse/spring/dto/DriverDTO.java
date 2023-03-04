@@ -23,4 +23,5 @@ public class DriverDTO {
     private int age;
     private int contact;
     private String releaseOrNot;
+    private String adminID;
 }

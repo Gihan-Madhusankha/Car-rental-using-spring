@@ -6,6 +6,8 @@ import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Gihan Madhusankha
  * 2023-02-21 11:56 PM
@@ -22,6 +24,12 @@ public class CustomerController {
     @PostMapping
     public void saveCustomer(@RequestBody CustomerDTO dto) {
         service.saveCustomer(dto);
+    }
+
+    @GetMapping
+    public ResponseUtil allCustomers(){
+        ArrayList<CustomerDTO> allCustomers = service.allCustomers();
+        return new ResponseUtil("200", "Success", allCustomers);
     }
 
     @GetMapping(params = {"username"})
