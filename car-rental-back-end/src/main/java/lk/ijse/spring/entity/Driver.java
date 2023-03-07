@@ -32,6 +32,6 @@ public class Driver {
     private String releaseOrNot;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "admID", referencedColumnName = "adminID",nullable = false)
-    private Admin admID;
+    @JoinColumn(name = "admin_id", referencedColumnName = "adminID", nullable = false)
+    private Admin adminID;
 }

@@ -34,10 +34,14 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO dto) {
+
         if (repo.existsById(dto.getDriverID())) {
             throw new RuntimeException("Driver " + dto.getDriverID() + " id is Already Exists.!");
         }
         Driver entity = modelMapper.map(dto, Driver.class);
+        System.out.println("dto enti : "+dto);
+
+        System.out.println("entity : " + entity);
         repo.save(entity);
     }
 
@@ -48,12 +52,13 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public void deleteDriver(String id){
+    public void deleteDriver(String id) {
         repo.deleteById(id);
     }
 
     @Override
     public ArrayList<DriverDTO> allDrivers() {
-        return modelMapper.map(repo.findAll(), new TypeToken<ArrayList<DriverDTO>>(){}.getType());
+        return modelMapper.map(repo.findAll(), new TypeToken<ArrayList<DriverDTO>>() {
+        }.getType());
     }
 }

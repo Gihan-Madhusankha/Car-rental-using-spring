@@ -23,7 +23,9 @@ public class DriverController {
 
     @PostMapping
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto) {
+        System.out.println("dto0 : "+dto);
         service.saveDriver(dto);
+        System.out.println("dto1 : "+dto);
         return new ResponseUtil("200", "Added", null);
     }
 
