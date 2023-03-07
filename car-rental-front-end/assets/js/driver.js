@@ -114,7 +114,6 @@ $('#btnSaveDriver').click(function () {
         releaseOrNot: $('#driverReleaseOrNot option:selected').text(),
         adminID: $('#adUserId').val()
     }
-    console.log('driver : ', driver);
 
     $.ajax({
         url: baseURL + "driver",
@@ -124,7 +123,6 @@ $('#btnSaveDriver').click(function () {
         contentType: "application/json",
         success: function () {
             loadAllDrivers();
-            console.log(driver);
         },
         error: function (error) {
             let jsObject = JSON.parse(error.responseText);
