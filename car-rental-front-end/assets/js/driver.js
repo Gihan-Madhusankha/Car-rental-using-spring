@@ -210,7 +210,8 @@ $('#btnUpdateDriver').click(function (){
         driverAddress: $('#driverAddress').val(),
         age: $('#driverAge').val(),
         contact: $('#driverContact').val(),
-        releaseOrNot: $('#driverReleaseOrNot option:selected').text()
+        releaseOrNot: $('#driverReleaseOrNot option:selected').text(),
+        adminID: $('#adUserId').val()
     }
 
     $.ajax({
