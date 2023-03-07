@@ -1,4 +1,4 @@
-$('#btnCustomerLogin').click(function () {
+$('#btnCustomerLogin, #mem-log').click(function () {
     $('.cusLogin').css('display', 'block');
     $('#main').css('display', 'none');
     $('#footer').css('display', 'none');
@@ -29,7 +29,7 @@ $('#btnAdminLogin').click(function () {
 });
 
 
-$('#customerSignUp').click(function () {
+$('#customerSignUp, #mem-sign').click(function () {
     $('.cusSignUp').css('display', 'block');
     $('#main').css('display', 'none');
     $('#footer').css('display', 'none');
