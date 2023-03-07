@@ -1,3 +1,17 @@
+a {
+    text-decoration: none;
+}
+
+.mem {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px
+}
+
+.mem:hover {
+    color: #0d6efd;
+}
+
 /*nav bar*/
 #nav {
     /*border: 1px solid red;*/
@@ -225,7 +239,7 @@
     height: 82vh;
 }
 
-#contact > div:last-child{
+#contact > div:last-child {
     background: url("../img/bmw.png");
 }
 
@@ -317,7 +331,7 @@
     }
 }*/
 
-#deal{
+#deal {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -326,7 +340,7 @@
     width: 100%;
 }
 
-#deal h1{
+#deal h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     font-weight: normal;
@@ -390,13 +404,13 @@
     background-position-y: bottom;
 }
 
-.nav-pills button{
+.nav-pills button {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: normal;
 }
 
-#dashboardGrid div{
+#dashboardGrid div {
     /*border: 1px solid red;*/
     height: 80px;
     width: 100%;
@@ -407,7 +421,7 @@
     font-size: 14px;
 }
 
-#stDate, #enDate:hover{
+#stDate, #enDate:hover {
     cursor: pointer;
 }
 
