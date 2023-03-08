@@ -1,6 +1,8 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.dto.CustomerDTO;
+import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.service.CarService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +40,20 @@ public class CarController {
         ArrayList<CarDTO> allCars = service.allCars();
         return new ResponseUtil("200", "Success", allCars);
     }
+
+    @GetMapping(params = "carName")
+    public ResponseUtil getCarTypesByName(String carName){
+        System.out.println("1");
+        ArrayList<String> carTypes = service.getCarTypesByName(carName);
+        System.out.println("2");
+        return new ResponseUtil("200"," Success.!", carTypes);
+    }
+
+//    @GetMapping(params = "name")
+//    public ResponseUtil searchCarByName(String name){
+//        Car car = service.searchCarByName(name);
+//        return new ResponseUtil("200"," Success.!",car);
+
+//    }
 
 }

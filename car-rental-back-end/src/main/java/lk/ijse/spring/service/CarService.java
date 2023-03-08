@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.entity.Car;
 
 import java.util.ArrayList;
 
@@ -10,7 +11,13 @@ import java.util.ArrayList;
  **/
 
 public interface CarService {
-    public void saveCar(CarDTO dto);
-    public ArrayList<CarDTO> allCars();
-    public String generateID();
+    void saveCar(CarDTO dto);
+
+    ArrayList<CarDTO> allCars();
+
+    String generateID();
+
+    Car searchCarByName(String name);
+
+    ArrayList<String> getCarTypesByName(String carName);
 }

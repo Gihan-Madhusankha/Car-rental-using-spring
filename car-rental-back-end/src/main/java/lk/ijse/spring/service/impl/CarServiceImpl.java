@@ -45,4 +45,15 @@ public class CarServiceImpl implements CarService {
     public String generateID() {
         return repo.generateID();
     }
+
+    @Override
+    public Car searchCarByName(String name) {
+        return repo.searchCarByName(name);
+    }
+
+    @Override
+    public ArrayList<String> getCarTypesByName(String carName) {
+        System.out.println("3");
+        return repo.getCarTypesByName(carName);
+    }
 }
