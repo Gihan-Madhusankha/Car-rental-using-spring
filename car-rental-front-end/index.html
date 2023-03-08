@@ -412,64 +412,65 @@
         <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
             <h1 style="font-weight: bolder; margin-top: 120px">CUSTOMER SIGNUP</h1>
         </div>
-        <form id="customerSignUpForm" class="row g-3" style="font-family: 'Poppins', sans-serif; margin-left: 200px; margin-right: 200px">
+        <form class="row g-3" id="customerSignUpForm"
+              style="font-family: 'Poppins', sans-serif; margin-left: 200px; margin-right: 200px">
             <div class="col-md-4">
                 <label class="form-label" for="cusFullName">Full name</label>
-                <input class="form-control rounded-1" id="cusFullName" type="text" name="fullName" required>
+                <input class="form-control rounded-1" id="cusFullName" name="fullName" required type="text">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="inputUserName">User name</label>
-                <input class="form-control rounded-1" id="inputUserName" type="text" name="userName" required>
+                <input class="form-control rounded-1" id="inputUserName" name="userName" required type="text">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="inputPasswordCus">Password</label>
-                <input class="form-control rounded-1" id="inputPasswordCus" type="password" name="password" required>
+                <input class="form-control rounded-1" id="inputPasswordCus" name="password" required type="password">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-8">
                 <label class="form-label" for="cusAddress">Address</label>
-                <input class="form-control rounded-1" id="cusAddress" type="text" name="address" required>
+                <input class="form-control rounded-1" id="cusAddress" name="address" required type="text">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="cusContactNum">Contact</label>
-                <input class="form-control rounded-1" id="cusContactNum" type="number" name="contact" required>
+                <input class="form-control rounded-1" id="cusContactNum" name="contact" required type="number">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="cusEmail">Email</label>
-                <input class="form-control rounded-1" id="cusEmail" type="email" name="email" required>
+                <input class="form-control rounded-1" id="cusEmail" name="email" required type="email">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="cusNICNo">NIC no</label>
-                <input class="form-control rounded-1" id="cusNICNo" type="text" name="nicNo" required>
+                <input class="form-control rounded-1" id="cusNICNo" name="nicNo" required type="text">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="cusLicenseNum">License no</label>
-                <input class="form-control rounded-1" id="cusLicenseNum" type="text" name="licenseNo" required>
+                <input class="form-control rounded-1" id="cusLicenseNum" name="licenseNo" required type="text">
                 <span style="font-size: 12px; color: red"></span>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="yourImage">Your Image</label>
-                <input class="form-control rounded-1" id="yourImage" style="font-size: 14px"
-                       type="file" name="customerImage" required>
+                <input class="form-control rounded-1" id="yourImage" name="customerImage"
+                       required style="font-size: 14px" type="file">
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="identityCardImage">NIC</label>
-                <input class="form-control rounded-1" id="identityCardImage" style="font-size: 14px"
-                       type="file" name="nicImage" required>
+                <input class="form-control rounded-1" id="identityCardImage" name="nicImage"
+                       required style="font-size: 14px" type="file">
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="licenseImage">License</label>
-                <input class="form-control rounded-1" id="licenseImage" style="font-size: 14px"
-                       type="file" name="licenseImage" required>
+                <input class="form-control rounded-1" id="licenseImage" name="licenseImage"
+                       required style="font-size: 14px" type="file">
             </div>
             <div class="mb-3 form-check" style="font-size: 14px;">
-                <input class="form-check-input" id="checkCusSignUp" type="checkbox" required>
+                <input class="form-check-input" id="checkCusSignUp" required type="checkbox">
                 <label class="form-check-label" for="check">Agree to terms and conditions</label>
             </div>
             <div class="col-md-6" style="letter-spacing: 1px">
@@ -484,7 +485,7 @@
                 </button>
             </div>
             <div style="display: flex; justify-content: center; margin-top: 25px">
-                <a href="#" class="mem" id="mem-log">~Already an Account~</a>
+                <a class="mem" href="#" id="mem-log">~Already an Account~</a>
             </div>
         </form>
     </div>
@@ -517,7 +518,7 @@
                         type="button">LOGIN
                 </button>
                 <div style="display: flex; justify-content: center; margin-top: 25px">
-                    <a href="#" class="mem" id="mem-sign">Not a member..! Create an Account</a>
+                    <a class="mem" href="#" id="mem-sign">Not a member..! Create an Account</a>
                 </div>
                 <img alt="" class="btnBack" src="assets/img/back.png"
                      style="width: 50px; margin-top: 5px; cursor: pointer">
@@ -582,7 +583,8 @@
                     <label class="form-check-label" for="check" style="font-size: 14px">Remember me</label>
                 </div>
                 <button class="btn btn-primary rounded-1 w-100"
-                        id="adminLoginBtn" style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;" type="button">LOGIN
+                        id="adminLoginBtn" style="letter-spacing: 1px; font-family: 'Poppins', sans-serif;"
+                        type="button">LOGIN
                 </button>
                 <img alt="" class="btnBack" src="assets/img/back.png"
                      style="width: 50px; margin-top: 25px; cursor: pointer">
@@ -598,77 +600,103 @@
             <h1 style="font-weight: bolder; margin-top: 120px">Booking</h1>
         </div>
         <div style="display:flex; margin-left: 10px; justify-content:center; border: 1px solid red; width: 100%; height: 70vh; display: flex; justify-content: center; margin-top: 5px;">
-<!--            details-->
+            <!--            details-->
             <div>
-            <form class="row g-3">
-                <div class="col-md-3">
-                    <label for="bookingId" class="form-label">Booking ID</label>
-                    <input disabled type="text" class="form-control" id="bookingId">
-                </div>
-                <div class="col-md-3">
-                    <label for="bookingUsername" class="form-label">Username</label>
-                    <input disabled type="text" class="form-control" id="bookingUsername">
-                </div>
-                <div class="col-md-3">
-                    <label for="bookingAddress" class="form-label">Address</label>
-                    <input disabled type="text" class="form-control" id="bookingAddress">
-                </div>
-                <div class="col-md-3">
-                    <label for="bookingContact" class="form-label">Contact</label>
-                    <input disabled type="text" class="form-control" id="bookingContact">
-                </div>
-                <div class="col-md-2">
-                    <label class="form-label" for="selectVehicle"
-                           style="font-family: 'Poppins', sans-serif;">Select Vehicle</label>
-                    <select class="form-select" aria-label="Default select example" id="selectVehicle">
-                        <option selected>none</option>
-                        <option selected value="1">Suzuki </option>
-                        <option selected value="2">Perodua </option>
-                        <option selected value="2">Toyota </option>
-                        <option selected value="2">Mercedes</option>
-                        <option selected value="2">BMW</option>
-                    </select>
-                </div><div class="col-md-2">
-                    <label class="form-label" for="selectVehicleType"
-                           style="font-family: 'Poppins', sans-serif;">Vehicle Type</label>
-                    <select class="form-select" aria-label="Default select example" id="selectVehicleType">
-                        <option selected>none</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingCarAvailable" class="form-label">Available Cars</label>
-                    <input type="text" class="form-control" id="bookingCarAvailable" disabled>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingDailyRate" class="form-label">Daily Rate</label>
-                    <input type="text" class="form-control" id="bookingDailyRate" disabled>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingMonthlyRate" class="form-label">Monthly Rate</label>
-                    <input type="text" class="form-control" id="bookingMonthlyRate" disabled>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingFreeKMPerDay" class="form-label">Free Km Per Day</label>
-                    <input type="text" class="form-control" id="bookingFreeKMPerDay" disabled>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingFreeKMPerMonth" class="form-label">Free Km Per Month</label>
-                    <input type="text" class="form-control" id="bookingFreeKMPerMonth" disabled>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingFuelType" class="form-label">Fuel Type</label>
-                    <input type="text" class="form-control" id="bookingFuelType" disabled>
-                </div>
-                <div class="col-md-2">
-                    <label for="bookingPassengers" class="form-label">Passengers</label>
-                    <input type="text" class="form-control" id="bookingPassengers" disabled>
-                </div>
-
-
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                </div>
-            </form>
+                <form class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingId">Booking ID</label>
+                        <input class="form-control" disabled id="bookingId" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingUsername">Username</label>
+                        <input class="form-control" disabled id="bookingUsername" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingAddress">Address</label>
+                        <input class="form-control" disabled id="bookingAddress" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingContact">Contact</label>
+                        <input class="form-control" disabled id="bookingContact" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="selectVehicle"
+                               style="font-family: 'Poppins', sans-serif;">Select Vehicle</label>
+                        <select aria-label="Default select example" class="form-select" id="selectVehicle">
+                            <option selected>none</option>
+                            <option selected value="1">Suzuki</option>
+                            <option selected value="2">Perodua</option>
+                            <option selected value="2">Toyota</option>
+                            <option selected value="2">Mercedes</option>
+                            <option selected value="2">BMW</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="selectVehicleType"
+                               style="font-family: 'Poppins', sans-serif;">Vehicle Type</label>
+                        <select aria-label="Default select example" class="form-select" id="selectVehicleType">
+                            <option selected>none</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingCarAvailable">Available Cars</label>
+                        <input class="form-control" disabled id="bookingCarAvailable" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingDailyRate">Daily Rate</label>
+                        <input class="form-control" disabled id="bookingDailyRate" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingMonthlyRate">Monthly Rate</label>
+                        <input class="form-control" disabled id="bookingMonthlyRate" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingFreeKMPerDay">Free Km Per Day</label>
+                        <input class="form-control" disabled id="bookingFreeKMPerDay" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingFreeKMPerMonth">Free Km Per Month</label>
+                        <input class="form-control" disabled id="bookingFreeKMPerMonth" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingFuelType">Fuel Type</label>
+                        <input class="form-control" disabled id="bookingFuelType" type="text">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" for="bookingPassengers">Passengers</label>
+                        <input class="form-control" disabled id="bookingPassengers" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="selectDriver"
+                               style="font-family: 'Poppins', sans-serif;">Select Driver</label>
+                        <select aria-label="Default select example" class="form-select" id="selectDriver">
+                            <option selected>none</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingDriverFee">Driver Fee</label>
+                        <input class="form-control" disabled id="bookingDriverFee" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingPickUpDate">Pickup Date</label>
+                        <input class="form-control" id="bookingPickUpDate" type="date">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingPickUpTime">Pickup Time</label>
+                        <input class="form-control" id="bookingPickUpTime" type="time">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingReturnDate">Return Date</label>
+                        <input class="form-control" id="bookingReturnDate" type="date">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="bookingReturnTime">Return Time</label>
+                        <input class="form-control" id="bookingReturnTime" type="time">
+                    </div>
+                    <div class="col-12" style="display: flex; justify-content: right">
+                        <button class="btn btn-success" type="button" style="width: 220px; margin-top: 20px">BOOKING</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -978,7 +1006,7 @@
                                 <div class="col-md-6">
                                     <label class="form-label" for="adID" style="font-family: 'Poppins', sans-serif;">Admin
                                         ID</label>
-                                    <input disabled class="form-control" id="adID" type="text">
+                                    <input class="form-control" disabled id="adID" type="text">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="adminName"
@@ -1081,20 +1109,24 @@
                                                 <form class="row g-3">
                                                     <div class="col-md-6">
                                                         <label class="form-label" for="adUserId"
-                                                               style="font-family: 'Poppins', sans-serif;">Admin ID</label>
-                                                        <input class="form-control" id="adUserId" type="text" disabled>
+                                                               style="font-family: 'Poppins', sans-serif;">Admin
+                                                            ID</label>
+                                                        <input class="form-control" disabled id="adUserId" type="text">
                                                         <span class="navbar-toggler-icon"></span>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="form-label" for="adUserName"
-                                                               style="font-family: 'Poppins', sans-serif;">Admin Username</label>
-                                                        <input class="form-control" id="adUserName" type="text" disabled>
+                                                               style="font-family: 'Poppins', sans-serif;">Admin
+                                                            Username</label>
+                                                        <input class="form-control" disabled id="adUserName"
+                                                               type="text">
                                                         <span class="navbar-toggler-icon"></span>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="form-label" for="driverId"
-                                                               style="font-family: 'Poppins', sans-serif;">Driver ID</label>
-                                                        <input disabled class="form-control" id="driverId" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Driver
+                                                            ID</label>
+                                                        <input class="form-control" disabled id="driverId" type="text">
                                                         <span class="navbar-toggler-icon"></span>
                                                     </div>
                                                     <div class="col-6">
@@ -1125,8 +1157,10 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <label class="form-label" for="driverReleaseOrNot"
-                                                               style="font-family: 'Poppins', sans-serif;">Release or Not</label>
-                                                        <select class="form-select" aria-label="Default select example" id="driverReleaseOrNot">
+                                                               style="font-family: 'Poppins', sans-serif;">Release or
+                                                            Not</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="driverReleaseOrNot">
                                                             <option selected>none</option>
                                                             <option selected value="1">Release</option>
                                                             <option selected value="2">No Release</option>
@@ -1162,7 +1196,8 @@
 
                     </div>
                     <div style="display:flex; height: 390px; justify-content:center;">
-                        <table class="table table-striped table-sm table-hover" style="width: 80%; height: 300px; margin-top: 10px">
+                        <table class="table table-striped table-sm table-hover"
+                               style="width: 80%; height: 300px; margin-top: 10px">
                             <thead>
                             <tr>
                                 <th scope="col">Driver ID</th>
@@ -1204,12 +1239,14 @@
                                                                style="font-family: 'Poppins', sans-serif;">
                                                             Car ID
                                                         </label>
-                                                        <input disabled class="form-control" id="manageCarId" type="text">
+                                                        <input class="form-control" disabled id="manageCarId"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarBrand"
                                                                style="font-family: 'Poppins', sans-serif;">Brand</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarBrand">
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarBrand">
                                                             <option selected>none</option>
                                                             <option value="1">Suzuki</option>
                                                             <option value="2">Perodua</option>
@@ -1221,7 +1258,8 @@
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarColor"
                                                                style="font-family: 'Poppins', sans-serif;">Color</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarColor">
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarColor">
                                                             <option selected>none</option>
                                                             <option value="1">red</option>
                                                             <option value="2">gray</option>
@@ -1233,8 +1271,9 @@
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarType"
                                                                style="font-family: 'Poppins', sans-serif;">Type
-                                                            </label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarType">
+                                                        </label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarType">
                                                             <option selected>none</option>
                                                             <option value="1">Alto - Premium</option>
                                                             <option value="2">Alto K10</option>
@@ -1252,14 +1291,18 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarRegistrationNo"
-                                                               style="font-family: 'Poppins', sans-serif;">Registration No
-                                                            </label>
-                                                        <input class="form-control" id="manageCarRegistrationNo" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Registration
+                                                            No
+                                                        </label>
+                                                        <input class="form-control" id="manageCarRegistrationNo"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarFuelType"
-                                                               style="font-family: 'Poppins', sans-serif;">Fuel Type</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarFuelType">
+                                                               style="font-family: 'Poppins', sans-serif;">Fuel
+                                                            Type</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarFuelType">
                                                             <option selected>none</option>
                                                             <option value="1">Petrol</option>
                                                             <option value="2">Diesel</option>
@@ -1267,8 +1310,10 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarTransmissionType"
-                                                               style="font-family: 'Poppins', sans-serif;">Transmission Type</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarTransmissionType">
+                                                               style="font-family: 'Poppins', sans-serif;">Transmission
+                                                            Type</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarTransmissionType">
                                                             <option selected>none</option>
                                                             <option value="1">Auto</option>
                                                             <option value="2">Manual</option>
@@ -1276,38 +1321,52 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarNoOfPassengers"
-                                                               style="font-family: 'Poppins', sans-serif;">No of Passengers</label>
-                                                        <input class="form-control" id="manageCarNoOfPassengers" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">No of
+                                                            Passengers</label>
+                                                        <input class="form-control" id="manageCarNoOfPassengers"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarDailyRatePrice"
-                                                               style="font-family: 'Poppins', sans-serif;">Daily Rate Price</label>
-                                                        <input class="form-control" id="manageCarDailyRatePrice" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Daily Rate
+                                                            Price</label>
+                                                        <input class="form-control" id="manageCarDailyRatePrice"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarMonthlyRatePrice"
-                                                               style="font-family: 'Poppins', sans-serif;">Monthly Rate Price</label>
-                                                        <input class="form-control" id="manageCarMonthlyRatePrice" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Monthly Rate
+                                                            Price</label>
+                                                        <input class="form-control" id="manageCarMonthlyRatePrice"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarFreeKMPerDay"
-                                                               style="font-family: 'Poppins', sans-serif;">Free KM Per Day</label>
-                                                        <input class="form-control" id="manageCarFreeKMPerDay" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Free KM Per
+                                                            Day</label>
+                                                        <input class="form-control" id="manageCarFreeKMPerDay"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarFreeKMPerMonth"
-                                                               style="font-family: 'Poppins', sans-serif;">Free KM Per Month</label>
-                                                        <input class="form-control" id="manageCarFreeKMPerMonth" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Free KM Per
+                                                            Month</label>
+                                                        <input class="form-control" id="manageCarFreeKMPerMonth"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarPriceForExtraKm"
-                                                               style="font-family: 'Poppins', sans-serif;">Price for Extra KM</label>
-                                                        <input class="form-control" id="manageCarPriceForExtraKm" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Price for
+                                                            Extra KM</label>
+                                                        <input class="form-control" id="manageCarPriceForExtraKm"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarAvailableOrNot"
-                                                               style="font-family: 'Poppins', sans-serif;">Available or Not</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarAvailableOrNot">
+                                                               style="font-family: 'Poppins', sans-serif;">Available or
+                                                            Not</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarAvailableOrNot">
                                                             <option selected>none</option>
                                                             <option value="1">Available</option>
                                                             <option value="2">Not Available</option>
@@ -1315,8 +1374,10 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarDamageOrNot"
-                                                               style="font-family: 'Poppins', sans-serif;">Damage or Not</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarDamageOrNot">
+                                                               style="font-family: 'Poppins', sans-serif;">Damage or
+                                                            Not</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarDamageOrNot">
                                                             <option selected>none</option>
                                                             <option value="1">Damage</option>
                                                             <option value="2">Not Damage</option>
@@ -1324,8 +1385,10 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarUnderMaintainOrNot"
-                                                               style="font-family: 'Poppins', sans-serif;">Under Maintain or Not</label>
-                                                        <select class="form-select" aria-label="Default select example" id="manageCarUnderMaintainOrNot">
+                                                               style="font-family: 'Poppins', sans-serif;">Under
+                                                            Maintain or Not</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="manageCarUnderMaintainOrNot">
                                                             <option selected>none</option>
                                                             <option value="1">Under Maintain</option>
                                                             <option value="2">Not</option>
@@ -1333,29 +1396,39 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="form-label" for="manageCarTotalDistanceTravelled"
-                                                               style="font-family: 'Poppins', sans-serif;">Total Distance Travelled</label>
-                                                        <input class="form-control" id="manageCarTotalDistanceTravelled" type="text">
+                                                               style="font-family: 'Poppins', sans-serif;">Total
+                                                            Distance Travelled</label>
+                                                        <input class="form-control" id="manageCarTotalDistanceTravelled"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-md-9"></div>
                                                     <div class="col-md-3">
-                                                        <label class="form-label" for="manageCarFrontView">Front View</label>
-                                                        <input class="form-control rounded-1" id="manageCarFrontView" style="font-size: 14px"
+                                                        <label class="form-label" for="manageCarFrontView">Front
+                                                            View</label>
+                                                        <input class="form-control rounded-1" id="manageCarFrontView"
+                                                               style="font-size: 14px"
                                                                type="file">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label class="form-label" for="manageCarBackView">Back View</label>
-                                                        <input class="form-control rounded-1" id="manageCarBackView" style="font-size: 14px"
+                                                        <label class="form-label" for="manageCarBackView">Back
+                                                            View</label>
+                                                        <input class="form-control rounded-1" id="manageCarBackView"
+                                                               style="font-size: 14px"
                                                                type="file">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label class="form-label" for="manageCarSideView">Side View</label>
-                                                        <input class="form-control rounded-1" id="manageCarSideView" style="font-size: 14px"
+                                                        <label class="form-label" for="manageCarSideView">Side
+                                                            View</label>
+                                                        <input class="form-control rounded-1" id="manageCarSideView"
+                                                               style="font-size: 14px"
                                                                type="file">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label class="form-label" for="manageCarInteriorView">Interior View</label>
-                                                        <input class="form-control rounded-1" id="manageCarInteriorView" style="font-size: 14px"
-                                                               type="file" name="myfile">
+                                                        <label class="form-label" for="manageCarInteriorView">Interior
+                                                            View</label>
+                                                        <input class="form-control rounded-1" id="manageCarInteriorView"
+                                                               name="myfile"
+                                                               style="font-size: 14px" type="file">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div aria-label="Basic mixed styles example" class="btn-group"
@@ -1432,9 +1505,11 @@
                                                 <form class="row g-3">
                                                     <div class="col-md-6">
                                                         <label class="form-label" for="changeDriverReservationIDs"
-                                                               style="font-family: 'Poppins', sans-serif;">Reservation IDs
-                                                            </label>
-                                                        <select class="form-select" aria-label="Default select example" id="changeDriverReservationIDs">
+                                                               style="font-family: 'Poppins', sans-serif;">Reservation
+                                                            IDs
+                                                        </label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="changeDriverReservationIDs">
                                                             <option selected>none</option>
                                                             <option value="1">One</option>
                                                             <option value="2">Two</option>
@@ -1444,8 +1519,10 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="form-label" for="changeDriverCarIDs"
-                                                               style="font-family: 'Poppins', sans-serif;">Car ID</label>
-                                                        <select class="form-select" aria-label="Default select example" id="changeDriverCarIDs">
+                                                               style="font-family: 'Poppins', sans-serif;">Car
+                                                            ID</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="changeDriverCarIDs">
                                                             <option selected>none</option>
                                                             <option value="1">One</option>
                                                             <option value="2">Two</option>
@@ -1456,19 +1533,23 @@
                                                         <label class="form-label" for="changeDriverOldDriverID"
                                                                style="font-family: 'Poppins', sans-serif;">Old Driver
                                                             ID</label>
-                                                        <input class="form-control" id="changeDriverOldDriverID" type="text">
+                                                        <input class="form-control" id="changeDriverOldDriverID"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-6">
                                                         <label class="form-label" for="changeOldDriverName"
                                                                style="font-family: 'Poppins', sans-serif;">Old Driver
                                                             Name</label>
-                                                        <input class="form-control" id="changeOldDriverName" type="text">
+                                                        <input class="form-control" id="changeOldDriverName"
+                                                               type="text">
                                                     </div>
                                                     <div class="col-12">
                                                         <label class="form-label" for="chooseNewDriver"
-                                                               style="font-family: 'Poppins', sans-serif;">Choose New Driver
-                                                            </label>
-                                                        <select class="form-select" aria-label="Default select example" id="chooseNewDriver">
+                                                               style="font-family: 'Poppins', sans-serif;">Choose New
+                                                            Driver
+                                                        </label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="chooseNewDriver">
                                                             <option selected>none</option>
                                                             <option value="1">One</option>
                                                             <option value="2">Two</option>
@@ -1477,12 +1558,14 @@
                                                     </div>
                                                     <div class="col-6">
                                                         <label class="form-label" for="newDriverName"
-                                                               style="font-family: 'Poppins', sans-serif;">New Driver Name</label>
+                                                               style="font-family: 'Poppins', sans-serif;">New Driver
+                                                            Name</label>
                                                         <input class="form-control" id="newDriverName" type="number">
                                                     </div>
                                                     <div class="col-6">
                                                         <label class="form-label" for="newDriverContact"
-                                                               style="font-family: 'Poppins', sans-serif;">New Driver Contact</label>
+                                                               style="font-family: 'Poppins', sans-serif;">New Driver
+                                                            Contact</label>
                                                         <input class="form-control" id="newDriverContact" type="number">
                                                     </div>
                                                     <div class="col-12">
@@ -1514,12 +1597,9 @@
                                 <th scope="col">Customer</th>
                                 <th scope="col">Pickup Date</th>
                                 <th scope="col">Pickup Time</th>
-                                <th scope="col">Pickup Venue</th>
                                 <th scope="col">Return Date</th>
                                 <th scope="col">Return Time</th>
-                                <th scope="col">Return Venue</th>
-                                <th scope="col">Destination</th>
-                                <th scope="col">Duration</th>
+                                <th scope="col">Duration(D)</th>
                                 <th scope="col">Driver (or/not)</th>
                                 <th scope="col">Accept or Deny</th>
                             </tr>
