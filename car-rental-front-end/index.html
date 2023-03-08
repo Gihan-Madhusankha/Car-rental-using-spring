@@ -597,49 +597,75 @@
         <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
             <h1 style="font-weight: bolder; margin-top: 120px">Booking</h1>
         </div>
-        <div style="display:flex; justify-content:center; border: 1px solid red; width: 100%; height: 70vh; display: flex; justify-content: center; margin-top: 5px;">
+        <div style="display:flex; margin-left: 10px; justify-content:center; border: 1px solid red; width: 100%; height: 70vh; display: flex; justify-content: center; margin-top: 5px;">
 <!--            details-->
             <div>
             <form class="row g-3">
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <label for="bookingId" class="form-label">Booking ID</label>
+                    <input disabled type="text" class="form-control" id="bookingId">
+                </div>
+                <div class="col-md-3">
                     <label for="bookingUsername" class="form-label">Username</label>
                     <input disabled type="text" class="form-control" id="bookingUsername">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="bookingAddress" class="form-label">Address</label>
                     <input disabled type="text" class="form-control" id="bookingAddress">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="bookingContact" class="form-label">Contact</label>
                     <input disabled type="text" class="form-control" id="bookingContact">
                 </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
+                <div class="col-md-2">
+                    <label class="form-label" for="selectVehicle"
+                           style="font-family: 'Poppins', sans-serif;">Select Vehicle</label>
+                    <select class="form-select" aria-label="Default select example" id="selectVehicle">
+                        <option selected>none</option>
+                        <option selected value="1">Suzuki Alto Premium</option>
+                        <option selected value="1">Suzuki Alto K10</option>
+                        <option selected value="1">Suzuki Celerio</option>
+                        <option selected value="2">Perodua (Daihatsu) Axia</option>
+                        <option selected value="2">Toyota Prius C/ Aqua</option>
+                        <option selected value="2">Toyota Corolla Axio/ NZE141</option>
+                        <option selected value="2">Perodua Bezza Prime Sedan</option>
+                        <option selected value="2">Toyota Allion NZT 260</option>
+                        <option selected value="2">Toyota Axio NKR 165</option>
+                        <option selected value="2">Toyota Premio</option>
+                        <option selected value="2">Mercedes C200</option>
+                        <option selected value="2">BMW i8</option>
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <label for="bookingCarAvailable" class="form-label">Available or Not</label>
+                    <input type="text" class="form-control" id="bookingCarAvailable">
                 </div>
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
+                <div class="col-md-2">
+                    <label for="bookingDailyRate" class="form-label">Daily Rate</label>
+                    <input type="text" class="form-control" id="bookingDailyRate">
                 </div>
+                <div class="col-md-2">
+                    <label for="bookingMonthlyRate" class="form-label">Monthly Rate</label>
+                    <input type="text" class="form-control" id="bookingMonthlyRate">
+                </div>
+                <div class="col-md-2">
+                    <label for="bookingFreeKMPerDay" class="form-label">Free Km Per Day</label>
+                    <input type="text" class="form-control" id="bookingFreeKMPerDay">
+                </div>
+                <div class="col-md-2">
+                    <label for="bookingFreeKMPerMonth" class="form-label">Free Km Per Month</label>
+                    <input type="text" class="form-control" id="bookingFreeKMPerMonth">
+                </div>
+                <div class="col-md-2">
+                    <label for="bookingFuelType" class="form-label">Fuel Type</label>
+                    <input type="text" class="form-control" id="bookingFuelType">
+                </div>
+                <div class="col-md-3">
+                    <label for="bookingPassengers" class="form-label">Passengers</label>
+                    <input type="text" class="form-control" id="bookingPassengers">
+                </div>
+
+
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Sign in</button>
                 </div>
