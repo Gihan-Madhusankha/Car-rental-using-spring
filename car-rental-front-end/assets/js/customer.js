@@ -269,9 +269,6 @@ $('#btnCusLogin').click(function () {
         url: baseURL + "customer?username=" + username,
         method: "get",
         success: function (resp) {
-            console.log(resp.data);
-            console.log('c',resp.data.contact);
-            console.log('e',resp.data.email);
             if ($('#passwordCus').val() === resp.data.password) {
                 $('.driverLogin').css('display', 'none');
                 $('#main').css('display', 'none');
