@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.service.CustomerService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,9 @@ public class CustomerController {
     }
 
     @GetMapping(params = {"username"})
-    public ResponseUtil getPassword(@RequestParam String username){
-        String password = service.getPassword(username);
-        return new ResponseUtil("200", "Done", password);
+    public ResponseUtil findCustomerByName(@RequestParam String username){
+        Customer customerByName = service.findCustomerByName(username);
+        return new ResponseUtil("200", "Done", customerByName);
     }
 
 }

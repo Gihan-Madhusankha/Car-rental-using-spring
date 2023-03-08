@@ -6,6 +6,18 @@ $('#btnCustomerLogin, #mem-log').click(function () {
     $('.driverLogin').css('display', 'none');
     $('.adminLogin').css('display', 'none');
     $('#adminDash').css('display', 'none');
+    $('.booking-form').css('display', 'none');
+});
+
+$('#btnCusLogin').click(function () {
+    $('.driverLogin').css('display', 'none');
+    $('#main').css('display', 'none');
+    $('#footer').css('display', 'none');
+    $('.cusSignUp').css('display', 'none');
+    $('.adminLogin').css('display', 'none');
+    $('.cusLogin').css('display', 'none');
+    $('#adminDash').css('display', 'none');
+    $('.booking-form').css('display', 'block');
 });
 
 $('#btnDriverLogin').click(function () {
@@ -16,6 +28,7 @@ $('#btnDriverLogin').click(function () {
     $('.adminLogin').css('display', 'none');
     $('.cusLogin').css('display', 'none');
     $('#adminDash').css('display', 'none');
+    $('.booking-form').css('display', 'none');
 });
 
 $('#btnAdminLogin').click(function () {
@@ -26,6 +39,7 @@ $('#btnAdminLogin').click(function () {
     $('.cusLogin').css('display', 'none');
     $('.driverLogin').css('display', 'none');
     $('#adminDash').css('display', 'none');
+    $('.booking-form').css('display', 'none');
 });
 
 
@@ -36,7 +50,6 @@ $('#customerSignUp, #mem-sign').click(function () {
     $('.cusLogin').css('display', 'none');
     $('.driverLogin').css('display', 'none');
     $('.adminLogin').css('display', 'none');
-    $('#adminDash').css('display', 'none');
 });
 
 $('#cusSignUpCancel, .btnBack').click(function () {
@@ -47,6 +60,7 @@ $('#cusSignUpCancel, .btnBack').click(function () {
     $('#main').css('display', 'block');
     $('#footer').css('display', 'flex');
     $('#adminDash').css('display', 'none');
+    $('.booking-form').css('display', 'none');
 });
 
 // $('#adminLoginBtn').click(function () {
@@ -265,8 +279,13 @@ $('#btnCusLogin').click(function () {
         url: baseURL + "customer?username=" + username,
         method: "get",
         success: function (resp) {
-            if ($('#passwordCus').val() == resp.data) {
+            console.log(resp.data);
+            console.log('c',resp.data.contact);
+            console.log('e',resp.data.email);
+            if ($('#passwordCus').val() === resp.data) {
                 console.log('password', resp.data);
+                setCusDetailsOfBooking(username);
+
             } else {
                 alert('username or password is wrong...');
             }
@@ -274,9 +293,13 @@ $('#btnCusLogin').click(function () {
         error: function (error) {
             console.log(error.message);
         }
-
     });
 });
+
+function setCusDetailsOfBooking(username){
+
+}
+
 
 $('#usernameCus, #passwordCus').on('keyup', function () {
     checkValidity();

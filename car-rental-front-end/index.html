@@ -591,6 +591,64 @@
     </div>
 </section>
 
+<!--booking form-->
+<section class="booking-form row bg-light" style="display: none; width: 100%; height: 100vh;">
+    <div style="width: 100%; height: 100vh;">
+        <div style="display: flex; justify-content: center; font-family: 'Poppins', sans-serif;">
+            <h1 style="font-weight: bolder; margin-top: 120px">Booking</h1>
+        </div>
+        <div style="display:flex; justify-content:center; border: 1px solid red; width: 100%; height: 70vh; display: flex; justify-content: center; margin-top: 5px;">
+<!--            details-->
+            <div>
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="bookingUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="bookingUsername">
+                </div>
+                <div class="col-md-4">
+                    <label for="bookingAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="bookingAddress">
+                </div>
+                <div class="col-md-4">
+                    <label for="bookingContact" class="form-label">Contact</label>
+                    <input type="text" class="form-control" id="bookingContact">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="inputZip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Check me out
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!--admin dashboard-->
 <section id="adminDash" style="display: none; width: 100%; height: 82vh;">
     <aside style="display: flex; width: 100%; height: 82vh">

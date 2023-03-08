@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CustomerDTO;
+import lk.ijse.spring.entity.Customer;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,6 @@ import java.util.ArrayList;
 
 public interface CustomerService {
     public void saveCustomer(CustomerDTO dto);
-    public String getPassword(String username);
+    public Customer findCustomerByName(String username);
     public ArrayList<CustomerDTO> allCustomers();
 }
