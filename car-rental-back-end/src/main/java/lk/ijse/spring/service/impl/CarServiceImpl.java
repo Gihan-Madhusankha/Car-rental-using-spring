@@ -47,13 +47,13 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car searchCarByName(String name) {
-        return repo.searchCarByName(name);
+    public Car searchCarByName(String carType) {
+        System.out.println("3");
+        return repo.searchCarByName(carType);
     }
 
     @Override
     public ArrayList<String> getCarTypesByName(String carName) {
-        System.out.println("3");
         return repo.getCarTypesByName(carName);
     }
 }

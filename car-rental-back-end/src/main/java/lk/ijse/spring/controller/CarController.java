@@ -43,17 +43,16 @@ public class CarController {
 
     @GetMapping(params = "carName")
     public ResponseUtil getCarTypesByName(String carName){
-        System.out.println("1");
         ArrayList<String> carTypes = service.getCarTypesByName(carName);
-        System.out.println("2");
         return new ResponseUtil("200"," Success.!", carTypes);
     }
 
-//    @GetMapping(params = "name")
-//    public ResponseUtil searchCarByName(String name){
-//        Car car = service.searchCarByName(name);
-//        return new ResponseUtil("200"," Success.!",car);
-
-//    }
+    @GetMapping(path = "/c", params = "carType")
+    public ResponseUtil searchCarByName(String carType){
+        System.out.println("1");
+        Car car = service.searchCarByName(carType);
+        System.out.println("2");
+        return new ResponseUtil("200"," Success.!",car);
+    }
 
 }

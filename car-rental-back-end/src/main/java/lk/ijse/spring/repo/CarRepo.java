@@ -15,8 +15,8 @@ public interface CarRepo extends JpaRepository<Car, String> {
     @Query(value = "select manageCarId from Car order by manageCarId desc limit 1", nativeQuery = true)
     String generateID();
 
-    @Query(value = "select * from car where manageCarType = ?1", nativeQuery = true)
-    Car searchCarByName(String name);
+    @Query(value = "select DISTINCT * from car where manageCarType = ?1 Group by manageCarType", nativeQuery = true)
+    Car searchCarByName(String carType);
 
     @Query(value = "select DISTINCT manageCarType from car where manageCarBrand = ?1", nativeQuery = true)
     ArrayList<String> getCarTypesByName(String carName);

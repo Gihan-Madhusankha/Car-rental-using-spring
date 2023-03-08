@@ -1,16 +1,6 @@
 $('#selectVehicle').change(function(){
     let carName = $("#selectVehicle option:selected").text();
-    // $("#orderCustomerID").val(cusID);
-    let res = searchVehicle(carName);
-    // if (res.length > 0) {
-    //     $("#bookingCarAvailable").val(res[0].manageCarAvailableOrNot);
-    //     $("#bookingDailyRate").val(res[0].manageCarAvailableOrNot);
-    //     $("#bookingMonthlyRate").val(res[0].manageCarAvailableOrNot);
-    //     $("#bookingFreeKMPerDay").val(res[0].manageCarAvailableOrNot);
-    //     $("#bookingFreeKMPerMonth").val(res[0].manageCarAvailableOrNot);
-    //     $("#bookingFuelType").val(res[0].manageCarAvailableOrNot);
-    //     $("#bookingPassengers").val(res[0].manageCarAvailableOrNot);
-    // }
+    searchVehicle(carName);
 });
 
 function searchVehicle(carName){
@@ -24,11 +14,48 @@ function searchVehicle(carName){
             for (let c of resp.data) {
                 $('#selectVehicleType').append(`<option value="1">${c}</option>`);
             }
-            // response = resp.data.filter((c) => {
-            //     return c.manageCarId == carName;
-            // });
         }
     });
     return response;
 }
 
+
+$('#selectVehicleType').change(function (){
+    let carType = $("#selectVehicleType option:selected").text();
+    console.log(carType);
+    let res = searchVehicleType(carType);
+    /*if (res.length > 0) {
+        $("#bookingCarAvailable").val(res[0]);
+        $("#bookingDailyRate").val(res[0].manageCarAvailableOrNot);
+        $("#bookingMonthlyRate").val(res[0].manageCarAvailableOrNot);
+        $("#bookingFreeKMPerDay").val(res[0].manageCarAvailableOrNot);
+        $("#bookingFreeKMPerMonth").val(res[0].manageCarAvailableOrNot);
+        $("#bookingFuelType").val(res[0].manageCarAvailableOrNot);
+        $("#bookingPassengers").val(res[0].manageCarAvailableOrNot);
+    }*/
+});
+
+function searchVehicleType(carType){
+    let response = "";
+    $.ajax({
+        url: baseURL + "car/c?carType=" + carType,
+        dataType: "json",
+        async: false,
+        success: function (resp) {
+            console.log('resp ', resp);
+            console.log('resp.data ', resp.data);
+            // response = resp.data.filter((c) => {
+            //     return c.manageCarType == carType;
+            // });
+
+            $("#bookingCarAvailable").val(resp.data.manageCarAvailableOrNot);
+            $("#bookingDailyRate").val(resp.data.manageCarDailyRatePrice);
+            $("#bookingMonthlyRate").val(resp.data.manageCarMonthlyRatePrice);
+            $("#bookingFreeKMPerDay").val(resp.data.manageCarFreeKMPerDay);
+            $("#bookingFreeKMPerMonth").val(resp.data.manageCarFreeKMPerMonth);
+            $("#bookingFuelType").val(resp.data.manageCarFuelType);
+            $("#bookingPassengers").val(resp.data.manageCarNoOfPassengers);
+        }
+    });
+    // return response;
+}

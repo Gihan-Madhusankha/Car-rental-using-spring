@@ -17,7 +17,7 @@ public interface CarService {
 
     String generateID();
 
-    Car searchCarByName(String name);
+    Car searchCarByName(String carType);
 
     ArrayList<String> getCarTypesByName(String carName);
 }
