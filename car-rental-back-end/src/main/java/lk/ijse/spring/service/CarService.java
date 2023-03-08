@@ -20,4 +20,6 @@ public interface CarService {
     Car searchCarByName(String carType);
 
     ArrayList<String> getCarTypesByName(String carName);
+
+    int getAvailableCars(String c);
 }

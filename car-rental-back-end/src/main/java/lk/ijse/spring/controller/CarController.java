@@ -49,10 +49,14 @@ public class CarController {
 
     @GetMapping(path = "/c", params = "carType")
     public ResponseUtil searchCarByName(String carType){
-        System.out.println("1");
         Car car = service.searchCarByName(carType);
-        System.out.println("2");
         return new ResponseUtil("200"," Success.!",car);
+    }
+
+    @GetMapping(params = "c")
+    public ResponseUtil getAvailableCars(String c){
+        int count = service.getAvailableCars(c);
+        return new ResponseUtil("200"," Success.!", count);
     }
 
 }

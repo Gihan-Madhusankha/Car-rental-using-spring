@@ -42,13 +42,9 @@ function searchVehicleType(carType){
         dataType: "json",
         async: false,
         success: function (resp) {
-            console.log('resp ', resp);
-            console.log('resp.data ', resp.data);
-            // response = resp.data.filter((c) => {
-            //     return c.manageCarType == carType;
-            // });
+            getAvailableCars(resp.data.manageCarType);
 
-            $("#bookingCarAvailable").val(resp.data.manageCarAvailableOrNot);
+            // $("#bookingCarAvailable").val(availableCars);
             $("#bookingDailyRate").val(resp.data.manageCarDailyRatePrice);
             $("#bookingMonthlyRate").val(resp.data.manageCarMonthlyRatePrice);
             $("#bookingFreeKMPerDay").val(resp.data.manageCarFreeKMPerDay);
@@ -57,5 +53,14 @@ function searchVehicleType(carType){
             $("#bookingPassengers").val(resp.data.manageCarNoOfPassengers);
         }
     });
-    // return response;
+}
+
+function getAvailableCars(c){
+    $.ajax({
+        url: baseURL+"car?c="+c,
+        method: "get",
+        success: function (resp){
+            $("#bookingCarAvailable").val(resp.data);
+        }
+    });
 }
