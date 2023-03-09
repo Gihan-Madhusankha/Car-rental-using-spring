@@ -29,9 +29,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void saveCar(CarDTO dto) {
-        if (repo.existsById(dto.getManageCarId())) {
-            throw new RuntimeException("Car "+dto.getManageCarId()+ " id is Already Exists");
-        }
+//        if (repo.existsById(dto.getManageCarId())) {
+//            throw new RuntimeException("Car "+dto.getManageCarId()+ " id is Already Exists");
+//        }
         Car entity = modelMapper.map(dto, Car.class);
         repo.save(entity);
     }
@@ -59,5 +59,17 @@ public class CarServiceImpl implements CarService {
     @Override
     public int getAvailableCars(String c) {
         return repo.getAvailableCars(c);
+    }
+
+    @Override
+    public void updateAvailableCars(CarDTO dto) {
+        System.out.println("3");
+        Car entity = modelMapper.map(dto, Car.class);
+        repo.save(entity);
+    }
+
+    @Override
+    public Car getLastAvailableCarDetails(String lastAvailableCarType) {
+        return repo.getLastAvailableCarDetails(lastAvailableCarType);
     }
 }

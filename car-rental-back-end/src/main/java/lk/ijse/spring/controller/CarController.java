@@ -29,6 +29,14 @@ public class CarController {
         return new ResponseUtil("200", "Success", null);
     }
 
+    @PutMapping
+    public ResponseUtil updateAvailableCars(@RequestBody CarDTO dto){
+        System.out.println("1");
+        service.updateAvailableCars(dto);
+        System.out.println("2");
+        return new ResponseUtil("200", "Updated", null);
+    }
+
     @GetMapping(path = "/generate")
     public ResponseUtil generateID() {
         String id = service.generateID();
@@ -50,6 +58,12 @@ public class CarController {
     @GetMapping(path = "/c", params = "carType")
     public ResponseUtil searchCarByName(String carType){
         Car car = service.searchCarByName(carType);
+        return new ResponseUtil("200"," Success.!",car);
+    }
+
+    @GetMapping(path = "/c", params = "lastAvailableCarType")
+    public ResponseUtil getLastAvailableCarDetails(String lastAvailableCarType){
+        Car car = service.getLastAvailableCarDetails(lastAvailableCarType);
         return new ResponseUtil("200"," Success.!",car);
     }
 

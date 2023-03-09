@@ -1,9 +1,9 @@
-$('#selectVehicle').change(function(){
+$('#selectVehicle').change(function () {
     let carName = $("#selectVehicle option:selected").text();
     searchVehicle(carName);
 });
 
-function searchVehicle(carName){
+function searchVehicle(carName) {
     let response = "";
     $.ajax({
         url: baseURL + "car?carName=" + carName,
@@ -20,7 +20,7 @@ function searchVehicle(carName){
 }
 
 
-$('#selectVehicleType').change(function (){
+$('#selectVehicleType').change(function () {
     let carType = $("#selectVehicleType option:selected").text();
     console.log(carType);
     let res = searchVehicleType(carType);
@@ -35,7 +35,7 @@ $('#selectVehicleType').change(function (){
     }*/
 });
 
-function searchVehicleType(carType){
+function searchVehicleType(carType) {
     let response = "";
     $.ajax({
         url: baseURL + "car/c?carType=" + carType,
@@ -55,20 +55,21 @@ function searchVehicleType(carType){
     });
 }
 
-function getAvailableCars(c){
+function getAvailableCars(c) {
     $.ajax({
-        url: baseURL+"car?c="+c,
+        url: baseURL + "car?c=" + c,
         method: "get",
-        success: function (resp){
+        success: function (resp) {
             $("#bookingCarAvailable").val(resp.data);
         }
     });
 }
 
 generateBookingID();
-function generateBookingID(){
+
+function generateBookingID() {
     $.ajax({
-        url: baseURL + "booking/generate",
+        url: baseURL + "reserve/generate",
         method: "get",
         success: function (resp) {
             let bId = resp.data;
@@ -77,7 +78,7 @@ function generateBookingID(){
             } else {
                 let bIdNo = parseInt(bId.substr(2, 5)) + 1;
                 console.log(bIdNo);
-                $('#manageCarId').val('B-' + bIdNo.toString().padStart(3, '0'));
+                $('#bookingId').val('B-' + bIdNo.toString().padStart(3, '0'));
             }
         },
         error: function (error) {
@@ -88,11 +89,12 @@ function generateBookingID(){
 }
 
 loadDrivers();
-function loadDrivers(){
+
+function loadDrivers() {
     $.ajax({
-        url: baseURL+"driver",
+        url: baseURL + "driver",
         method: "get",
-        success: function (resp){
+        success: function (resp) {
             $('#selectDriver').empty();
             $('#selectDriver').append(`<option value="1">none</option>`);
             for (let driver of resp.data) {
@@ -102,13 +104,124 @@ function loadDrivers(){
     });
 }
 
-$('#selectDriver').change(function (){
+$('#selectDriver').change(function () {
     var a = $('#selectDriver option:selected').text();
     console.log(a);
-    console.log(a=='none');
-    if (a=='none'){
+    console.log(a == 'none');
+    if (a == 'none') {
         $('#bookingDriverFee').val(0.00);
-    }else {
+    } else {
         $('#bookingDriverFee').val(1500.00);
     }
 });
+
+$('#btnBooking').click(function () {
+    var booking = {
+        reserveID: $('#bookingId').val(),
+        reserveDate: $('#bookingPickUpDate').val(),
+        cusUsername: $('#bookingUsername').val(),
+        pickDate: $('#bookingPickUpDate').val(),
+        pickTime: $('#bookingPickUpTime').val(),
+        returnDate: $('#bookingReturnDate').val(),
+        returnTime: $('#bookingReturnTime').val(),
+        duration: getDays($('#bookingPickUpDate').val(), $('#bookingReturnDate').val()),
+        driverID: $('#selectDriver option:selected').text()
+    }
+
+    $.ajax({
+        url: baseURL + "reserve",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(booking),
+        success: function (resp) {
+            alert('Booking successfully');
+            generateBookingID();
+            updateAvailableCars();
+            clearFields();
+        }
+    });
+
+    console.log(booking);
+});
+
+function getDays(a, b) {
+    const startDate = new Date(a);
+    const endDate = new Date(b);
+
+    const timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+    const numDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    console.log('numDays : ', numDays);
+    return numDays;
+}
+
+function updateAvailableCars() {
+    var lastAvailableCarType = $('#selectVehicleType option:selected').text();
+    console.log(lastAvailableCarType);
+    $.ajax({
+        url: baseURL + "car/c?lastAvailableCarType=" + lastAvailableCarType,
+        method: "get",
+        success: function (resp) {
+            console.log("f :", resp.data);
+            console.log("f :", resp.data.manageCarId);
+            console.log("f :", resp.data.manageCarType);
+            updateAvailableCarDetails(resp);
+            // clearFields();
+
+        }
+    });
+}
+
+function updateAvailableCarDetails(resp){
+    var carD = {
+        manageCarId: resp.data.manageCarId,
+        manageCarBrand: resp.data.manageCarBrand,
+        manageCarColor: resp.data.manageCarColor,
+        manageCarType: resp.data.manageCarType,
+        manageCarRegistrationNo: resp.data.manageCarRegistrationNo,
+        manageCarFuelType: resp.data.manageCarFuelType,
+        manageCarTransmissionType: resp.data.manageCarTransmissionType,
+        manageCarNoOfPassengers: resp.data.manageCarNoOfPassengers,
+        manageCarDailyRatePrice: resp.data.manageCarDailyRatePrice,
+        manageCarMonthlyRatePrice: resp.data.manageCarMonthlyRatePrice,
+        manageCarFreeKMPerDay: resp.data.manageCarFreeKMPerDay,
+        manageCarFreeKMPerMonth: resp.data.manageCarFreeKMPerMonth,
+        manageCarTotalDistanceTravelled: resp.data.manageCarTotalDistanceTravelled,
+        manageCarPriceForExtraKm: resp.data.manageCarPriceForExtraKm,
+        manageCarInteriorView: resp.data.manageCarInteriorView,
+        manageCarBackView: resp.data.manageCarBackView,
+        manageCarSideView: resp.data.manageCarSideView,
+        manageCarFrontView: resp.data.manageCarFrontView,
+        manageCarAvailableOrNot: "Not Available",
+        manageCarDamageOrNot: resp.data.manageCarDamageOrNot,
+        manageCarUnderMaintainOrNot:resp.data.manageCarUnderMaintainOrNot
+    }
+    console.log('resp : ',resp.data);
+    console.log('carD : ',carD);
+
+    $.ajax({
+        url: baseURL + "car",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(carD),
+        success: function () {
+            //alert('updated');
+            console.log(carD);
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
+
+function clearFields() {
+    $('#bookingCarAvailable').val("");
+    $('#bookingDailyRate').val("");
+    $('#bookingMonthlyRate').val("");
+    $('#bookingFreeKMPerDay').val("");
+    $('#bookingFreeKMPerMonth').val("");
+    $('#bookingFuelType').val("");
+    $('#bookingPassengers').val("");
+    $('#selectDriver option:selected').text("none");
+    $('#bookingDriverFee').val("0");
+}

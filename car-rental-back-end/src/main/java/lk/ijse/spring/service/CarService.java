@@ -22,4 +22,8 @@ public interface CarService {
     ArrayList<String> getCarTypesByName(String carName);
 
     int getAvailableCars(String c);
+
+    void updateAvailableCars(CarDTO dto);
+
+    Car getLastAvailableCarDetails(String lastAvailableCarType);
 }

@@ -28,13 +28,13 @@ public class CustomerController {
     }
 
     @GetMapping
-    public ResponseUtil allCustomers(){
+    public ResponseUtil allCustomers() {
         ArrayList<CustomerDTO> allCustomers = service.allCustomers();
         return new ResponseUtil("200", "Success", allCustomers);
     }
 
     @GetMapping(params = {"username"})
-    public ResponseUtil findCustomerByName(@RequestParam String username){
+    public ResponseUtil findCustomerByName(@RequestParam String username) {
         Customer customerByName = service.findCustomerByName(username);
         return new ResponseUtil("200", "Done", customerByName);
     }
