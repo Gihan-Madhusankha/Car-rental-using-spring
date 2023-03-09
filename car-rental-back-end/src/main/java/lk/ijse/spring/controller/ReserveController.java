@@ -6,6 +6,8 @@ import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Gihan Madhusankha
  * 2023-03-09 1:45 AM
@@ -29,6 +31,12 @@ public class ReserveController {
     public ResponseUtil generateReserveID() {
         String id = service.generateReserveID();
         return new ResponseUtil("200", "Success", id);
+    }
+
+    @GetMapping
+    public ResponseUtil getAllReserves() {
+        ArrayList<ReserveDTO> res = service.allReserves();
+        return new ResponseUtil("200", "Success", res);
     }
 
 }

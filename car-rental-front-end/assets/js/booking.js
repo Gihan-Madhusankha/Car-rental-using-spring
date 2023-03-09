@@ -225,3 +225,22 @@ function clearFields() {
     $('#selectDriver option:selected').text("none");
     $('#bookingDriverFee').val("0");
 }
+
+loadAllReserves();
+function loadAllReserves(){
+    $.ajax({
+        url: baseURL + "reserve",
+        method: "get",
+        dataType: "json",
+        success: function (resp) {
+            $('#tblRentalDetail').empty();
+            for (let res of resp.data) {
+                $('#tblRentalDetail').append(`<tr><td> ${res.reserveID} </td><td> ${res.reserveDate} </td><td> ${res.customerID} </td><td> ${res.pickDate} </td><td> ${res.pickTime} </td><td> ${res.returnDate} </td><td> ${res.returnTime} </td><td> ${res.duration} </td><td> ${res.driverID} </td></tr>`);
+            }
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
