@@ -694,7 +694,9 @@
                         <input class="form-control" id="bookingReturnTime" type="time">
                     </div>
                     <div class="col-12" style="display: flex; justify-content: right">
-                        <button id="btnBooking" class="btn btn-success" type="button" style="width: 220px; margin-top: 20px">BOOKING</button>
+                        <button class="btn btn-success" id="btnBooking" style="width: 220px; margin-top: 20px"
+                                type="button">BOOKING
+                        </button>
                     </div>
                 </form>
             </div>
@@ -1640,8 +1642,97 @@
                      tabindex="0">
                     <div class="main-title" style="display: flex; justify-content: center;"><h1
                             style="font-family: 'Poppins', sans-serif">PAYMENT DETAILS</h1></div>
+                    <!--                    =========================-->
+
+                    <div style="width: 90%; display: flex; justify-content: right">
+
+                        <div aria-hidden="true" aria-labelledby="exampleModalToggleLabel10" class="modal fade"
+                             id="exampleModalToggle10" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel10">Payment</h1>
+                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                type="button"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- manage driver-->
+                                        <div style="display:flex; justify-content:center;">
+                                            <div style="width: 80%">
+                                                <form class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="paymentID"
+                                                               style="font-family: 'Poppins', sans-serif;">Payment
+                                                            ID</label>
+                                                        <input class="form-control" id="paymentID" type="text">
+                                                        <!--                                                        <span class="navbar-toggler-icon"></span>-->
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="damageFee"
+                                                               style="font-family: 'Poppins', sans-serif;">Damage
+                                                            Fee</label>
+                                                        <input class="form-control" id="damageFee"
+                                                               type="text">
+                                                        <!--                                                        <span class="navbar-toggler-icon"></span>-->
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="travelledDistance"
+                                                               style="font-family: 'Poppins', sans-serif;">Travelled
+                                                            Distance
+                                                        </label>
+                                                        <input class="form-control" id="travelledDistance" type="text">
+                                                        <!--                                                        <span class="navbar-toggler-icon"></span>-->
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label" for="extraKM"
+                                                               style="font-family: 'Poppins', sans-serif;">Extra
+                                                            KM</label>
+                                                        <input class="form-control" id="extraKM" type="text">
+                                                        <!--                                                        <span class="navbar-toggler-icon"></span>-->
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label class="form-label" for="harm"
+                                                               style="font-family: 'Poppins', sans-serif;">Harm or
+                                                            Not</label>
+                                                        <select aria-label="Default select example" class="form-select"
+                                                                id="harm">
+                                                            <option selected>none</option>
+                                                            <option selected value="1">Harm</option>
+                                                            <option selected value="2">Not</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label class="form-label" for="fullPayment"
+                                                               style="font-family: 'Poppins', sans-serif;">Full
+                                                            Payment</label>
+                                                        <input class="form-control" id="fullPayment" type="text">
+                                                        <span class="navbar-toggler-icon"></span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div aria-label="Basic mixed styles example" class="btn-group"
+                                                             role="group">
+                                                            <button class="btn btn-primary btn-sm" id="btnPay"
+                                                                    style="color: white;"
+                                                                    type="button">Pay
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--                    =========================-->
                     <div style="width: 95%; display: flex; justify-content: right">
-                        <button class="btn btn-primary btn-sm" type="button">MAKE PAYMENT</button>
+                        <!--                        <button class="btn btn-primary btn-sm" type="button"></button>-->
+                        <button class="btn btn-primary btn-sm" data-bs-target="#exampleModalToggle10"
+                                data-bs-toggle="modal" id="btnMakePayment">MAKE PAYMENT
+                        </button>
                     </div>
                     <div style="display: flex; height: 390px; justify-content:center;">
                         <table class="table table-striped table-hover" style="width: 90%; margin-top: 10px">
@@ -1651,8 +1742,7 @@
                                 <th scope="col">Payment Date</th>
                                 <th scope="col">Rent Fee</th>
                                 <th scope="col">Driver Fee</th>
-                                <th scope="col">Lose Damage Waiver Fee</th>
-                                <th scope="col">Reduced Lose Damage Fee</th>
+                                <th scope="col">Damage Fee</th>
                                 <th scope="col">Harm or Not</th>
                                 <th scope="col">Travelled Distance</th>
                                 <th scope="col">Extra KM</th>
@@ -1728,5 +1818,6 @@
 <script src="assets/js/driver.js"></script>
 <script src="assets/js/car.js"></script>
 <script src="assets/js/booking.js"></script>
+<script src="assets/js/payment.js"></script>
 </body>
 </html>

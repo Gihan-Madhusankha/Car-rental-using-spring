@@ -137,6 +137,7 @@ $('#btnBooking').click(function () {
             alert('Booking successfully');
             generateBookingID();
             updateAvailableCars();
+            savePayment(resp);
             clearFields();
         }
     });
@@ -235,7 +236,81 @@ function loadAllReserves(){
         success: function (resp) {
             $('#tblRentalDetail').empty();
             for (let res of resp.data) {
-                $('#tblRentalDetail').append(`<tr><td> ${res.reserveID} </td><td> ${res.reserveDate} </td><td> ${res.customerID} </td><td> ${res.pickDate} </td><td> ${res.pickTime} </td><td> ${res.returnDate} </td><td> ${res.returnTime} </td><td> ${res.duration} </td><td> ${res.driverID} </td></tr>`);
+                $('#tblRentalDetail').append(`<tr><td> ${res.reserveID} </td><td> ${res.reserveDate} </td><td> ${res.cusUsername} </td><td> ${res.pickDate} </td><td> ${res.pickTime} </td><td> ${res.returnDate} </td><td> ${res.returnTime} </td><td> ${res.duration} </td><td> ${res.driverID} </td></tr>`);
+            }
+        },
+        error: function (error) {
+            let jsObject = JSON.parse(error.responseText);
+            alert("error : " + jsObject.message);
+        }
+    });
+}
+
+
+// =================================================
+
+function loadAllPaymentDetails(){
+    $.ajax({
+        url: baseURL + "payment",
+        method: "get",
+        success: function (resp){
+            console.log('r ',resp.data);
+            $('#tblPayment').empty();
+            for (let p of resp.data) {
+                $('#tblPayment').append(`<tr><td>${p.paymentID}</td><td>${p.paymentDate}</td><td>${p.rentFee}</td><td>${p.driverFee}</td><td>${p.damageFee}</td><td>${p.harmOrNot}</td><td>${p.totalDistance}</td><td>${p.extraKM}</td><td>${p.fullPayment}</td></tr>`);
+            }
+        }
+    });
+}
+
+var pid = generatePaymentID();
+console.log('pid', pid);
+function savePayment(resp){
+    var dys = getDays($('#bookingPickUpDate').val(), $('#bookingReturnDate').val());
+    var rntFee = (parseInt(dys) * parseInt($('#bookingDailyRate').val()));
+    var drFee = parseInt($('#bookingDriverFee').val());
+    console.log(dys, rntFee, drFee);
+    console.log("days: ", parseInt(dys));
+    console.log("rate: ", $('#bookingDailyRate').val());
+
+    var payment = {
+        paymentID: 'P-001',
+        paymentDate: $('#bookingPickUpDate').val(),
+        rentFee: rntFee,
+        driverFee: drFee,
+        damageFee: '0',
+        harmOrNot: 'not',
+        totalDistance: '223',
+        extraKM: '0',
+        fullPayment: rntFee + drFee
+    }
+    console.log('payment', payment);
+
+    $.ajax({
+        url: baseURL + "payment",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(payment),
+        success: function (resp){
+            loadAllPaymentDetails();
+        }
+    });
+}
+
+function generatePaymentID() {
+    $.ajax({
+        url: baseURL + "payment/generate",
+        method: "get",
+        success: function (resp) {
+            let pId = resp.data;
+            if (pId == null) {
+                // $('#bookingId').val("B-001");
+                return "P-001";
+            } else {
+                let pIdNo = parseInt(pId.substr(2, 5)) + 1;
+                console.log(pIdNo);
+                // $('#bookingId').val();
+                return 'B-' + pIdNo.toString().padStart(3, '0');
             }
         },
         error: function (error) {
